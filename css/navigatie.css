@@ -1,0 +1,67 @@
+html {
+  font-family: century gothic;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  }
+  
+.topnav {
+	border-top: 2px solid #08faec;
+	border-right: 2px solid #08faec;
+	border-left: 2px solid #08faec;
+	border-bottom: 2px solid #08faec;
+	margin:0;
+	overflow: hidden;
+	background-color:#74c385;
+
+}
+
+.topnav a {
+	padding: 6px 4px 0px 16px;
+	margin-left: 10.6%;
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #08faec;
+	color: black;
+}
+
+.sidenav {
+	border-top: 2px solid #08faec;
+	border-right: 2px solid #08faec;
+	border-left: 2px solid #08faec;
+	border-bottom: 2px solid #08faec;
+	margin-top: 3.35%;
+    height: 100%;
+    width: 164px;
+	top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #74c385;
+
+}
+
+.sidenav a {
+	margin-top:50%;
+    padding: 6px 4px 0px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidenav a:hover {
+  background-color: #08faec;
+  color: black;
+}
