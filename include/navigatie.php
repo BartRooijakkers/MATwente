@@ -1,15 +1,13 @@
 <div class="topnav">
-	<a href="home.html">Home</a>
-	<a href="info over mij.html">Info over mij</a>
-    <a href="hobby's.html">Hobby's</a>
-	<a href="cv.html">CV</a>
-	<a href="contact.html">Contact</a>
+	<a href="configuratie.php">Configuratie</a>
+    <a href="incidenten.php">Incidenten</a>
+	<a href="gerbuikers.php">Gerbuikers</a>
+	<a href="login.php">Login</a>
 </div>
 
 <div class="sidenav">
-	<a href="home.html">Home</a>
-	<a href="over ons.html">Over ons</a>
-	<a href="producten.html">Producten</a>
-	<a href="thema's.html">Thema's</a>
-	<a href="bestellencontact.html">contact bestellen</a>
+	<a href="configuratietoevoegen.php">Configuratie Toevoegen</a>
+	<a href="gebruikertoevoegen.php">Gebruiker toevoegen</a>
+	<a href="incidentmeld.php">Incident Melden</a>
+	<a href="faq.php">Veel Gestelde Vragen</a>
 </div>	
