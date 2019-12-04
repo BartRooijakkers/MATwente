@@ -1,9 +1,11 @@
 .topnav {
+	width:100.83%;
 	border-top: 2px solid #08faec;
 	border-right: 2px solid #08faec;
 	border-left: 2px solid #08faec;
 	border-bottom: 2px solid #08faec;
-	margin:0;
+	margin-top:-0.6%;
+	margin-left:-0.6%;
 	overflow: hidden;
 	background-color:#74c385;
 
@@ -30,18 +32,18 @@
 	border-right: 2px solid #08faec;
 	border-left: 2px solid #08faec;
 	border-bottom: 2px solid #08faec;
-	margin-top: 3.35%;
+	margin-top: ;
     height: 100%;
-    width: 164px;
+    width: 10%;
 	top: 0;
     left: 0;
     position: fixed;
     background-color: #74c385;
-
+	margin-top:3.3%;
 }
 
 .sidenav a {
-	margin-top:50%;
+	margin-top:20%;
     padding: 6px 4px 0px 16px;
     text-decoration: none;
     font-size: 25px;
