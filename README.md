@@ -1,2 +1,2 @@
 # M.A.-Twente
-M.A. Twente project /  Bart, Casey en Wesley
+M.A. Twente project /  Bart, Casey en Worstley
