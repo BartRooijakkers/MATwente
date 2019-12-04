@@ -19,7 +19,7 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 .topnav a:hover {
@@ -39,14 +39,14 @@
     left: 0;
     position: fixed;
     background-color: #74c385;
-	margin-top:3.3%;
+	margin-top:3.5%;
 }
 
 .sidenav a {
 	margin-top:20%;
     padding: 6px 4px 0px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     display: block;
 }
