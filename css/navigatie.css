@@ -1,5 +1,8 @@
+@font-face { font-family: LemonMilk; src: url('Font/Lemonmilk.ttf'); }
+.LemonMilk { font-family:  LemonMilk; font-size: 4.2em; }
+
 .topnav {
-	width:93.85%;
+	width:93.80%;
 	border-top: 2px solid #08faec;
 	border-right: 2px solid #08faec;
 	border-left: 2px solid #08faec;
@@ -9,8 +12,9 @@
 	overflow: hidden;
 	background-color:#74c385;
 	padding-left: 7%;
-
+font-family: 'lemonMilk';
 }
+
 
 .topnav a {
 	padding: 6px 4px 0px 16px;
@@ -20,7 +24,7 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .topnav a:hover {
@@ -33,21 +37,24 @@
 	border-right: 2px solid #08faec;
 	border-left: 2px solid #08faec;
 	border-bottom: 2px solid #08faec;
-	margin-top: ;
-    height: 92.3%;
-    width: 10%;
+    height: auto;
+    width: auto;
+		max-width: 10%;
+		min-height: 100%;
 	top: 0;
     left: 0;
     position: fixed;
     background-color: #74c385;
-	margin-top:3.5%;
+	margin-top:auto;
+	text-overflow: ellipsis;
+	font-family: 'lemonMilk';
 }
 
 .sidenav a {
-	margin-top:20%;
+	margin-top:30%;
     padding: 35px 8px 35px 8px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     display: block;
 }
@@ -55,4 +62,5 @@
 .sidenav a:hover {
   background-color: #08faec;
   color: black;
+
 }
