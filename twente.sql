@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 04 dec 2019 om 22:23
+-- Gegenereerd op: 06 dec 2019 om 12:56
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -318,6 +318,45 @@ CREATE TABLE `user2incident` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Gegevens worden geëxporteerd voor tabel `user2incident`
+--
+
+INSERT INTO `user2incident` (`ID`, `userID`, `incidentID`) VALUES
+(9, 1, 9),
+(24, 3, 24),
+(11, 4, 11),
+(25, 5, 25),
+(27, 6, 27),
+(1, 7, 1),
+(5, 8, 5),
+(8, 9, 8),
+(12, 10, 12),
+(19, 13, 19),
+(21, 14, 21),
+(29, 15, 29),
+(33, 16, 33),
+(3, 19, 3),
+(20, 20, 20),
+(26, 21, 26),
+(4, 23, 4),
+(17, 24, 17),
+(13, 25, 13),
+(22, 27, 22),
+(28, 28, 28),
+(14, 33, 14),
+(16, 34, 16),
+(23, 36, 23),
+(31, 37, 31),
+(32, 38, 32),
+(2, 40, 2),
+(7, 41, 7),
+(10, 42, 10),
+(18, 43, 18),
+(15, 44, 15),
+(30, 45, 30),
+(6, 47, 6);
+
+--
 -- Indexen voor geëxporteerde tabellen
 --
 
@@ -461,7 +500,7 @@ ALTER TABLE `user2configuration`
 -- AUTO_INCREMENT voor een tabel `user2incident`
 --
 ALTER TABLE `user2incident`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
