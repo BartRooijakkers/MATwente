@@ -38,3 +38,29 @@ label.error{
 div.container{
   margin-top:12%;
 }
+
+/* Tabellen */
+
+div.table{
+margin-left:11%;
+margin-bottom: 5%;
+}
+
+table.details{
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  background-color: #b4da55;
+  overflow:auto;
+}
+
+th{
+  border: 3px solid black;
+  padding: 10px;
+  background-color:#74c385;
+}
+
+td{
+  border: 2px solid black;
+  padding: 10px;
+}
