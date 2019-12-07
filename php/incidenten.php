@@ -36,8 +36,7 @@ $result = mysqli_query($conn,$sql);
 		<th> Tijd </th>
 		<th> Afdeling </th>
 	 <th> Melder </th>
-		<th> Feedback</th>
-		<th> Aanpassen </th>
+		<th> Openen </th>
 
 
 
@@ -55,8 +54,7 @@ $result = mysqli_query($conn,$sql);
 			<td>".$row["time"]."</td>
 			<td>".$row["departmentName"]."</td>
 			<td>".$row["initials"].", ".$row["surname"]."</td>
-			<td>".$row["feedback"]."</td>
-			<td><a href='details.php?id=".$row["incidentID"]."'>"."Edit"."</td>
+			<td><a href='incidentdetails.php?id=".$row["incidentID"]."'>"."<img class= 'open' src=../open.png>"."</td>
 			 </tr>";
 	  }
 	}

@@ -35,8 +35,7 @@ $result = mysqli_query($conn,$sql);
 	  <th> Afdeling </th>
 		<th> E-mail </th>
 		<th> Intern Tel.nr</th>
-		<th> Geslacht</th>
-		<th> Aanpassen </th>
+		<th> Openen </th>
 
 
 
@@ -53,8 +52,7 @@ $result = mysqli_query($conn,$sql);
 	    <td>".$row["departmentName"]."</td>
 			<td>".$row["email"]."</td>
 			<td>".$row["interncell"]."</td>
-			<td>".$row["sex"]."</td>
-			<td><a href='details.php?id=".$row["userID"]."'>"."Edit"."</td>
+			<td><a href='gebruikerdetails.php?id=".$row["userID"]."'>"."<img class= 'open' src=../open.png>"."</td>
 			 </tr>";
 	  }
 	}
