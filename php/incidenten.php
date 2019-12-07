@@ -33,7 +33,7 @@ $result = mysqli_query($conn,$sql);
 		<th> Korte Omschrijving</th>
 		<th> Oorzaak </th>
 		<th> Oplossing</th>
-		<th> Tijd </th>
+		<th> Tijd (uren)</th>
 		<th> Afdeling </th>
 	 <th> Melder </th>
 		<th> Openen </th>
