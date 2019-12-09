@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 06 dec 2019 om 17:10
+-- Gegenereerd op: 09 dec 2019 om 22:13
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -128,7 +128,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT NULL,
+  `date` timestamp NULL DEFAULT current_timestamp(),
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -200,7 +200,7 @@ INSERT INTO `responsible` (`responsibleID`, `responsibleName`) VALUES
 
 CREATE TABLE `status` (
   `statusID` int(11) NOT NULL,
-  `statusName` varchar(50) DEFAULT NULL,
+  `statusName` varchar(255) DEFAULT NULL,
   `statusImpact` varchar(3) DEFAULT NULL,
   `urgency` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -211,7 +211,7 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`statusID`, `statusName`, `statusImpact`, `urgency`) VALUES
 (1, 'Niemand kan nog werken', '>10', '1'),
-(2, 'Kunnen niet werken. orders worden gemist en/of afs', '<10', '1'),
+(2, 'Kunnen niet werken. orders worden gemist en/of afspraken worden niet gehaald', '<10', '1'),
 (3, 'kan niet werken', '1', '2'),
 (4, 'kunnen niet werken met 1 programma', '>1', '2'),
 (5, 'kan niet werken met 1 programma', '1', '3'),
