@@ -65,8 +65,11 @@ $geslacht = " TEST "
 
 
 
+
 </table>
+<a href="gebruikers.php"> <img class= 'return' src=../return.png> </a>
 </div>
+
 
 
 

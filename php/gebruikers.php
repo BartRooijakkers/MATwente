@@ -25,7 +25,7 @@ $result = mysqli_query($conn,$sql);
 <br>
 <br>
 	<div class=table>
-	<table class="incidenten" name="incidenten">
+	<table class="gebruikers" name="gebruikers">
 	<tr>
 
 
