@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 09 dec 2019 om 22:13
--- Serverversie: 10.4.6-MariaDB
--- PHP-versie: 7.3.9
+-- Gegenereerd op: 10 dec 2019 om 12:20
+-- Serverversie: 10.1.38-MariaDB
+-- PHP-versie: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -128,7 +128,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT current_timestamp(),
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -142,7 +142,7 @@ INSERT INTO `incident` (`incidentID`, `statusID`, `description`, `shortDescripti
 (3, 1, 'E-mailomgeving is niet te benaderen door kantoor en buitendienst medewerkers.', 'E-mail niet beschikbaar', 80, 2.00, 2, 'DNS-configuratie fout Hosting provider', 'Provider gecontact. deze hebben de fout in DNS-server opgelost. Aanpassing duurt 4 uur voordat deze overal doorwerkt.', 'Alle gebruikers een e-mail gestuurd dat het probleem opgelost is.', '2019-12-02 15:32:00', 1),
 (4, 4, 'Gebruiker wil een pagina in een Word document landscape afdrukken. Pagina\'s voor en na deze pagina dienen portrait te blijven.', 'Secties in Word', 1, 0.50, 1, 'Secties gebruiken', 'Met gebruiker meegekeken. de werking van secties uitgelegd en samen ingesteld voor het document.', 'Niet van toepassing.', '2019-12-02 15:32:00', 1),
 (5, 3, 'Als laptop opstart alleen drie piepjes te horen. Laptop doet verder niets.', 'Piepjes bij aanzetten laptop', 1, 1.50, 1, 'Geheugen vervangen', 'Geheugen blijkt defect. Geheugen vervangen. Geheugen wordt RMA gestuurd.', 'Gebruiker heeft laptop direct meegenomen.', '2019-12-02 15:32:00', 2),
-(6, 7, 'Gebruiker wilt zakeljke e-mail op privétablet', 'E-mail op privétablet', 1, 0.25, 1, 'Standaard instellingen', 'Telefonisch samen met de gebruiker tablet ingesteld.', 'Niet van toepassing.', '2019-12-03 15:32:00', 1),
+(6, 7, 'Gebruiker wilt zakeljke e-mail op priv&eacute;tablet', 'E-mail op priv&eacute;tablet', 1, 0.25, 1, 'Standaard instellingen', 'Telefonisch samen met de gebruiker tablet ingesteld.', 'Niet van toepassing.', '2019-12-03 15:32:00', 1),
 (7, 7, 'Laptop is gevallen. Er zit nu een breuk in scherm.', 'Breuk in laptopscherm', 1, 1.50, 1, 'Tijdelijk andere laptop', 'Data overgezet naar tijdelijke laptop. Deze laptop wordt opgestuurd naar leverancier voor reparatie.', 'Aan gebruiker gemeld dat nieuwe laptop opgehaald kan worden.', '2019-12-03 15:32:00', 2),
 (8, 3, 'Ik wil e-mailinstellingen van een extern e-mailadres op mijn tablet instellen. maar ik weet het wachtwoord niet meer. Account met wachtwoord zit nog wel op laptop van de zaak.', 'Wachtwoord omzetten', 1, 1.00, 1, 'Wachtwoord terug gezocht.', 'Met behulp van wachtwoord tool wachtwoord in Outlook zichtbaar gemaakt.', 'Wachtwoord telefonisch aan gebruiker doorgegeven.', '2019-12-03 15:32:00', 1),
 (9, 2, 'Alle buitendienstmedewerkers kunnen na de update niet meer inloggen op de urenadministratie.', 'Buitendienstmedewerkers geen toegang tot urenadministratie', 1, 3.00, 1, 'IP-routing niet goed', 'Route naar VPN server toegevoegd aan routing tabel van server.', 'Alle buitendienstmedewerkers gemaild.', '2019-12-04 15:32:00', 1),
@@ -159,7 +159,7 @@ INSERT INTO `incident` (`incidentID`, `statusID`, `description`, `shortDescripti
 (20, 3, 'Sarisa de Hoogt weet na vakantie haar wachtwoord niet meer.', 'Wachtwoord vergeten', 1, 0.10, 3, 'Niet van toepassing', 'Wachtwoord gereset naar standaard waarden. Optie Change password at next logon aagezet.', 'Gebruiker gebeld met nieuw tijdelijk wachtwoord.', '2019-12-02 15:32:00', 1),
 (21, 3, 'Bij het opstarten van de pc verschijnt de melding \"Boot failure. Reboot en Select proper Boot device or Insert Boot Media in selected Boot device\".', 'PC start niet meer op', 1, 1.50, 3, 'Defecte harddisk', 'Hardisk vervangen en standaard image terug gezet.', 'Persoonlijk aan gebuiker doorgegeven dat pc weer werkt.', '2019-12-03 15:32:00', 2),
 (22, 6, 'Printer geeft melding \"Engine Error please contact administrator\". Gebruikers printen nu op printer van financiële administratie.', 'Papier zit vast in printer', 15, 0.25, 4, 'Tandwiel defect', 'Bij leverancier aangemeld; wordt binnen 4 werkdagen vervangen.', 'Gebruikers gemaild dat de printer binnen 4 werkdagen gerepareerd wordt door de leverancier.', '2019-12-03 15:32:00', 2),
-(23, 6, 'Op alle kantoorwerkplekken verschijnt dagelijks meerdere malen de melding dat JAVA geupdate moet worden.', 'Java update melding', 40, 2.00, 3, 'Oude versie van JAVA was geïnstalleerd', 'Via AD nieuwe versie van JAVA uitgerold.', 'Niet direct teruggemeld aan gebruikers.', '2019-12-03 15:32:00', 1),
+(23, 6, 'Op alle kantoorwerkplekken verschijnt dagelijks meerdere malen de melding dat JAVA geupdate moet worden.', 'Java updatemelding', 40, 2.00, 3, 'oude versie van JAVA was ge&iuml;stalleerd', 'Via AD nieuwe versie van JAVA uitgerold.', 'Niet direct teruggemeld aan gebruikers.', '2019-12-03 15:32:00', 1),
 (24, 6, 'Het benaderen van data vanaf de servers en vanaf het internet is traag. Het gaat wel. maar heel langzaam.', 'Netwerk is traag bij financiele administratie', 4, 3.00, 3, 'Configuratiefout in switch', 'Alle poorten op 1000 mbps full duplex gezet.', 'Oplossing aan afdelingshoofd gemeld.', '2019-12-03 15:32:00', 2),
 (25, 2, 'Er kunnen geen bestanden meer opgeslagen worden op de CAD-server. Het openen van bestanden gaat nog wel.', 'Geen oplag capaciteit meer op CAD-server', 6, 3.00, 3, 'Geen capaciteit meer op virtuele disken', 'Virtuele disken en partities vergroot.', 'Gemeld aan CAD-tekenaars dat er weer capaciteit is.', '2019-12-04 15:32:00', 1),
 (26, 7, 'Evert de Vrind. een medewerker van de CAD-afdeling. is op staande voet ontslagen. Zijn account moet per direct afgelosten worden.', 'Ontslagen medewerker CAD-afdeling', 1, 0.25, 3, 'Account disabelen', 'Account gedisabeld.', 'Aan HRM doorgegeven dat account uitstaat.', '2019-12-04 15:32:00', 1),
@@ -246,7 +246,7 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (1, 'V', 'Campbell', '', 2, '254', 1, 'vcampbell@cad.matwente.com', '', 1),
 (2, 'S', 'Geerman', '', 2, '253', 1, 'sgeerman@cad.matwente.com', '', 1),
 (3, 'S', 'Nahuys', ' Van', 2, '252', 2, 'snahuys@cad.matwente.com', '', 1),
-(4, 'F', 'Çiçek', '', 3, '235', 2, 'fçiçek@directie.matwente.com', '', 3),
+(4, 'F', '&Ccedil;i&ccedil;ek', '', 3, '235', 2, 'fcicek@directie.matwente.com', '', 3),
 (5, 'O', 'Neville', '', 3, '236', 1, 'oneville@directie.matwente.com', '', 3),
 (6, 'M', 'Oldeneel tot Oldenzeel', ' Van', 3, '234', 2, 'moldeneeltotoldenzeel@directie.matwente.com', '', 3),
 (7, 'M', ' Barney', '', 4, '250', 1, 'mbarney@engeneering.matwente.com', '', 1),
@@ -260,7 +260,7 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (15, 'B', 'Rochussen', '', 4, '247', 1, 'brochussen@engeneering.matwente.com', '', 1),
 (16, 'K', 'Schwartzenberg en Hohenlansberg', ' Thoe', 4, '246', 2, 'kschwartzenbergenhohenlansberg@engeneering.matwente.com', '', 1),
 (17, 'J', 'Wilder', '', 4, '249', 2, 'jwilder@engeneering.matwente.com', '', 1),
-(18, 'E', 'Yalçin', '', 4, '248', 2, 'eyalçin@engeneering.matwente.com', '', 1),
+(18, 'E', 'Yal&ccedil;in', '', 4, '248', 2, 'eyalcin@engeneering.matwente.com', '', 1),
 (19, 'J', 'Matse', '', 5, '290', 1, 'jmatse@financieleadministratie.matwente.com', '', 1),
 (20, 'N', 'Kinschot', ' Van', 5, '290', 2, 'nkinschot@financieleadministratie.matwente.com', '', 1),
 (21, 'K', 'Nguyen', '', 5, '290', 2, 'knguyen@financieleadministratie.matwente.com', '', 1),
@@ -268,7 +268,7 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (23, 'H', 'Aktas', '', 7, '278', 2, 'haktas@ict.matwente.com', '', 2),
 (24, 'S', 'Harrison', '', 7, '279', 1, 'sharrison@ict.matwente.com', '', 2),
 (25, 'V', 'Delen', ' Van', 8, '263', 2, 'vdelen@onderzoek.matwente.com', '', 1),
-(26, 'T', 'Gülcher', '', 8, '264', 1, 'tgülcher@onderzoek.matwente.com', '', 1),
+(26, 'T', 'G&uuml;lcher', '', 8, '264', 1, 'tgulcher@onderzoek.matwente.com', '', 1),
 (27, 'L', 'Leyden', ' Van', 8, '282', 2, 'lleyden@onderzoek.matwente.com', '', 1),
 (28, 'A', 'Posson', ' De', 8, '261', 1, 'aposson@onderzoek.matwente.com', '', 1),
 (29, 'M', 'Tahiri', '', 8, '265', 2, 'mtahiri@onderzoek.matwente.com', '', 1),
