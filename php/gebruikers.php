@@ -25,6 +25,7 @@ $result = mysqli_query($conn,$sql);
 <br>
 <br>
 	<div class=table>
+      <h1> Gebruikers </h1>
 	<table class="gebruikers" name="gebruikers">
 	<tr>
 

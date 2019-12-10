@@ -80,3 +80,29 @@ img.return{
 	max-height: 100px;
 	max-width: 100px;
 }
+
+/* Urgency opmaak */
+p.nuAfhandelen{
+	color:#f3102b;
+	font-weight:bold;
+}
+
+p.urgent{
+	color:#f78d03;
+	font-weight:bold;
+}
+
+p.afhandelen{
+	color:#ebd834;
+	font-weight:bold;
+}
+
+p.wacht{
+	color:grey;
+	font-weight: bold;
+}
+
+p.geen{
+	color:green;
+	font-weight:bold;
+}

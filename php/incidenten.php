@@ -28,6 +28,7 @@ $result = mysqli_query($conn,$sql);
 <br>
 <br>
 	<div class=table>
+        <h1> Incidenten </h1>
 	<table class="incidenten" name="incidenten">
 	<tr>
 
@@ -52,15 +53,15 @@ $result = mysqli_query($conn,$sql);
           $urgency = $row["urgency"];
           echo "<tr><td>";
               if ($urgency == 1) {
-              echo "Nu Afhandelen";
+              echo "<p class='nuAfhandelen' >Nu Afhandelen</p>";
               } elseif ($urgency == 2) {
-              echo "Urgent";
+              echo "<p class='urgent'> Urgent</p>";
               } elseif ($urgency == 3) {
-               echo "Afhandelen";
+               echo "<p class='afhandelen'> Afhandelen</p>";
               } elseif ($urgency == 4) {
-              echo "Wacht";
+              echo "<p class='wacht'>Wacht</p>";
               } elseif ($urgency == 5) {
-                echo "Geen";
+                echo "<p class='geen'>Geen</p>";
               }"</td>";
 
         echo"<td>".$row["shortDescription"]."</td>
