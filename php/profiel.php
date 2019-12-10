@@ -1,6 +1,6 @@
 <?php
- require '../include/sesion.php';
- 
+ require '../include/session.php';
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -28,7 +28,7 @@ $result = mysqli_query($conn,$sql);?>
 		</div>
 		<div class="gegevens">
 			<p>Persoonlijke gegevens<br><br>
-			
+
 	<?php
 	if (mysqli_num_rows($result) > 0){
 
@@ -49,6 +49,6 @@ $result = mysqli_query($conn,$sql);?>
 		</div>
 		<?php include('../include/navigatie.php');?>
 		<button type="submit" class="uitloggen" name="uitlog_btn">uitloggen</button>
-		
+
 	</body>
 </html>
