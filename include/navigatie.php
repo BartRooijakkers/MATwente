@@ -3,7 +3,7 @@
     <a href="incidenten.php">Incidenten</a>
 	<a href="gebruikers.php">Gebruikers</a>
 	<a href="profiel.php">Profiel</a>
-	<a href="login.php">Login</a>
+	<a href="index.php">Login</a>
 </div>
 
 <div class="sidenav">
