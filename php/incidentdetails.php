@@ -13,7 +13,7 @@ if (!$conn) {
 
 $id = $_GET["incidentID"];
 
-$sql = "SELECT status.statusName, incident.description, incident.impact, incident.time, responsible.responsibleName, incident.cause, incident.solution, incident.feedback, incident.date, user.initials, user.middleName, user.surname, departments.departmentName,departments.location, status.statusName, status.statusImpact, status.urgency FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN responsible ON incident.responsibleID = responsible.responsibleID INNER JOIN status ON incident.statusID = status.statusID WHERE incident.incidentID = $id";
+$sql = "SELECT status.statusName, incident.description, incident.impact, incident.time, responsible.responsibleName, incident.cause, incident.solution, incident.feedback, incident.date, user.userID, user.initials, user.middleName, user.surname, departments.departmentName,departments.location, status.statusName, status.statusImpact, status.urgency FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN responsible ON incident.responsibleID = responsible.responsibleID INNER JOIN status ON incident.statusID = status.statusID WHERE incident.incidentID = $id";
 
 $result = mysqli_query($conn,$sql);
 
@@ -66,7 +66,7 @@ $result = mysqli_query($conn,$sql);
       <td>".$row["feedback"]."</td>
       <td>".$row["responsibleName"]."</td>
       <td>".$row["time"]."</td>
-      <td>".$row["initials"].", ".$row["surname"]."</td>
+      <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$row["departmentName"]."</td>
       <td>".$row["date"]."</td>
       </tr>";
