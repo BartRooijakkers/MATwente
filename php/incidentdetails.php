@@ -17,7 +17,6 @@ $sql = "SELECT status.statusName, incident.description, incident.impact, inciden
 
 $result = mysqli_query($conn,$sql);
 
-$personen = " TEST "
 ?>
 
 <!doctype html>
@@ -32,7 +31,8 @@ $personen = " TEST "
 	<table class="incidentenDetails" name="incidentenDetails">
 	<tr>
 
-	  <th> status </th>
+	  <th> Impact </th>
+    <th> Status </th>
 		<th> Omschrijving</th>
 		<th> Oorzaak </th>
 		<th> Oplossing</th>
@@ -51,7 +51,15 @@ $personen = " TEST "
 
 
     while($row = mysqli_fetch_assoc($result)){
-      echo "<tr><td>".$row["impact"].$personen.$row["statusName"]."</td>
+      $personen = "personen";
+      if ($row["impact"] == 1) {
+      $personen = " persoon ";
+    } else {
+      $personen = " personen ";
+};
+
+      echo "<tr><td>".$row["impact"].$personen."</td>
+      <td>".$row["statusName"]."</td>
       <td>".$row["description"]."</td>
       <td>".$row["cause"]."</td>
       <td>".$row["solution"]."</td>

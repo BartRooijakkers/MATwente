@@ -14,19 +14,7 @@ $sql = "SELECT incident.impact, incident.incidentID, incident.shortDescription, 
 
 $result = mysqli_query($conn,$sql);
 
-$urgency = 1;
 
-if ($urgency == 1) {
-    echo "Nu Afhandelen";
-} elseif ($urgency == 2) {
-    echo "Urgent";
-} elseif ($urgency == 3) {
-    echo "Afhandelen";
-} elseif ($urgency == 4) {
-    echo "Wacht";
-} elseif ($urgency == 5) {
-    echo "Geen";
-}
 
 
 ?>
@@ -58,19 +46,31 @@ if ($urgency == 1) {
 	</tr>
 	<?php
 
-	if (mysqli_num_rows($result) > 1){
+  if (mysqli_num_rows($result) > 1){
 
+        while($row = mysqli_fetch_assoc($result)){
+          $urgency = $row["urgency"];
+          echo "<tr><td>";
+              if ($urgency == 1) {
+              echo "Nu Afhandelen";
+              } elseif ($urgency == 2) {
+              echo "Urgent";
+              } elseif ($urgency == 3) {
+               echo "Afhandelen";
+              } elseif ($urgency == 4) {
+              echo "Wacht";
+              } elseif ($urgency == 5) {
+                echo "Geen";
+              }"</td>";
 
-	  while($row = mysqli_fetch_assoc($result)){
-	    echo "<tr><td>".$urgency."</td>
-			<td>".$row["shortDescription"]."</td>
-	    <td>".$row["cause"]."</td>
-	    <td>".$row["solution"]."</td>
-			<td>".$row["time"]."</td>
-			<td>".$row["departmentName"]."</td>
-			<td>".$row["initials"].", ".$row["surname"]."</td>
-			<td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<img class= 'open' src=../open.png>"."</td>
-			 </tr>";
+        echo"<td>".$row["shortDescription"]."</td>
+	           <td>".$row["cause"]."</td>
+	           <td>".$row["solution"]."</td>
+			       <td>".$row["time"]."</td>
+			       <td>".$row["departmentName"]."</td>
+      			 <td>".$row["initials"].", ".$row["surname"]."</td>
+      			 <td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<img class= 'open' src=../open.png>"."</td>
+      			 </tr>";
 	  }
 	}
 	else{

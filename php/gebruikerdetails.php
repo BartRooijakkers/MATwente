@@ -17,7 +17,6 @@ $sql = "SELECT user.initials, user.middleName, user.surname, user.interncell, us
 
 $result = mysqli_query($conn,$sql);
 
-$geslacht = " TEST "
 ?>
 
 <!doctype html>
@@ -46,15 +45,24 @@ $geslacht = " TEST "
   <?php
   if (mysqli_num_rows($result) == 1){
 
-
     while($row = mysqli_fetch_assoc($result)){
+        $geslacht = $row["sex"];
+
       echo "<tr><td>".$row["initials"]."</td>
       <td>".$row["middleName"]."</td>
       <td>".$row["surname"]."</td>
       <td>".$row["departmentName"]."</td>
-      <td>".$row["interncell"]."</td>
-      <td>".$geslacht."</td>
-      <td>".$row["email"]."</td>
+      <td>".$row["interncell"]."</td>";
+      echo "<td>";
+          if ($geslacht == 1) {
+          echo "Man";
+          } elseif ($geslacht == 2) {
+          echo "Vrouw";
+          } elseif ($geslacht == 3) {
+           echo "Anders";
+    }"</td>";
+
+    echo"<td>".$row["email"]."</td>
       </tr>";
     }
   }
