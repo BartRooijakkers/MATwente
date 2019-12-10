@@ -2,7 +2,7 @@
 	<a href="configuraties.php">Configuratie</a>
     <a href="incidenten.php">Incidenten</a>
 	<a href="gebruikers.php">Gebruikers</a>
-	<a href="login.php">Login</a>
+	<a href="profiel.php">Profiel</a>
 </div>
 
 <div class="sidenav">
