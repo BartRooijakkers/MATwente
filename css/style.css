@@ -81,27 +81,53 @@ img.return{
 	max-width: 100px;
 }
 
+/* Urgency opmaak */
+p.nuAfhandelen{
+	color:#f3102b;
+	font-weight:bold;
+}
+
+p.urgent{
+	color:#f78d03;
+	font-weight:bold;
+}
+
+p.afhandelen{
+	color:#ebd834;
+	font-weight:bold;
+}
+
+p.wacht{
+	color:grey;
+	font-weight: bold;
+}
+
+p.geen{
+	color:green;
+	font-weight:bold;
+}
+
 .oudemelding{
-	border-radius:30px;
-	border: 2px solid black;
-	padding-left: 0.3%;
-	padding-right: 0.3%;
-	margin-left: 83.3%;
-	margin-top: 4.5%;
-	position: fixed;
+    border-radius:30px;
+    border: 2px solid black;
+    padding-left: 0.3%;
+    padding-right: 0.3%;
+    margin-left: 83.3%;
+    margin-top: 4.5%;
+    position: fixed;
 }
 
 .btnp{
-	margin-left: 35%;
-	margin-bottom: 2%;
+    margin-left: 35%;
+    margin-bottom: 2%;
 }
 
 .gegevens{
-	border-radius:30px;
-	border: 2px solid black;
-	padding-left: 0.3%;
-	padding-right: 0.3%;
-	margin-left: 10.5%;
-	margin-top: 4.5%;
-	position: fixed;
+    border-radius:30px;
+    border: 2px solid black;
+    padding-left: 0.3%;
+    padding-right: 0.3%;
+    margin-left: 10.5%;
+    margin-top: 4.5%;
+    position: fixed;
 }
