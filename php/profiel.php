@@ -25,7 +25,7 @@ $result = mysqli_query($conn,$sql);?>
 			<button type="submit" class="btnp" name="login_btn">details</button>
 		</div>
 		<div class="gegevens">
-			<p>Persoonlijke gegevens<br>
+			<p>Persoonlijke gegevens<br><br>
 			
 	<?php
 	if (mysqli_num_rows($result) > 0){
