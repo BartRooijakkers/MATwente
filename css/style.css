@@ -16,6 +16,7 @@ background-color:#74c385;
 text-align:center;
 margin-bottom: 5%;
 margin: 0 auto;
+	border-radius: 15px;
 }
 
 
@@ -37,6 +38,7 @@ label.error{
 
 div.container{
   margin-top:12%;
+	border-radius: 15px;
 }
 
 /* Tabellen */
