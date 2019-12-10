@@ -1,4 +1,6 @@
 <?php
+ require '../include/sesion.php';
+
 $servername = "localhost";
 $username = "root";
 $password = "";

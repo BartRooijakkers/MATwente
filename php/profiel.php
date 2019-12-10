@@ -1,4 +1,6 @@
 <?php
+ require '../include/sesion.php';
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -46,6 +48,7 @@ $result = mysqli_query($conn,$sql);?>
 			</p>
 		</div>
 		<?php include('../include/navigatie.php');?>
+		<button type="submit" class="uitloggen" name="uitlog_btn">uitloggen</button>
 		
 	</body>
 </html>
