@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 dec 2019 om 14:19
--- Serverversie: 10.1.38-MariaDB
--- PHP-versie: 7.3.2
+-- Gegenereerd op: 11 dec 2019 om 22:38
+-- Serverversie: 10.4.6-MariaDB
+-- PHP-versie: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -95,7 +95,7 @@ CREATE TABLE `departments` (
 INSERT INTO `departments` (`departmentID`, `departmentName`, `location`) VALUES
 (2, 'CAD', 1),
 (3, 'Directie', 1),
-(4, 'Engeneering', 2),
+(4, 'Engineering', 2),
 (5, 'Financiele Administratie', 1),
 (6, 'HRM', 1),
 (7, 'ICT', 1),
@@ -147,7 +147,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NULL DEFAULT current_timestamp(),
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -268,18 +268,18 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (4, 'F', '&Ccedil;i&ccedil;ek', '', 3, '235', 2, 'fcicek@directie.matwente.com', '', 3),
 (5, 'O', 'Neville', '', 3, '236', 1, 'oneville@directie.matwente.com', '', 3),
 (6, 'M', 'Oldeneel tot Oldenzeel', ' Van', 3, '234', 2, 'moldeneeltotoldenzeel@directie.matwente.com', '', 3),
-(7, 'M', ' Barney', '', 4, '250', 1, 'mbarney@engeneering.matwente.com', '', 1),
-(8, 'K', 'Ali', '', 4, '244', 2, 'kali@engeneering.matwente.com', '', 1),
-(9, 'Z', 'Bozkurt', '', 4, '239', 1, 'zbozkurt@engeneering.matwente.com', '', 1),
-(10, 'A', 'Conley', '', 4, '245', 2, 'aconley@engeneering.matwente.com', '', 1),
-(11, 'H', 'Grotenhuis van Onstein', ' Van', 4, '241', 2, 'hgrotenhuisvanonstein@engeneering.matwente.com', '', 1),
-(12, 'C', 'Hall', '', 4, '240', 1, 'chall@engeneering.matwente.com', '', 1),
-(13, 'M', 'Hugenpoth', ' Van', 4, '242', 2, 'mhugenpoth@engeneering.matwente.com', '', 1),
-(14, 'P', 'Koning', '', 4, '237', 1, 'pkoning@engeneering.matwente.com', '', 1),
-(15, 'B', 'Rochussen', '', 4, '247', 1, 'brochussen@engeneering.matwente.com', '', 1),
-(16, 'K', 'Schwartzenberg en Hohenlansberg', ' Thoe', 4, '246', 2, 'kschwartzenbergenhohenlansberg@engeneering.matwente.com', '', 1),
-(17, 'J', 'Wilder', '', 4, '249', 2, 'jwilder@engeneering.matwente.com', '', 1),
-(18, 'E', 'Yal&ccedil;in', '', 4, '248', 2, 'eyalcin@engeneering.matwente.com', '', 1),
+(7, 'M', ' Barney', '', 4, '250', 1, 'mbarney@engineering.matwente.com', '', 1),
+(8, 'K', 'Ali', '', 4, '244', 2, 'kali@engineering.matwente.com', '', 1),
+(9, 'Z', 'Bozkurt', '', 4, '239', 1, 'zbozkurt@engineering.matwente.com', '', 1),
+(10, 'A', 'Conley', '', 4, '245', 2, 'aconley@engineering.matwente.com', '', 1),
+(11, 'H', 'Grotenhuis van Onstein', ' Van', 4, '241', 2, 'hgrotenhuisvanonstein@engineering.matwente.com', '', 1),
+(12, 'C', 'Hall', '', 4, '240', 1, 'chall@engineering.matwente.com', '', 1),
+(13, 'M', 'Hugenpoth', ' Van', 4, '242', 2, 'mhugenpoth@engineering.matwente.com', '', 1),
+(14, 'P', 'Koning', '', 4, '237', 1, 'pkoning@engineering.matwente.com', '', 1),
+(15, 'B', 'Rochussen', '', 4, '247', 1, 'brochussen@engineering.matwente.com', '', 1),
+(16, 'K', 'Schwartzenberg en Hohenlansberg', ' Thoe', 4, '246', 2, 'kschwartzenbergenhohenlansberg@engineering.matwente.com', '', 1),
+(17, 'J', 'Wilder', '', 4, '249', 2, 'jwilder@engineering.matwente.com', '', 1),
+(18, 'E', 'Yal&ccedil;in', '', 4, '248', 2, 'eyalcin@engineering.matwente.com', '', 1),
 (19, 'J', 'Matse', '', 5, '290', 1, 'jmatse@financieleadministratie.matwente.com', '', 1),
 (20, 'N', 'Kinschot', ' Van', 5, '290', 2, 'nkinschot@financieleadministratie.matwente.com', '', 1),
 (21, 'K', 'Nguyen', '', 5, '290', 2, 'knguyen@financieleadministratie.matwente.com', '', 1),

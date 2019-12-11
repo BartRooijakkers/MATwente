@@ -1,3 +1,6 @@
+@font-face { font-family: LemonMilk; src: url('Font/LemonMilk.otf'); }
+.LemonMilk { font-family:  LemonMilk; font-size: 4.2em; }
+
 html{
 	font-family:Century Gothic;
 	height:100%;
@@ -60,7 +63,33 @@ table.incidentenDetails{
   overflow:auto;
 }
 
+table.incidenten{
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  overflow:auto;
+}
 
+table.gebruikers{
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  overflow:auto;
+}
+
+table.gebruikerDetails{
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  overflow:auto;
+}
+
+table.configuratieDetails{
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  overflow:auto;
+}
 
 th{
   border: 3px solid black;
@@ -73,20 +102,20 @@ td{
   padding: 10px;
 }
 
-img.edit{
-	max-height: 100px;
-	max-width: 100px;
-}
 
-img.open{
-	max-height: 100px;
-	max-width: 100px;
+
+i.fas.fa-external-link-alt {
+    color: black;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 30px;
+		text-align: center;
 }
 
 img.return{
-	max-height: 100px;
-	max-width: 100px;
+	max-height: 75px;
+	max-width: 75px;
 }
+
 
 /* Urgency opmaak */
 p.nuAfhandelen{

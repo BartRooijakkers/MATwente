@@ -1,6 +1,6 @@
 <?php
  require '../include/session.php';
-
+/* Connectie maken met de database */
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,6 +30,7 @@ $result = mysqli_query($conn,$sql);
 <br>
 <br>
 	<div class=table>
+          <h1> Incident details </h1>
 	<table class="incidentenDetails" name="incidentenDetails">
 	<tr>
 
@@ -49,9 +50,10 @@ $result = mysqli_query($conn,$sql);
 
 	</tr>
   <?php
+  /* Opening if statement voor laten zien data in tabel */
   if (mysqli_num_rows($result) == 1){
 
-
+/* Begin van loop voor het weergeven van data in tabel */
     while($row = mysqli_fetch_assoc($result)){
 /* Als het meer dan 1 personen betreft is het Personen, als het 1 iemand betreft is het persoon */
       $personen = "personen";
@@ -91,7 +93,7 @@ $time =  $row["time"] / 60;
       <td>".$row["solution"]."</td>
       <td>".$row["feedback"]."</td>
       <td>".$row["responsibleName"]."</td>
-      <td>".round($time, 2)."</td>
+      <td>".round($time, 2)." uur"."</td>
       <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$row["departmentName"]."</td>
       <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>

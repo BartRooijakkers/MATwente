@@ -7,4 +7,5 @@
 	<meta name="viewport"content="width=device-witdth, initial-scale=1-0">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/navigatie.css">
+	<script src="https://kit.fontawesome.com/85544c20de.js" crossorigin="anonymous"></script>
 </head>

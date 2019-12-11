@@ -19,6 +19,8 @@ $sql = "SELECT user.initials, user.middleName, user.surname, user.interncell, us
 
 $result = mysqli_query($conn,$sql);
 
+
+
 ?>
 
 <!doctype html>
@@ -30,7 +32,8 @@ $result = mysqli_query($conn,$sql);
 <br>
 <br>
 	<div class=table>
-	<table class="incidentenDetails" name="incidentenDetails">
+          <h1> Gebruiker details </h1>
+	<table class="gebruikerDetails" name="incidentenDetails">
 	<tr>
 
 	  <th> Initialen </th>
@@ -48,6 +51,7 @@ $result = mysqli_query($conn,$sql);
   if (mysqli_num_rows($result) == 1){
 
     while($row = mysqli_fetch_assoc($result)){
+      $name = $row["initials"]." ".$row["surname"];
         $geslacht = $row["sex"];
 
       echo "<tr><td>".$row["initials"]."</td>
@@ -77,6 +81,7 @@ $result = mysqli_query($conn,$sql);
 
 
 </table>
+
 <a href="gebruikers.php"> <img class= 'return' src=../img/return.png> </a>
 </div>
 
