@@ -12,7 +12,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
-$sql = "SELECT user.userID, departments.departmentName, departments.location, user.initials, user.surname, user.middleName, user.sex, user.interncell, user.email FROM user INNER JOIN departments ON user.departmentID = departments.departmentID";
+$sql = "SELECT user.userID, user.initials, user.surname, departments.departmentName, configuration.configurationName, departments.location FROM user INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN user2configuration ON user2configuration.userID = user.userID INNER JOIN configuration ON user2configuration.configurationID = configuration.configurationID";
 
 $result = mysqli_query($conn,$sql);
 
@@ -32,10 +32,10 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th> Afdeling</th>
-		<th> Gebruiker</th>
+	  <th> Configuratie</th>
+		<th> Afdeling</th>
+    <th> Gebruiker </th>
     <th> Locatie </th>
-    <th> Coniguratie </th>
 		<th> Openen </th>
 
 
@@ -56,10 +56,10 @@ $result = mysqli_query($conn,$sql);
         $location = "Extern";
       }
       /* Weergeven van de data in het tabel */
-	    echo "<tr><td>".$row["departmentName"]."</td>
+	    echo "<tr><td>".$row["configurationName"]."</td>
+      <td>".$row["departmentName"]."</td>
       <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$location."</td>
-      <td>".$row["configuration"]."</td>
 			 </tr>";
 	  }
 	}

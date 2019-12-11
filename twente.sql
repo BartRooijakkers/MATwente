@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 dec 2019 om 13:34
+-- Gegenereerd op: 11 dec 2019 om 14:19
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.2
 
@@ -34,6 +34,17 @@ CREATE TABLE `config2hardware` (
   `configurationID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `config2hardware`
+--
+
+INSERT INTO `config2hardware` (`ID`, `hardwareID`, `configurationID`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -54,63 +65,16 @@ CREATE TABLE `config2incident` (
 
 CREATE TABLE `configuration` (
   `configurationID` int(11) NOT NULL,
-  `configuration` varchar(255) DEFAULT NULL
+  `configurationName` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `configuration`
 --
 
-INSERT INTO `configuration` (`configurationID`, `configuration`) VALUES
+INSERT INTO `configuration` (`configurationID`, `configurationName`) VALUES
 (1, 'Standaard werkplek'),
-(2, 'Standaard werkplek'),
-(3, 'Standaard werkplek'),
-(4, 'Standaard werkplek'),
-(5, 'Standaard werkplek'),
-(6, 'Standaard werkplek'),
-(7, 'Standaard werkplek'),
-(8, 'Standaard werkplek'),
-(9, 'Standaard werkplek'),
-(10, 'Standaard werkplek'),
-(11, 'Standaard werkplek'),
-(12, 'Standaard werkplek'),
-(13, 'Standaard werkplek'),
-(14, 'Standaard werkplek'),
-(15, 'Standaard werkplek'),
-(16, 'Standaard werkplek'),
-(17, 'Standaard werkplek'),
-(18, 'Standaard werkplek'),
-(19, 'Standaard werkplek'),
-(20, 'Standaard werkplek'),
-(21, 'Standaard werkplek'),
-(22, 'Standaard werkplek'),
-(23, 'Standaard werkplek'),
-(24, 'Standaard werkplek'),
-(25, 'Standaard werkplek'),
-(26, 'Standaard werkplek'),
-(27, 'Standaard werkplek'),
-(28, 'Mobiele werkplek'),
-(29, 'Mobiele werkplek'),
-(30, 'Mobiele werkplek'),
-(31, 'Mobiele werkplek'),
-(32, 'Mobiele werkplek'),
-(33, 'Mobiele werkplek'),
-(34, 'Mobiele werkplek'),
-(35, 'Mobiele werkplek'),
-(36, 'Mobiele werkplek'),
-(37, 'Mobiele werkplek'),
-(38, 'Mobiele werkplek'),
-(39, 'Mobiele werkplek'),
-(40, 'Mobiele werkplek'),
-(41, 'Mobiele werkplek'),
-(42, 'Mobiele werkplek'),
-(43, 'Mobiele werkplek'),
-(44, 'Mobiele werkplek'),
-(45, 'Mobiele werkplek'),
-(46, 'Mobiele werkplek'),
-(47, 'Mobiele werkplek'),
-(48, 'Mobiele werkplek'),
-(49, 'Mobiele werkplek');
+(2, 'Mobiele werkplek');
 
 -- --------------------------------------------------------
 
@@ -366,54 +330,54 @@ CREATE TABLE `user2configuration` (
 
 INSERT INTO `user2configuration` (`ID`, `userID`, `configurationID`) VALUES
 (1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 28),
-(8, 8, 29),
-(9, 9, 30),
-(10, 10, 31),
-(11, 11, 32),
-(12, 12, 33),
-(13, 13, 34),
-(14, 14, 35),
-(15, 15, 36),
-(16, 16, 37),
-(17, 17, 38),
-(18, 18, 39),
-(19, 19, 7),
-(20, 20, 8),
-(21, 21, 9),
-(22, 22, 10),
-(23, 23, 11),
-(24, 24, 12),
-(25, 25, 40),
-(26, 26, 41),
-(27, 27, 42),
-(28, 28, 43),
-(29, 29, 44),
-(30, 30, 45),
-(31, 31, 46),
-(32, 32, 47),
-(33, 33, 48),
-(34, 34, 49),
-(35, 35, 13),
-(36, 36, 14),
-(37, 37, 15),
-(38, 38, 16),
-(39, 39, 17),
-(40, 40, 18),
-(41, 41, 19),
-(42, 42, 20),
-(43, 43, 21),
-(44, 44, 22),
-(45, 45, 23),
-(46, 46, 24),
-(47, 47, 25),
-(48, 48, 26),
-(49, 49, 27);
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 1),
+(6, 6, 1),
+(7, 7, 2),
+(8, 8, 2),
+(9, 9, 2),
+(10, 10, 2),
+(11, 11, 2),
+(12, 12, 2),
+(13, 13, 2),
+(14, 14, 2),
+(15, 15, 2),
+(16, 16, 2),
+(17, 17, 2),
+(18, 18, 2),
+(19, 19, 1),
+(20, 20, 1),
+(21, 21, 1),
+(22, 22, 1),
+(23, 23, 1),
+(24, 24, 1),
+(25, 25, 2),
+(26, 26, 2),
+(27, 27, 2),
+(28, 28, 2),
+(29, 29, 2),
+(30, 30, 2),
+(31, 31, 2),
+(32, 32, 2),
+(33, 33, 2),
+(34, 34, 2),
+(35, 35, 1),
+(36, 36, 1),
+(37, 37, 1),
+(38, 38, 1),
+(39, 39, 1),
+(40, 40, 1),
+(41, 41, 1),
+(42, 42, 1),
+(43, 43, 1),
+(44, 44, 1),
+(45, 45, 1),
+(46, 46, 1),
+(47, 47, 1),
+(48, 48, 1),
+(49, 49, 1);
 
 -- --------------------------------------------------------
 
@@ -550,7 +514,7 @@ ALTER TABLE `user2incident`
 -- AUTO_INCREMENT voor een tabel `config2hardware`
 --
 ALTER TABLE `config2hardware`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `config2incident`
