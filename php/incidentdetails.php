@@ -15,7 +15,7 @@ if (!$conn) {
 
 $id = $_GET["incidentID"];
 
-$sql = "SELECT status.statusName, incident.description, incident.impact, incident.time, responsible.responsibleName, incident.cause, incident.solution, incident.feedback, incident.date, user.userID, user.initials, user.middleName, user.surname, departments.departmentName,departments.location, status.statusName, status.statusImpact, status.urgency FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN responsible ON incident.responsibleID = responsible.responsibleID INNER JOIN status ON incident.statusID = status.statusID WHERE incident.incidentID = $id";
+$sql = "SELECT status.statusName, incident.description, incident.impact, incident.time, responsible.responsibleName, incident.cause, incident.solution, incident.feedback, DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date), user.userID, user.initials, user.middleName, user.surname, departments.departmentName,departments.location, status.statusName, status.statusImpact, status.urgency FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN responsible ON incident.responsibleID = responsible.responsibleID INNER JOIN status ON incident.statusID = status.statusID WHERE incident.incidentID = $id";
 
 $result = mysqli_query($conn,$sql);
 
@@ -53,6 +53,7 @@ $result = mysqli_query($conn,$sql);
 
 
     while($row = mysqli_fetch_assoc($result)){
+/* Als het meer dan 1 personen betreft is het Personen, als het 1 iemand betreft is het persoon */
       $personen = "personen";
       if ($row["impact"] == 1) {
       $personen = " persoon ";
@@ -60,8 +61,29 @@ $result = mysqli_query($conn,$sql);
       $personen = " personen ";
 };
 
+/* Tijdsberekening, Omzetten van minuten naar Uren */
 $time =  $row["time"] / 60;
 
+/* Het vertalen van dagen uit de database van Engels naar Nederlands */
+  $day = "";
+  if ($row["DAYNAME(incident.date)"] == "Monday"){
+    $day = "Maandag";
+  }
+  elseif ($row["DAYNAME(incident.date)"] == "Tuesday") {
+    $day = "Dinsdag";
+  } elseif ($row["DAYNAME(incident.date)"] == "Wednesday") {
+      $day = "Woesndag";
+  } elseif ($row["DAYNAME(incident.date)"] == "Thursday") {
+      $day = "Donderdag";
+  } elseif($row["DAYNAME(incident.date)"] == "Friday") {
+      $day = "Vrijdag";
+  } elseif ($row["DAYNAME(incident.date)"] == "Saturday") {
+      $day = "Zaterdag";
+  } elseif($row["DAYNAME(incident.date)"] == "Sunday") {
+      $day = "Zondag";
+  };
+
+  /* Weergeven van data uit de database */
       echo "<tr><td>".$row["impact"].$personen."</td>
       <td>".$row["statusName"]."</td>
       <td>".$row["description"]."</td>
@@ -72,7 +94,7 @@ $time =  $row["time"] / 60;
       <td>".round($time, 2)."</td>
       <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$row["departmentName"]."</td>
-      <td>".$row["date"]."</td>
+      <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
       </tr>";
     }
   }
