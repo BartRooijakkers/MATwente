@@ -20,7 +20,6 @@
 .topnav a {
 	padding: 6px 4px 0px 16px;
 	margin-left: 10.6%;
-	float: left;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
@@ -40,8 +39,8 @@
 	border-bottom: 2px solid #08faec;
     height: auto;
     width: auto;
-		max-width: 10%;
-		min-height: 100%;
+	max-width: 10%;
+	min-height: 100%;
 	top: 0;
     left: 0;
     position: fixed;

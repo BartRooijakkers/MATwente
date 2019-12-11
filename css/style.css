@@ -7,14 +7,14 @@ html{
 
 /* login */
 div.login{
-  height:auto;
-border: 2px solid #08faec;
-max-width:35%;
-float:center;
-background-color:#74c385;
-text-align:center;
-margin-bottom: 5%;
-margin: 0 auto;
+	height:auto;
+	border: 2px solid #08faec;
+	max-width:35%;
+	float:center;
+	background-color:#74c385;
+	text-align:center;
+	margin-bottom: 5%;
+	margin: 0 auto;
 	border-radius: 15px;
 }
 
@@ -38,6 +38,12 @@ label.error{
 div.container{
   margin-top:8%;
 	border-radius: 15px;
+}
+
+.avatar{
+	margin: 3%;
+	height: 40%;
+	width: 40%;
 }
 
 /* Tabellen */
@@ -133,11 +139,10 @@ p.geen{
     position: fixed;
 }
 
-.avatar{
-	margin: 3%;
-	height: 40%;
-	width: 40%;
+.gebruiker{
+	margin-top: 30%;
+	margin: auto;
+	background: #74c385;
+	width: 35%;
+	border: 2px solid #08faec;
 }
-
-
-
