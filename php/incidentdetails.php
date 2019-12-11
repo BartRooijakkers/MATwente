@@ -60,6 +60,8 @@ $result = mysqli_query($conn,$sql);
       $personen = " personen ";
 };
 
+$time =  $row["time"] / 60;
+
       echo "<tr><td>".$row["impact"].$personen."</td>
       <td>".$row["statusName"]."</td>
       <td>".$row["description"]."</td>
@@ -67,7 +69,7 @@ $result = mysqli_query($conn,$sql);
       <td>".$row["solution"]."</td>
       <td>".$row["feedback"]."</td>
       <td>".$row["responsibleName"]."</td>
-      <td>".$row["time"]."</td>
+      <td>".round($time, 2)."</td>
       <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$row["departmentName"]."</td>
       <td>".$row["date"]."</td>

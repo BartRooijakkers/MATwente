@@ -66,10 +66,12 @@ $result = mysqli_query($conn,$sql);
                 echo "<p class='geen'>Geen</p>";
               }"</td>";
 
+              $time =  $row["time"] / 60;
+
         echo"<td>".$row["shortDescription"]."</td>
 	           <td>".$row["cause"]."</td>
 	           <td>".$row["solution"]."</td>
-			       <td>".$row["time"]."</td>
+			       <td>".round($time, 2)."</td>
 			       <td>".$row["departmentName"]."</td>
       			 <td>".$row["initials"].", ".$row["surname"]."</td>
       			 <td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<img class= 'open' src=../img/open.png>"."</td>
