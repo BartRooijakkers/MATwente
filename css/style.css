@@ -9,8 +9,7 @@ html{
 div.login{
   height:auto;
 border: 2px solid #08faec;
-max-width:30%;
-max-height:250px;
+max-width:35%;
 float:center;
 background-color:#74c385;
 text-align:center;
@@ -37,7 +36,7 @@ label.error{
 }
 
 div.container{
-  margin-top:12%;
+  margin-top:8%;
 	border-radius: 15px;
 }
 
@@ -133,3 +132,12 @@ p.geen{
     margin-top: 4.5%;
     position: fixed;
 }
+
+.avatar{
+	margin: 3%;
+	height: 40%;
+	width: 40%;
+}
+
+
+

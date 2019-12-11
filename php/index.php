@@ -16,9 +16,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 				<div class="container">
 					<div class="login">
-						 <form action="login.php" method="post">
+					<img src="../img/loginavatar.png" class="avatar">
+						 <form action="profiel.php" method="post">
 				<br>
-
 					<label for="username"><b>E-mail</b></label><br>
 					<input type="text" placeholder="Vul uw E-mail in" name="username" required><br>
 
