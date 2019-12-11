@@ -72,7 +72,7 @@ $result = mysqli_query($conn,$sql);
 			       <td>".$row["time"]."</td>
 			       <td>".$row["departmentName"]."</td>
       			 <td>".$row["initials"].", ".$row["surname"]."</td>
-      			 <td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<img class= 'open' src=../open.png>"."</td>
+      			 <td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<img class= 'open' src=../img/open.png>"."</td>
       			 </tr>";
 	  }
 	}

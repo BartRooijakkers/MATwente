@@ -55,7 +55,7 @@ $result = mysqli_query($conn,$sql);
 	    <td>".$row["departmentName"]."</td>
 			<td>".$row["email"]."</td>
 			<td>".$row["interncell"]."</td>
-			<td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>"."<img class= 'open' src=../open.png>"."</td>
+			<td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>"."<img class= 'open' src=../img/open.png>"."</td>
 			 </tr>";
 	  }
 	}

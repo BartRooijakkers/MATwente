@@ -77,7 +77,7 @@ $result = mysqli_query($conn,$sql);
 
 
 </table>
-<a href="gebruikers.php"> <img class= 'return' src=../return.png> </a>
+<a href="gebruikers.php"> <img class= 'return' src=../img/return.png> </a>
 </div>
 
 

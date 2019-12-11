@@ -82,6 +82,7 @@ $result = mysqli_query($conn,$sql);
 
 
 </table>
+<a href="incidenten.php"> <img class= 'return' src=../img/return.png> </a>
 </div>
 
 
