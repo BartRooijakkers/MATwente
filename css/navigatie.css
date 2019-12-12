@@ -2,12 +2,12 @@
 .LemonMilk { font-family:  LemonMilk; font-size: 4.2em; }
 
 .topnav {
-	width:97.63%;
+	width:98%;
 	border-top: 2px solid #08faec;
 	border-right: 2px solid #08faec;
 	border-left: 2px solid #08faec;
 	border-bottom: 2px solid #08faec;
-	margin-top:-0.53%;
+	margin-top:-0.4%;
 	margin-left:-0.6%;
 	overflow: hidden;
 	background-color:#74c385;
@@ -20,7 +20,28 @@
 
 .topnav a {
 	padding: 6px 4px 0px 16px;
-	margin-left: 10.6%;
+	margin-left: 1%;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 25px;
+
+}
+
+.topnav a:first-child {
+	padding: 6px 4px 0px 16px;
+	margin-left: 12.6%;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+.topnav a:last-child {
+	padding: 6px 4px 0px 16px;
+	margin-left: 54%;
 	color: white;
 	text-align: center;
 	padding: 20px 20px;
