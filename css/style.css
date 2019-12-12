@@ -117,6 +117,11 @@ img.return{
 }
 
 
+p.profielfields{
+	font-weight:bold;
+	color: #74c385;
+}
+
 /* Urgency opmaak */
 p.nuAfhandelen{
 	color:#f3102b;
@@ -143,7 +148,7 @@ p.geen{
 	font-weight:bold;
 }
 
-.oudemelding{
+.oudemeldingen{
     border-radius:30px;
     border: 2px solid black;
     padding-left: 0.3%;
@@ -151,6 +156,7 @@ p.geen{
     margin-left: 83.3%;
     margin-top: 4.5%;
     position: fixed;
+		background-color:#74c385;
 }
 
 .btnp{
@@ -166,6 +172,7 @@ p.geen{
     margin-left: 10.5%;
     margin-top: 4.5%;
     position: fixed;
+		#74c385
 }
 
 .gebruiker{
