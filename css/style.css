@@ -119,7 +119,7 @@ img.return{
 
 p.profielfields{
 	font-weight:bold;
-	color: #74c385;
+	color: black;
 }
 
 /* Urgency opmaak */
@@ -172,7 +172,7 @@ p.geen{
     margin-left: 10.5%;
     margin-top: 4.5%;
     position: fixed;
-		#74c385
+		background-color:#74c385;
 }
 
 .gebruiker{
