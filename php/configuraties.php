@@ -41,7 +41,7 @@ $result = mysqli_query($conn,$sql);
 
 
 	</tr>
-	<?php 
+	<?php
 
 	if (mysqli_num_rows($result) > 1){
 
@@ -58,7 +58,7 @@ $result = mysqli_query($conn,$sql);
       /* Weergeven van de data in het tabel */
 	    echo "<tr><td>".$row["configurationName"]."</td>
       <td>".$row["departmentName"]."</td>
-      <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
+      <td><a class='gebruikers' href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$location."</td>
       <td><a href='configuratiedetails.php?configurationID=".$row["configurationID"]."'>"."<i class='fas fa-external-link-alt 1'></i>"."</td>
 			 </tr>";

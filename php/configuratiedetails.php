@@ -63,7 +63,7 @@ $result = mysqli_query($conn,$sql);
 
 
 </table>
-<a href="configuraties.php"> <img class= 'return' src=../img/return.png> </a>
+<a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
 </div>
 
 

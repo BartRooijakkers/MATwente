@@ -15,7 +15,7 @@ if (!$conn) {
 
 $id = $_GET["userID"];
 
-$sql = "SELECT user.initials, user.middleName, user.surname, user.interncell, user.sex, user.email, departments.departmentName FROM user INNER JOIN departments ON departments.departmentID = user.departmentID WHERE user.userID = $id";
+$sql = "SELECT user.initials, user.middleName, user.surname, user.interncell, user.sex, user.email, departments.departmentName, configuration.configurationName FROM user INNER JOIN departments ON departments.departmentID = user.departmentID INNER JOIN user2configuration ON user.userID = user2configuration.userID INNER JOIN configuration ON configuration.configurationID = user2configuration.configurationID WHERE user.userID = $id";
 
 $result = mysqli_query($conn,$sql);
 
@@ -43,6 +43,7 @@ $result = mysqli_query($conn,$sql);
 		<th> Intern Telnr.</th>
     <th> Geslacht </th>
 		<th> E-mail </th>
+    <th> Configuratie </th>
 
 
 
@@ -69,6 +70,7 @@ $result = mysqli_query($conn,$sql);
     }"</td>";
 
     echo"<td>".$row["email"]."</td>
+      <td>".$row["configurationName"]."</td>
       </tr>";
     }
   }
@@ -81,8 +83,7 @@ $result = mysqli_query($conn,$sql);
 
 
 </table>
-
-<a href="gebruikers.php"> <img class= 'return' src=../img/return.png> </a>
+<a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
 </div>
 
 

@@ -91,6 +91,7 @@ table.configuratieDetails{
   overflow:auto;
 }
 
+
 th{
   border: 3px solid black;
   padding: 10px;
@@ -102,7 +103,15 @@ td{
   padding: 10px;
 }
 
+tr:nth-child(even){
+background: #ffffff;
+font-weight:bold;
+}
 
+tr:nth-child(odd){
+	background: #e0e0e0;
+	font-weight:bold;
+}
 
 i.fas.fa-external-link-alt {
     color: black;
@@ -147,6 +156,26 @@ p.geen{
 	color:green;
 	font-weight:bold;
 }
+
+p.PG{
+	color:#ffffff;
+	font-weight:bolder;
+}
+
+a.gebruikers {
+	text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
 
 .oudemeldingen{
     border-radius:30px;

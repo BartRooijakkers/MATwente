@@ -108,7 +108,7 @@ $time =  $row["time"] / 60;
 
 
 </table>
-<a href="incidenten.php"> <img class= 'return' src=../img/return.png> </a>
+<a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
 </div>
 
 
