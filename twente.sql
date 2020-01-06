@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 dec 2019 om 22:38
+-- Gegenereerd op: 06 jan 2020 om 19:27
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -56,6 +56,48 @@ CREATE TABLE `config2incident` (
   `incidentID` int(11) DEFAULT NULL,
   `configurationID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `config2incident`
+--
+
+INSERT INTO `config2incident` (`ID`, `incidentID`, `configurationID`) VALUES
+(2, 2, 1),
+(3, 3, 1),
+(4, 3, 2),
+(5, 4, 1),
+(6, 5, 2),
+(7, 6, 1),
+(8, 7, 1),
+(1, 7, 2),
+(9, 8, 2),
+(10, 9, 1),
+(11, 10, 1),
+(12, 11, 1),
+(13, 12, 2),
+(14, 13, 2),
+(15, 14, 2),
+(16, 15, 1),
+(17, 16, 2),
+(18, 17, 1),
+(19, 18, 1),
+(20, 19, 1),
+(21, 20, 1),
+(22, 21, 2),
+(23, 22, 2),
+(24, 23, 2),
+(25, 24, 1),
+(26, 25, 1),
+(27, 25, 2),
+(28, 26, 1),
+(29, 27, 1),
+(30, 28, 2),
+(31, 29, 1),
+(32, 29, 2),
+(33, 30, 1),
+(34, 31, 1),
+(35, 32, 1),
+(36, 33, 2);
 
 -- --------------------------------------------------------
 
@@ -520,7 +562,7 @@ ALTER TABLE `config2hardware`
 -- AUTO_INCREMENT voor een tabel `config2incident`
 --
 ALTER TABLE `config2incident`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT voor een tabel `configuration`

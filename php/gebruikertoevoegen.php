@@ -16,12 +16,12 @@
 
 					<label for="password"><b>Wachtwoord</b></label><br>
 					<input type="password" placeholder="Vul uw wachtwoord in" name="password" required><br>
-					
-					<label for="password"><b>e-mail</b></label><br>
-					<input type="password" placeholder="Vul uw e-mail in" name="password" required><br>
-					
-					<label for="password"><b>Nummer</b></label><br>
-					<input type="password" placeholder="Vul uw nummer in" name="password" required><br>
+
+					<label for="E-mail"><b>E-mail</b></label><br>
+					<input type="password" placeholder="Vul uw e-mail in" name="e-mail" required><br>
+
+					<label for="nummer"><b>Nummer</b></label><br>
+					<input type="password" placeholder="Vul uw nummer in" name="Nummer" required><br>
 
 					<button type="submit" class="btn" name="login_btn">Aanmaken</button>
 					<br>

@@ -17,6 +17,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 				<div class="container">
 					<div class="login">
 					<img src="../img/loginavatar.png" class="avatar">
+
 						 <form action="profiel.php" method="post">
 				<br>
 					<label for="username"><b>E-mail</b></label><br>
@@ -25,7 +26,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 					<label for="password"><b>Wachtwoord</b></label><br>
 					<input type="password" placeholder="Voer wachtwoord in" name="password" required><br>
 
-					<button type="submit" class="btn" name="login_btn">Login</button>
+					<button class="btn" name="login_btn">Login</button>
 					<br>
 
 			<label class="error"></label>

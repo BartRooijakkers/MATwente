@@ -63,7 +63,7 @@ $result = mysqli_query($conn,$sql);
             elseif ($row["DAYNAME(incident.date)"] == "Tuesday") {
               $day = "Dinsdag";
             } elseif ($row["DAYNAME(incident.date)"] == "Wednesday") {
-                $day = "Woesndag";
+                $day = "Woensdag";
             } elseif ($row["DAYNAME(incident.date)"] == "Thursday") {
                 $day = "Donderdag";
             } elseif($row["DAYNAME(incident.date)"] == "Friday") {

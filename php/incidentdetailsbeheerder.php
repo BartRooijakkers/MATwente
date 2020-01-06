@@ -31,6 +31,7 @@ $result = mysqli_query($conn,$sql);
 <br>
 	<div class=table>
           <h1> Incident details </h1>
+  <form class="edit" action="<?php$_SERVER['PHP_SELF'];?>" method="post">
 	<table class="incidentenDetails" name="incidentenDetails">
 	<tr>
 
