@@ -49,10 +49,10 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th> Configuratie<a href="configuraties.php?sort=configuratie"><i class="fas fa-sort"></a></th>
-		<th> Afdeling<a href="configuraties.php?sort=departments"><i class="fas fa-sort"></a></th>
-    <th> Gebruiker <a href="configuraties.php?sort=gebruiker"><i class="fas fa-sort"></a></th>
-    <th> Locatie <a href="configuraties.php?sort=locatie"><i class="fas fa-sort"></a></th>
+	  <th> Configuratie<a href="configuraties.php?sort=configuratie"><i class="fas fa-sort-down"></a></th>
+		<th> Afdeling<a href="configuraties.php?sort=departments"><i class="fas fa-sort-down"></a></th>
+    <th> Gebruiker <a href="configuraties.php?sort=gebruiker"><i class="fas fa-sort-down"></a></th>
+    <th> Locatie <a href="configuraties.php?sort=locatie"><i class="fas fa-sort-down"></a></th>
 		<th> Openen </th>
 
 

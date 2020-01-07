@@ -7,9 +7,10 @@
 <body>
 	<?php include('../include/navigatie.php');?>
 	<br>
+  <div class="container">
 
 					<div class="login">
-						 <form action="gebruikertoevoegen.php" method="post" class="addUser">
+						 <form action="adduser.php" method="post" class="addUser">
 				<br>
 					<label for="username"><b>Initialen</b></label><br>
 					<input type="text" placeholder="Vul de Initialen in" name="initials" required><br>
@@ -21,10 +22,10 @@
           <input type="text" placeholder="Vul de achternaam in" name="surname" required><br>
 
 					<label for="E-mail"><b>E-mail</b></label><br>
-					<input type="text" placeholder="Vul de e-mail in" name="e-mail" required><br>
+					<input type="text" placeholder="Vul de e-mail in" name="email" required><br>
 
 					<label for="nummer"><b>Nummer</b></label><br>
-					<input type="text" placeholder="Vul het Interne telefoonnummer in" name="Nummer" maxlength="3" required><br>
+					<input type="text" placeholder="Vul het Interne telefoonnummer in" name="nummer" maxlength="3" required><br>
 
           <label for="geslacht"><b>Geslacht</b></label><br>
           <input type="radio" name="gender" value="male" required> Man
@@ -37,6 +38,6 @@
 			<br>
 			</div>
 		</form>
-
+  </div>
 </body>
 </html>

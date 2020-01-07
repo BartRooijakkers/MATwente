@@ -16,20 +16,21 @@ $sql = "SELECT user.userID, departments.departmentName, user.initials, user.surn
 
 if ($_GET['sort'] == 'initials')
 {
-    $sql .= " ORDER BY user.initials";
+    $sql .= " ORDER BY user.initials ASC";
 }
 elseif ($_GET['sort'] == 'surname')
 {
-    $sql .= " ORDER BY user.surname";
+    $sql .= " ORDER BY user.surname ASC";
 }
 elseif ($_GET['sort'] == 'department')
 {
-    $sql .= " ORDER BY departments.departmentName";
+    $sql .= " ORDER BY departments.departmentName ASC";
 }
 elseif ($_GET['sort'] == 'interncell')
 {
-    $sql .= " ORDER BY user.interncell";
+    $sql .= " ORDER BY user.interncell ASC";
 }
+
 
 $result = mysqli_query($conn,$sql);
 

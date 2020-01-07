@@ -16,15 +16,15 @@ $sql = "SELECT incident.impact, incident.incidentID, incident.shortDescription, 
 
 if ($_GET['sort'] == 'urgency')
 {
-    $sql .= " ORDER BY status.urgency";
+    $sql .= " ORDER BY status.urgency ASC";
 }
 elseif ($_GET['sort'] == 'time')
 {
-    $sql .= " ORDER BY incident.time";
+    $sql .= " ORDER BY incident.time DESC";
 }
 elseif ($_GET['sort'] == 'date')
 {
-    $sql .= " ORDER BY incident.date";
+    $sql .= " ORDER BY incident.date DESC";
 }
 
 $result = mysqli_query($conn,$sql);
@@ -47,12 +47,12 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th> Urgentie <a href="incidenten.php?sort=urgency"><i class="fas fa-sort"></a></th>
+	  <th> Urgentie <a href="incidenten.php?sort=urgency"><i class="fas fa-sort-down"></a></th>
 		<th> Korte Omschrijving</th>
 		<th> Oorzaak </th>
-		<th> Tijd (uren)<a href="incidenten.php?sort=time"><i class="fas fa-sort"></a></th>
+		<th> Tijd (uren)<a href="incidenten.php?sort=time"><i class="fas fa-sort-down"></a></th>
 	 <th> Melder</th>
-   <th> Datum <a href="incidenten.php?sort=date"><i class="fas fa-sort"></a></th>
+   <th> Datum <a href="incidenten.php?sort=date"><i class="fas fa-sort-down"></a></th>
 		<th> Openen </th>
 
 
