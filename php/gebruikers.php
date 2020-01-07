@@ -14,7 +14,25 @@ if (!$conn) {
 }
 $sql = "SELECT user.userID, departments.departmentName, user.initials, user.surname, user.middleName, user.sex, user.interncell, user.email FROM user INNER JOIN departments ON user.departmentID = departments.departmentID";
 
+if ($_GET['sort'] == 'initials')
+{
+    $sql .= " ORDER BY user.initials";
+}
+elseif ($_GET['sort'] == 'surname')
+{
+    $sql .= " ORDER BY user.surname";
+}
+elseif ($_GET['sort'] == 'department')
+{
+    $sql .= " ORDER BY departments.departmentName";
+}
+elseif ($_GET['sort'] == 'interncell')
+{
+    $sql .= " ORDER BY user.interncell";
+}
+
 $result = mysqli_query($conn,$sql);
+
 
 ?>
 
@@ -32,12 +50,12 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th> Initialen</th>
+	  <th>Initialen<a href="gebruikers.php?sort=initials"><i class="fas fa-sort"></a></th>
 		<th> Tussenvoegsel</th>
-		<th> Achternaam </th>
-	  <th> Afdeling </th>
+		<th> Achternaam <a href="gebruikers.php?sort=surname"><i class="fas fa-sort"></a></th>
+	  <th> Afdeling <a href="gebruikers.php?sort=department"><i class="fas fa-sort"></a></th>
 		<th> E-mail </th>
-		<th> Intern Tel.nr</th>
+		<th> Intern Tel.nr<a href="gebruikers.php?sort=interncell"><i class="fas fa-sort"></a></th>
 		<th> Openen </th>
 
 

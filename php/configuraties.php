@@ -14,6 +14,23 @@ if (!$conn) {
 }
 $sql = "SELECT configuration.configurationID, user.userID, user.initials, user.surname, departments.departmentName, configuration.configurationName, departments.location FROM user INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN user2configuration ON user2configuration.userID = user.userID INNER JOIN configuration ON user2configuration.configurationID = configuration.configurationID";
 
+if ($_GET['sort'] == 'configuratie')
+{
+    $sql .= " ORDER BY configuration.configurationID";
+}
+elseif ($_GET['sort'] == 'departments')
+{
+    $sql .= " ORDER BY departments.departmentName";
+}
+elseif ($_GET['sort'] == 'gebruiker')
+{
+    $sql .= " ORDER BY user.surname";
+}
+elseif ($_GET['sort'] == 'locatie')
+{
+    $sql .= " ORDER BY departments.location";
+}
+
 $result = mysqli_query($conn,$sql);
 
 ?>
@@ -32,10 +49,10 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th> Configuratie</th>
-		<th> Afdeling</th>
-    <th> Gebruiker </th>
-    <th> Locatie </th>
+	  <th> Configuratie<a href="configuraties.php?sort=configuratie"><i class="fas fa-sort"></a></th>
+		<th> Afdeling<a href="configuraties.php?sort=departments"><i class="fas fa-sort"></a></th>
+    <th> Gebruiker <a href="configuraties.php?sort=gebruiker"><i class="fas fa-sort"></a></th>
+    <th> Locatie <a href="configuraties.php?sort=locatie"><i class="fas fa-sort"></a></th>
 		<th> Openen </th>
 
 

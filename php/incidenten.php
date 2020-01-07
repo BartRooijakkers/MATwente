@@ -12,10 +12,22 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
-$sql = "SELECT incident.impact, incident.incidentID, incident.shortDescription, incident.cause, incident.solution, incident.feedback, status.urgency, status.statusName, user.initials, user.surname, incident.time,  departments.departmentName, DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date) FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN status ON incident.statusID = status.statusID INNER JOIN departments ON user.departmentID = departments.departmentID ORDER BY status.urgency ASC";
+$sql = "SELECT incident.impact, incident.incidentID, incident.shortDescription, incident.cause, incident.solution, incident.feedback, status.urgency, status.statusName, user.initials, user.surname, incident.time,  departments.departmentName, DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date) FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN status ON incident.statusID = status.statusID INNER JOIN departments ON user.departmentID = departments.departmentID";
+
+if ($_GET['sort'] == 'urgency')
+{
+    $sql .= " ORDER BY status.urgency";
+}
+elseif ($_GET['sort'] == 'time')
+{
+    $sql .= " ORDER BY incident.time";
+}
+elseif ($_GET['sort'] == 'date')
+{
+    $sql .= " ORDER BY incident.date";
+}
 
 $result = mysqli_query($conn,$sql);
-
 
 
 
@@ -35,12 +47,12 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th> Urgentie </th>
+	  <th> Urgentie <a href="incidenten.php?sort=urgency"><i class="fas fa-sort"></a></th>
 		<th> Korte Omschrijving</th>
 		<th> Oorzaak </th>
-		<th> Tijd (uren)</th>
-	 <th> Melder </th>
-   <th> Datum </th>
+		<th> Tijd (uren)<a href="incidenten.php?sort=time"><i class="fas fa-sort"></a></th>
+	 <th> Melder</th>
+   <th> Datum <a href="incidenten.php?sort=date"><i class="fas fa-sort"></a></th>
 		<th> Openen </th>
 
 
