@@ -50,12 +50,12 @@ $result = mysqli_query($conn,$sql);
 	<tr>
 
 
-	  <th>Initialen<a href="gebruikers.php?sort=initials"><i class="fas fa-sort"></a></th>
+	  <th>Initialen<a href="gebruikers.php?sort=initials"><i class="fas fa-sort-down"></a></th>
 		<th> Tussenvoegsel</th>
-		<th> Achternaam <a href="gebruikers.php?sort=surname"><i class="fas fa-sort"></a></th>
-	  <th> Afdeling <a href="gebruikers.php?sort=department"><i class="fas fa-sort"></a></th>
+		<th> Achternaam <a href="gebruikers.php?sort=surname"><i class="fas fa-sort-down"></a></th>
+	  <th> Afdeling <a href="gebruikers.php?sort=department"><i class="fas fa-sort-down"></a></th>
 		<th> E-mail </th>
-		<th> Intern Tel.nr<a href="gebruikers.php?sort=interncell"><i class="fas fa-sort"></a></th>
+		<th> Intern Tel.nr<a href="gebruikers.php?sort=interncell"><i class="fas fa-sort-down"></a></th>
 		<th> Openen </th>
 
 
