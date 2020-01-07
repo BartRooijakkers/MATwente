@@ -31,6 +31,23 @@
           <input type="radio" name="gender" value="male" required> Man
           <input type="radio" name="gender" value="female"> Vrouw<br><br>
 
+          <label for="department"><b>Afdeling</b></label><br>
+          <select name="department" form="addUser" required>
+                  <option value="" selected disabled hidden>Kies Hier</option>
+                  <option value="CAD"> CAD </option>
+                  <option value="Directie"> Directie </option>
+                  <option value="Engineering"> Engineering </option>
+                  <option value="Financiele Administratie"> Financiele Administratie </option>
+                  <option value="HRM"> HRM </option>
+                  <option value="ICT"> ICT </option>
+                  <option value="Onderzoek"> Onderzoek </option>
+                  <option value="Planning"> Planning </option>
+                  <option value="Project planning"> Project Planning </option>
+                  <option value="Rapportage"> Rapportage </option>
+                  <option value="Secretariaat"> Secretariaat </option>
+                  <option value="Verkoop en Marketing"> Verkoop en Marketing </option>
+                  </select>
+
 					<button type="submit" class="btn" name="login_btn">Aanmaken</button>
 					<br>
 
