@@ -10,7 +10,7 @@
   <div class="container">
 
 					<div class="login">
-						 <form action="adduser.php" method="post" class="addUser">
+						 <form action="addincident.php" method="post" class="addUser">
 				<br>
 					<label for="omschrijving"><b>Omschrijving</b></label><br>
 					<input type="text" placeholder="Omschrijf het probleem" name="shortDescription" required><br>

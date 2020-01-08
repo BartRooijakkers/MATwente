@@ -32,7 +32,7 @@
           <input type="radio" name="gender" value="female"> Vrouw<br><br>
 
           <label for="department"><b>Afdeling</b></label><br>
-          <select name="department" form="addUser" required>
+          <select name="department" required>
                   <option value="">Make a selection</option>
                   <option value="2"> CAD </option>
                   <option value="3"> Directie </option>

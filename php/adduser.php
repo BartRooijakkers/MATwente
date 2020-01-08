@@ -16,12 +16,6 @@ elseif($_POST['gender'] == "female"){
 $sex = 2;
 }
 // Omzetten van department Van string naar integer
-if(isset($_POST['department'])){
-$department = $_POST['department'];
-}
-else{
-$department = 0;
-}
 
 $initials    =  $_POST['initials'];
 $middlename = $_POST['middleName'];
@@ -29,6 +23,7 @@ $surname       =  $_POST['surname'];
 $email  =  $_POST['email'];
 $interncell = $_POST['nummer'];
 $password  =  md5("Welkom0!");
+$department = $_POST['department'];
 
 
 

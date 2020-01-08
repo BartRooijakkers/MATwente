@@ -27,15 +27,15 @@ $result = mysqli_query($conn,$sql);
 	<br>
 				<div class="container">
 					<div class="login">
-						 <form action="configuratietoevoegen.php" method="post" name="config">
+						 <form action="addconfig.php" method="post" name="config">
 				<br>
 					<label for="username"><b>Gebruiker</b></label><br>
-          <select name='gebruiker' form='config' required>
+          <select name='user' required>
 <?php
           if (mysqli_num_rows($result) > 1){
 
                 while($row = mysqli_fetch_assoc($result)){
-                  echo " <option value='".$row["incidentID"]."'>".$row["initials"].", ".$row['surname']."</option>
+                  echo " <option value='".$row["userID"]."'>".$row["initials"].", ".$row['surname']."</option>
                 ";
             }
           }
@@ -49,8 +49,8 @@ $result = mysqli_query($conn,$sql);
         </select><br>
 
           <label for="configuratie"><b>Configuratie</b></label><br>
-          <input type="radio" name="config" value="Standaard Werkplek" required> <b>Standaard Werkplek</b>
-          <input type="radio" name="config" value="Mobiele Werkplek"><b> Mobiele Werkplek</b><br><br>
+          <input type="radio" name="config" value="1" required> <b>Standaard Werkplek</b>
+          <input type="radio" name="config" value="2"><b> Mobiele Werkplek</b><br><br>
 
           <button type="submit" class="btn" name="login_btn">Aanmaken</button>
           <br>
