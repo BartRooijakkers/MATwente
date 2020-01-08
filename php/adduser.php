@@ -30,6 +30,15 @@ $interncell = $_POST['nummer'];
 $password  =  hash("sha256","Welkom0!");
 $department = $_POST['department'];
 
+if($department == "7"){
+  $userType = "2";
+}
+elseif($department == "3"){
+  $userType = "3";
+}
+else{
+  $userType = "1";
+}
 
 
 
@@ -37,8 +46,8 @@ if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO user (initials, middleName, surname, email, interncell, password, sex, departmentID)
-VALUES ('$initials', '$middlename', '$surname', '$email', '$interncell', '$password', '$sex', '$department')";
+$sql = "INSERT INTO user (initials, middleName, surname, email, interncell, password, sex, departmentID,userType)
+VALUES ('$initials', '$middlename', '$surname', '$email', '$interncell', '$password', '$sex', '$department', '$userType')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

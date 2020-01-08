@@ -5,6 +5,8 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
+$data = $_SESSION['user'];
+
 // Database Instellingen
 $db_host = "localhost";
 $db_user = "root";
@@ -26,7 +28,7 @@ if($resultCheck > 0){
   // Stop de column als array in het variabele $row.
   if($row = mysqli_fetch_assoc($result)){
     // Laat de achternaam zien
-	$_SESSION['user'] = [$row['initials'], $row['middleName'], $row['surname'], $row['email'], $row['interncell'], $row['departmentName'], $row['usertype'], $row['userID']];
+	$_SESSION['user'] = [$row['initials'], $row['middleName'], $row['surname'], $row['email'], $row['interncell'], $row['departmentName'], $row['userType'], $row['userID']];
 	header('Location: profiel.php');
   }
 

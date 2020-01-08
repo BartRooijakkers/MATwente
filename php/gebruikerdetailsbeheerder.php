@@ -5,6 +5,8 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
+$data = $_SESSION['user'];
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -31,7 +33,17 @@ $result = mysqli_query($conn,$sql);
 <html lang="nl">
 <?php include('../include/header.php');?>
 <body>
-	<?php include('../include/navigatie.php');?>
+	<?php
+if($data[6] == 2){
+  include('../include/navigatiebeheerder.php');
+}
+elseif($data[6] == 3){
+  include('../include/navigatiebeheerder.php');
+}
+else{
+  include('../include/navigatie.php');
+}
+?>
 <br>
 <br>
 <br>

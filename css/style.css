@@ -238,3 +238,9 @@ background-image: linear-gradient(purple,maroon);
 select.selectDepartment{
 	min-width:50px;
 }
+
+h1.meldingerror{
+	color:grey;
+	float:center;
+	font-style: italic;
+}

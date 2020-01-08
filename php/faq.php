@@ -5,6 +5,8 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
+$data = $_SESSION['user'];
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -26,25 +28,34 @@ $result = mysqli_query($conn,$sql);
 <html lang="nl">
 <?php include('../include/header.php');?>
 <body>
-	<?php include('../include/navigatie.php');?>
+	<?php
+if($data[6] == 2){
+  include('../include/navigatiebeheerder.php');
+}
+elseif($data[6] == 3){
+  include('../include/navigatiebeheerder.php');
+}
+else{
+  include('../include/navigatie.php');
+}
+?>
 <br>
 <br>
 <br>
 	<div class=table>
       <h1> Veel Gestelde Vragen </h1>
-	<table class="gebruikers" name="gebruikers">
 
 	<?php
 
-	if (mysqli_num_rows($result) > 1){
+	if (mysqli_num_rows($result) >= 1){
 
 
 	  while($row = mysqli_fetch_assoc($result)){
 
       /* Weergeven van de data in het tabel */
 	    echo "
-      	  <label>".$row["question"]."<label>
-      <label>".$row["answer"]."<label>";
+      	  <label>".$row["question"]."<label><br>
+      <label>".$row["answer"]."<label><br>";
 	  }
 	}
 	else{
@@ -53,7 +64,6 @@ $result = mysqli_query($conn,$sql);
 	?>
 
 
-</table>
 </div>
 
 

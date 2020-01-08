@@ -24,7 +24,17 @@ if (!$conn) {
 	<html lang="nl">
 	<?php include('../include/header.php');?>
 		<body>
-		<?php include('../include/navigatie.php');?>
+      <?php
+      if($data[6] == 2){
+        include('../include/navigatiebeheerder.php');
+      }
+      elseif($data[6] == 3){
+        include('../include/navigatiebeheerder.php');
+      }
+      else{
+        include('../include/navigatie.php');
+      }
+      ?>
 			<div class="oudemeldingen">
 				<p>Hier staan uw meldingen</p>
       <form class="" action="sessionend.php" method="post">
@@ -36,19 +46,20 @@ if (!$conn) {
 			<div class="gegevens">
 				<p class="PG">Persoonlijke gegevens: </p>
 
+
 		<?php
 
 			echo "<td>"."<p class='profielfields'>Voorletter: </p>".$data[0]."</td>
 			<td><br>"."<p class='profielfields'>Tussenvoegsel: </p>".$data[1]."</td>
 			<td><br>"."<p class='profielfields'>Achternaam: </p>".$data[2]."</td>
-				<td><br>"."<p class='profielfields'>Email: </p>".$data[3]."</td>
-				<td><br>"."<p class='profielfields'>intern telefoon nummer: </p>".$data[4]."</td>";
+      <td><br>"."<p class='profielfields'>Afdeling: </p>".$data[5]."</td>
+			<td><br>"."<p class='profielfields'>Email: </p>".$data[3]."</td>
+			<td><br>"."<p class='profielfields'>intern telefoon nummer: </p>".$data[4]."</td>";
 
 
 		?>
 				</p>
 			</div>
-			<?php include('../include/navigatie.php');?>
 
 
 		</body>

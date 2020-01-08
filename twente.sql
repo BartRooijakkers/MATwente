@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 08 jan 2020 om 14:20
--- Serverversie: 10.1.38-MariaDB
--- PHP-versie: 7.3.2
+-- Gegenereerd op: 08 jan 2020 om 19:01
+-- Serverversie: 10.4.6-MariaDB
+-- PHP-versie: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -160,6 +160,13 @@ CREATE TABLE `faq` (
   `answer` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `faq`
+--
+
+INSERT INTO `faq` (`ID`, `question`, `answer`) VALUES
+(1, 'poopoo', 'and fart');
+
 -- --------------------------------------------------------
 
 --
@@ -201,7 +208,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NULL DEFAULT current_timestamp(),
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -290,7 +297,8 @@ INSERT INTO `status` (`statusID`, `statusName`, `statusImpact`, `urgency`) VALUE
 (5, 'kan niet werken met 1 programma', '1', '3'),
 (6, 'er is een workaround aanwezig', '>0', '3'),
 (7, 'niet reproduceerbare fout', '>0', '4'),
-(8, 'incident afgehandeld', '>0', '5');
+(8, 'incident afgehandeld', '>0', '5'),
+(9, 'Nog toe te wijzen', '-', '6');
 
 -- --------------------------------------------------------
 
@@ -316,56 +324,56 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID`, `interncell`, `sex`, `email`, `password`, `userType`) VALUES
-(1, 'V', 'Campbell', '', 2, '254', 1, 'vcampbell@cad.matwente.com', '', 1),
-(2, 'S', 'Geerman', '', 2, '253', 1, 'sgeerman@cad.matwente.com', '', 1),
-(3, 'S', 'Nahuys', ' Van', 2, '252', 2, 'snahuys@cad.matwente.com', '', 1),
-(4, 'F', '&Ccedil;i&ccedil;ek', '', 3, '235', 2, 'fcicek@directie.matwente.com', '', 3),
-(5, 'O', 'Neville', '', 3, '236', 1, 'oneville@directie.matwente.com', '', 3),
-(6, 'M', 'Oldeneel tot Oldenzeel', ' Van', 3, '234', 2, 'moldeneeltotoldenzeel@directie.matwente.com', '', 3),
-(7, 'M', ' Barney', '', 4, '250', 1, 'mbarney@engineering.matwente.com', '', 1),
-(8, 'K', 'Ali', '', 4, '244', 2, 'kali@engineering.matwente.com', '', 1),
-(9, 'Z', 'Bozkurt', '', 4, '239', 1, 'zbozkurt@engineering.matwente.com', '', 1),
-(10, 'A', 'Conley', '', 4, '245', 2, 'aconley@engineering.matwente.com', '', 1),
-(11, 'H', 'Grotenhuis van Onstein', ' Van', 4, '241', 2, 'hgrotenhuisvanonstein@engineering.matwente.com', '', 1),
-(12, 'C', 'Hall', '', 4, '240', 1, 'chall@engineering.matwente.com', '', 1),
-(13, 'M', 'Hugenpoth', ' Van', 4, '242', 2, 'mhugenpoth@engineering.matwente.com', '', 1),
-(14, 'P', 'Koning', '', 4, '237', 1, 'pkoning@engineering.matwente.com', '', 1),
-(15, 'B', 'Rochussen', '', 4, '247', 1, 'brochussen@engineering.matwente.com', '', 1),
-(16, 'K', 'Schwartzenberg en Hohenlansberg', ' Thoe', 4, '246', 2, 'kschwartzenbergenhohenlansberg@engineering.matwente.com', '', 1),
-(17, 'J', 'Wilder', '', 4, '249', 2, 'jwilder@engineering.matwente.com', '', 1),
-(18, 'E', 'Yal&ccedil;in', '', 4, '248', 2, 'eyalcin@engineering.matwente.com', '', 1),
-(19, 'J', 'Matse', '', 5, '290', 1, 'jmatse@financieleadministratie.matwente.com', '', 1),
-(20, 'N', 'Kinschot', ' Van', 5, '290', 2, 'nkinschot@financieleadministratie.matwente.com', '', 1),
-(21, 'K', 'Nguyen', '', 5, '290', 2, 'knguyen@financieleadministratie.matwente.com', '', 1),
-(22, 'A', 'Girard de Mielet van Coehoorn', ' De', 6, '276', 1, 'agirarddemieletvancoehoorn@hrm.matwente.com', '', 1),
-(23, 'H', 'Aktas', '', 7, '278', 2, 'haktas@ict.matwente.com', '', 2),
-(24, 'S', 'Harrison', '', 7, '279', 1, 'sharrison@ict.matwente.com', '', 2),
-(25, 'V', 'Delen', ' Van', 8, '263', 2, 'vdelen@onderzoek.matwente.com', '', 1),
-(26, 'T', 'G&uuml;lcher', '', 8, '264', 1, 'tgulcher@onderzoek.matwente.com', '', 1),
-(27, 'L', 'Leyden', ' Van', 8, '282', 2, 'lleyden@onderzoek.matwente.com', '', 1),
-(28, 'A', 'Posson', ' De', 8, '261', 1, 'aposson@onderzoek.matwente.com', '', 1),
-(29, 'M', 'Tahiri', '', 8, '265', 2, 'mtahiri@onderzoek.matwente.com', '', 1),
-(30, 'J', 'Thompson', '', 8, '266', 1, 'jthompson@onderzoek.matwente.com', '', 1),
-(31, 'L', 'Vos van Steenwijk', ' De', 8, '281', 1, 'lvosvansteenwijk@onderzoek.matwente.com', '', 1),
-(32, 'E', 'Westreenen van Tiellandt', ' Van', 8, '280', 1, 'ewestreenenvantiellandt@onderzoek.matwente.com', '', 1),
-(33, 'F', 'Erp', ' Van', 9, '260', 1, 'ferp@planning.matwente.com', '', 1),
-(34, 'J', 'Flugi van Aspermont', '', 9, '262', 2, 'jflugivanaspermont@planning.matwente.com', '', 1),
-(35, 'V', 'Harrison', '', 10, '259', 1, 'vharrison@projectplanning.matwente.com', '', 1),
-(36, 'K', 'Malik', '', 10, '258', 2, 'kmalik@projectplanning.matwente.com', '', 1),
-(37, 'L', 'Sasse van Ysselt', ' Van', 10, '257', 1, 'lsassevanysselt@projectplanning.matwente.com', '', 1),
-(38, 'M', 'Schinne', ' Van', 10, '251', 2, 'mschinne@projectplanning.matwente.com', '', 1),
-(39, 'T', 'Wolters', '', 10, '256', 2, 'twolters@projectplanning.matwente.com', '', 1),
-(40, 'R', 'Jansz.', '', 11, '277', 1, 'rjansz.@rapportage.matwente.com', '', 1),
-(41, 'D', 'Bergh', ' Van Benthem van den', 11, '268', 2, 'dbergh@rapportage.matwente.com', '', 1),
-(42, 'O', 'Chamberlain', '', 11, '275', 1, 'ochamberlain@rapportage.matwente.com', '', 1),
-(43, 'L', 'Hesselt van Dinter', '', 11, '267', 1, 'lhesseltvandinter@rapportage.matwente.com', '', 1),
-(44, 'D', 'Festetics de Tolna', '', 12, '243', 2, 'dfesteticsdetolna@secretariaat.matwente.com', '', 1),
-(45, 'S', 'Sandberg', '', 12, '238', 2, 'ssandberg@secretariaat.matwente.com', '', 1),
-(46, 'B', 'Wydenbruck', ' Von', 12, '255', 2, 'bwydenbruck@secretariaat.matwente.com', '', 1),
-(47, 'E', 'Aslan', '', 13, '270', 1, 'easlan@verkoopenmarketing.matwente.com', '', 1),
-(48, 'F', 'Suasso', ' Lopes', 13, '270', 2, 'fsuasso@verkoopenmarketing.matwente.com', '', 1),
-(49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '', 1),
-(50, 'a', 'dmin', '', 3, '69', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', NULL);
+(1, 'V', 'Campbell', '', 2, '254', 1, 'vcampbell@cad.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(2, 'S', 'Geerman', '', 2, '253', 1, 'sgeerman@cad.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(3, 'S', 'Nahuys', ' Van', 2, '252', 2, 'snahuys@cad.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(4, 'F', '&Ccedil;i&ccedil;ek', '', 3, '235', 2, 'fcicek@directie.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 3),
+(5, 'O', 'Neville', '', 3, '236', 1, 'oneville@directie.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 3),
+(6, 'M', 'Oldeneel tot Oldenzeel', ' Van', 3, '234', 2, 'moldeneeltotoldenzeel@directie.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 3),
+(7, 'M', ' Barney', '', 4, '250', 1, 'mbarney@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(8, 'K', 'Ali', '', 4, '244', 2, 'kali@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(9, 'Z', 'Bozkurt', '', 4, '239', 1, 'zbozkurt@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(10, 'A', 'Conley', '', 4, '245', 2, 'aconley@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(11, 'H', 'Grotenhuis van Onstein', ' Van', 4, '241', 2, 'hgrotenhuisvanonstein@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(12, 'C', 'Hall', '', 4, '240', 1, 'chall@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(13, 'M', 'Hugenpoth', ' Van', 4, '242', 2, 'mhugenpoth@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(14, 'P', 'Koning', '', 4, '237', 1, 'pkoning@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(15, 'B', 'Rochussen', '', 4, '247', 1, 'brochussen@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(16, 'K', 'Schwartzenberg en Hohenlansberg', ' Thoe', 4, '246', 2, 'kschwartzenbergenhohenlansberg@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(17, 'J', 'Wilder', '', 4, '249', 2, 'jwilder@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(18, 'E', 'Yal&ccedil;in', '', 4, '248', 2, 'eyalcin@engineering.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(19, 'J', 'Matse', '', 5, '290', 1, 'jmatse@financieleadministratie.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(20, 'N', 'Kinschot', ' Van', 5, '290', 2, 'nkinschot@financieleadministratie.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(21, 'K', 'Nguyen', '', 5, '290', 2, 'knguyen@financieleadministratie.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(22, 'A', 'Girard de Mielet van Coehoorn', ' De', 6, '276', 1, 'agirarddemieletvancoehoorn@hrm.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(23, 'H', 'Aktas', '', 7, '278', 2, 'haktas@ict.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 2),
+(24, 'S', 'Harrison', '', 7, '279', 1, 'sharrison@ict.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 2),
+(25, 'V', 'Delen', ' Van', 8, '263', 2, 'vdelen@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(26, 'T', 'G&uuml;lcher', '', 8, '264', 1, 'tgulcher@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(27, 'L', 'Leyden', ' Van', 8, '282', 2, 'lleyden@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(28, 'A', 'Posson', ' De', 8, '261', 1, 'aposson@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(29, 'M', 'Tahiri', '', 8, '265', 2, 'mtahiri@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(30, 'J', 'Thompson', '', 8, '266', 1, 'jthompson@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(31, 'L', 'Vos van Steenwijk', ' De', 8, '281', 1, 'lvosvansteenwijk@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(32, 'E', 'Westreenen van Tiellandt', ' Van', 8, '280', 1, 'ewestreenenvantiellandt@onderzoek.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(33, 'F', 'Erp', ' Van', 9, '260', 1, 'ferp@planning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(34, 'J', 'Flugi van Aspermont', '', 9, '262', 2, 'jflugivanaspermont@planning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(35, 'V', 'Harrison', '', 10, '259', 1, 'vharrison@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(36, 'K', 'Malik', '', 10, '258', 2, 'kmalik@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(37, 'L', 'Sasse van Ysselt', ' Van', 10, '257', 1, 'lsassevanysselt@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(38, 'M', 'Schinne', ' Van', 10, '251', 2, 'mschinne@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(39, 'T', 'Wolters', '', 10, '256', 2, 'twolters@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(40, 'R', 'Jansz.', '', 11, '277', 1, 'rjansz.@rapportage.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(41, 'D', 'Bergh', ' Van Benthem van den', 11, '268', 2, 'dbergh@rapportage.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(42, 'O', 'Chamberlain', '', 11, '275', 1, 'ochamberlain@rapportage.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(43, 'L', 'Hesselt van Dinter', '', 11, '267', 1, 'lhesseltvandinter@rapportage.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(44, 'D', 'Festetics de Tolna', '', 12, '243', 2, 'dfesteticsdetolna@secretariaat.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(45, 'S', 'Sandberg', '', 12, '238', 2, 'ssandberg@secretariaat.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(46, 'B', 'Wydenbruck', ' Von', 12, '255', 2, 'bwydenbruck@secretariaat.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(47, 'E', 'Aslan', '', 13, '270', 1, 'easlan@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(48, 'F', 'Suasso', ' Lopes', 13, '270', 2, 'fsuasso@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
+(50, 'a', 'dmin', '', 3, '69', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 3);
 
 -- --------------------------------------------------------
 
@@ -432,7 +440,8 @@ INSERT INTO `user2configuration` (`ID`, `userID`, `configurationID`) VALUES
 (46, 46, 1),
 (47, 47, 1),
 (48, 48, 1),
-(49, 49, 1);
+(49, 49, 1),
+(50, 50, 1);
 
 -- --------------------------------------------------------
 
@@ -599,7 +608,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT voor een tabel `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `hardware`
@@ -611,7 +620,7 @@ ALTER TABLE `hardware`
 -- AUTO_INCREMENT voor een tabel `incident`
 --
 ALTER TABLE `incident`
-  MODIFY `incidentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `incidentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT voor een tabel `responsible`
@@ -623,7 +632,7 @@ ALTER TABLE `responsible`
 -- AUTO_INCREMENT voor een tabel `status`
 --
 ALTER TABLE `status`
-  MODIFY `statusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `statusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
@@ -635,7 +644,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT voor een tabel `user2configuration`
 --
 ALTER TABLE `user2configuration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2incident`

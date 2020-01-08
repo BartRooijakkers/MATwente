@@ -12,21 +12,26 @@ $username = "root";
 $password = "";
 $dbname = "twente";
 
+$userID = $data[6];
+
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
-$sql = "SELECT incident.impact, incident.incidentID, incident.shortDescription, incident.cause, incident.solution, incident.feedback, status.urgency, status.statusName, user.initials, user.surname, incident.time,  departments.departmentName, DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date) FROM incident INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN user ON user2incident.userID = user.userID INNER JOIN status ON incident.statusID = status.statusID INNER JOIN departments ON user.departmentID = departments.departmentID";
+$sql = "SELECT status.urgency, incident.shortDescription, incident.feedback, incident.cause, responsible.responsibleName,
+ DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date) FROM incident INNER JOIN status ON status.statusID = incident.statusID
+ INNER JOIN user2incident ON incident.incidentID = user2incident.incidentID INNER JOIN responsible ON responsible.responsibleID = incident.responsibleID
+ WHERE user2incident.userID  = $data[7]";
 
 if ($_GET['sort'] == 'urgency')
 {
     $sql .= " ORDER BY status.urgency ASC";
 }
-elseif ($_GET['sort'] == 'time')
+elseif ($_GET['sort'] == 'responsible')
 {
-    $sql .= " ORDER BY incident.time DESC";
+    $sql .= " ORDER BY responsible.responsibleName DESC";
 }
 elseif ($_GET['sort'] == 'date')
 {
@@ -58,31 +63,32 @@ else{
 <br>
 <br>
 	<div class=table>
-        <h1> Incidenten </h1>
-	<table class="incidenten" name="incidenten">
+        <h1> Mijn incidenten </h1>
+        <?php if(mysqli_num_rows($result) == 0){
+          echo "";
+        }
+        else{ echo"
+	<table class='incidenten' name='incidenten'>
 	<tr>
 
 
-	  <th> Urgentie <a href="incidenten.php?sort=urgency"><i class="fas fa-sort-down"></a></th>
+	  <th> Urgentie <a href='mijnincidenten.php?sort=urgency'><i class='fas fa-sort-down'></a></th>
 		<th> Korte Omschrijving</th>
-		<th> Oorzaak </th>
-		<th> Tijd (uren)<a href="incidenten.php?sort=time"><i class="fas fa-sort-down"></a></th>
-	 <th> Melder</th>
-   <th> Datum <a href="incidenten.php?sort=date"><i class="fas fa-sort-down"></a></th>
-		<th> Openen </th>
+		<th> Feedback</th>
+		<th> Oorzaak</th>
+    <th> Verantwoordelijke <a href='mijnincidenten.php?sort=responsible'><i class='fas fa-sort-down'></a></th>
+   <th> Datum <a href='mijnincidenten.php?sort=date'><i class='fas fa-sort-down'></a></th>
 
 
 
-	</tr>
+	</tr>";
+}
+  ?>
 	<?php
 
-  if (mysqli_num_rows($result) > 1){
+  if (mysqli_num_rows($result) >= 1){
 
         while($row = mysqli_fetch_assoc($result)){
-
-          /* Tijdsberekening, Omzetten van minuten naar Uren */
-          $time =  $row["time"] / 60;
-
           /* Het vertalen van dagen uit de database van Engels naar Nederlands */
             $day = "";
             if ($row["DAYNAME(incident.date)"] == "Monday"){
@@ -120,16 +126,15 @@ else{
 
         /* Weergeven van data uit de database */
         echo"<td>".$row["shortDescription"]."</td>
-	           <td>".$row["cause"]."</td>
-			       <td>".round($time, 2)." uur"."</td>
-      			 <td>".$row["initials"].", ".$row["surname"]."</td>
+	           <td>".$row["feedback"]."</td>
+              <td>".$row["cause"]."</td>
+              <td>".$row["responsibleName"]."</td>
               <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
-      			 <td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<i class='fas fa-external-link-alt 1'></i>"."</td>
       			 </tr>";
 	  }
 	}
 	else{
-	  echo "Error";
+	  echo "<h1 class='meldingerror'> U heeft geen gemelde incidenten. </p>";
 	}
 	?>
 

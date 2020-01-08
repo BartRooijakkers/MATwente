@@ -41,7 +41,7 @@
 
 .topnav a:last-child {
 	padding: 6px 4px 0px 16px;
-	margin-left: 45%;
+	margin-left: 1%;
 	color: white;
 	text-align: center;
 	padding: 20px 20px;
@@ -86,4 +86,98 @@
   color: black;
 }
 
+.topnav a:nth-last-child(2) {
+	padding: 6px 4px 0px 16px;
+	margin-left: 45%;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 25px;
+}
+
 /* Responsiveness */
+.topnav1 {
+	width:97.8%;
+	border-top: 2px solid #08faec;
+	border-right: 2px solid #08faec;
+	border-left: 2px solid #08faec;
+	border-bottom: 2px solid #08faec;
+	margin-top:-0.55%;
+	margin-left:-0.6%;
+	overflow: hidden;
+	background-color:#74c385;
+	padding-left: 7%;
+	padding: 1%;
+	font-family: 'lemonMilk';
+	position: fixed;
+}
+
+
+.topnav1 a {
+	padding: 6px 4px 0px 16px;
+	margin-left: 1%;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 25px;
+
+}
+
+.topnav1 a:first-child {
+	padding: 6px 4px 0px 16px;
+	margin-left: 12.6%;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+.topnav1 a:last-child {
+	padding: 6px 4px 0px 16px;
+	margin-left: 60%;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+.topnav1 a:hover {
+	background-color: #08faec;
+	color: black;
+}
+
+.sidenav1 {
+	border-top: 2px solid #08faec;
+	border-right: 2px solid #08faec;
+	border-left: 2px solid #08faec;
+	border-bottom: 2px solid #08faec;
+    height: auto;
+    width: auto;
+	max-width: 10%;
+	min-height: 100%;
+	top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #74c385;
+	margin-top:auto;
+	text-overflow: ellipsis;
+	font-family: 'lemonMilk';
+}
+
+.sidenav1 a {
+	margin-top:30%;
+    padding: 35px 8px 35px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidenav1 a:hover {
+  background-color: #08faec;
+  color: black;
+}
