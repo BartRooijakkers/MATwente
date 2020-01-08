@@ -14,9 +14,6 @@ if (!$conn) {
 }
 
 
-
-
-
 ?>
 <!doctype html>
 <html lang="nl">
