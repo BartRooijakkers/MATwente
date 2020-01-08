@@ -38,11 +38,9 @@ $result = mysqli_query($conn,$sql);
 	  while($row = mysqli_fetch_assoc($result)){
 
       /* Weergeven van de data in het tabel */
-	    echo "<tr>
-      	  <th>".$row["question"]."</th>
-      	</tr>
-        <tr><td>".$row["answer"]."</td>
-			 </tr>";
+	    echo "
+      	  <label>".$row["question"]."<label>
+      <label>".$row["answer"]."<label>";
 	  }
 	}
 	else{
