@@ -1,5 +1,5 @@
 <?php
- require '../include/session.php';
+
 
 $servername = "localhost";
 $username = "root";

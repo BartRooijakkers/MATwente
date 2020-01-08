@@ -1,24 +1,36 @@
 <?php
- require '../include/session.php';
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
+
+
+
+
 ?>
 <!doctype html>
 <html lang="nl">
 <?php include('../include/header.php');?>
 	<body>
+	<?php
 
+?>
 
 				<div class="container">
 					<div class="login">
 					<img src="../img/loginavatar.png" class="avatar">
 
-						 <form action="profiel.php" method="post">
+						 <form action="login.php" method="post">
 				<br>
 					<label for="username"><b>E-mail</b></label><br>
 					<input type="text" placeholder="Vul uw E-mail in" name="username" required><br>

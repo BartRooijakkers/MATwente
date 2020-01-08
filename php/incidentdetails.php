@@ -1,5 +1,4 @@
 <?php
- require '../include/session.php';
 /* Connectie maken met de database */
 $servername = "localhost";
 $username = "root";
