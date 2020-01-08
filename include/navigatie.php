@@ -1,7 +1,7 @@
 <div class="topnav">
-	<a href="configuraties.php">Configuratie</a>
-    <a href="incidenten.php">Incidenten</a>
-	<a href="gebruikers.php">Gebruikers</a>
+	<a href="configuraties.php?sort=departments">Configuratie</a>
+    <a href="incidenten.php?sort=urgency">Incidenten</a>
+	<a href="gebruikers.php?sort=department">Gebruikers</a>
 	<a href="profiel.php">Profiel</a>
 </div>
 

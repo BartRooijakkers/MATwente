@@ -93,7 +93,7 @@ $time =  $row["time"] / 60;
       <td>".$row["feedback"]."</td>
       <td>".$row["responsibleName"]."</td>
       <td>".round($time, 2)." uur"."</td>
-      <td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
+      <td><a class='gebruikers' href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>".$row["departmentName"]."</td>
       <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
       </tr>";

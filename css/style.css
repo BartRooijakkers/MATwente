@@ -16,7 +16,6 @@ div.login{
 	float:center;
 	background-color:#74c385;
 	text-align:center;
-	margin-bottom: 5%;
 	margin: 0 auto;
 	border-radius: 15px;
 }
@@ -119,6 +118,10 @@ i.fas.fa-external-link-alt {
     text-shadow: 1px 1px 1px #ccc;
     font-size: 30px;
 		text-align: center;
+}
+
+i.fas.fa-sort-down{
+	color:white;
 }
 
 img.return{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 06 jan 2020 om 19:27
+-- Gegenereerd op: 07 jan 2020 om 16:07
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -147,6 +147,18 @@ INSERT INTO `departments` (`departmentID`, `departmentName`, `location`) VALUES
 (11, 'Rapportage', 1),
 (12, 'Secretariaat', 1),
 (13, 'Verkoop en Marketing', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `faq`
+--
+
+CREATE TABLE `faq` (
+  `ID` int(11) NOT NULL,
+  `question` varchar(255) NOT NULL,
+  `answer` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -503,6 +515,12 @@ ALTER TABLE `departments`
   ADD PRIMARY KEY (`departmentID`);
 
 --
+-- Indexen voor tabel `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexen voor tabel `hardware`
 --
 ALTER TABLE `hardware`
@@ -575,6 +593,12 @@ ALTER TABLE `configuration`
 --
 ALTER TABLE `departments`
   MODIFY `departmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT voor een tabel `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `hardware`
