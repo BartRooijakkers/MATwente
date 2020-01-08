@@ -1,4 +1,23 @@
+<?php
+if(!isset($_SESSION)){
+ session_start();
+}
+if(!isset($_SESSION['user'])){
+header("location:index.php");
+}
+/* Connectie maken met de database */
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "twente";
 
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+
+if (!$conn) {
+  die("Connection Failed " . mysqli_connect_error());
+}
+?>
 <!doctype html>
 <html lang="nl">
 	<?php include('../include/header.php');?>

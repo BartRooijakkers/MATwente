@@ -1,8 +1,24 @@
 <?php
- if(!isset($_SESSION)){
-	session_start();
- }
+if(!isset($_SESSION)){
+ session_start();
+}
+if(!isset($_SESSION['user'])){
+header("location:index.php");
+}
 $data = $_SESSION['user'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "twente";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+  die("Connection Failed " . mysqli_connect_error());
+}
+
+
  ?>
 	<!doctype html>
 	<html lang="nl">
@@ -11,7 +27,11 @@ $data = $_SESSION['user'];
 		<?php include('../include/navigatie.php');?>
 			<div class="oudemeldingen">
 				<p>Hier staan uw meldingen</p>
-				<button type="submit" class="btnp" name="login_btn">details</button>
+      <form class="" action="sessionend.php" method="post">
+	<button type="submit">details</button>
+      </form>
+
+
 			</div>
 			<div class="gegevens">
 				<p class="PG">Persoonlijke gegevens: </p>
@@ -24,12 +44,12 @@ $data = $_SESSION['user'];
 				<td><br>"."<p class='profielfields'>Email: </p>".$data[3]."</td>
 				<td><br>"."<p class='profielfields'>intern telefoon nummer: </p>".$data[4]."</td>";
 
-		
+
 		?>
 				</p>
 			</div>
 			<?php include('../include/navigatie.php');?>
-			<button type="submit" class="uitloggen" name="uitlog_btn">uitloggen</button>
+
 
 		</body>
 	</html>
