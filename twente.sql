@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 jan 2020 om 16:07
--- Serverversie: 10.4.6-MariaDB
--- PHP-versie: 7.3.9
+-- Gegenereerd op: 08 jan 2020 om 14:20
+-- Serverversie: 10.1.38-MariaDB
+-- PHP-versie: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -201,7 +201,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT current_timestamp(),
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -307,7 +307,7 @@ CREATE TABLE `user` (
   `interncell` varchar(3) DEFAULT NULL,
   `sex` int(3) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `userType` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -364,7 +364,8 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (46, 'B', 'Wydenbruck', ' Von', 12, '255', 2, 'bwydenbruck@secretariaat.matwente.com', '', 1),
 (47, 'E', 'Aslan', '', 13, '270', 1, 'easlan@verkoopenmarketing.matwente.com', '', 1),
 (48, 'F', 'Suasso', ' Lopes', 13, '270', 2, 'fsuasso@verkoopenmarketing.matwente.com', '', 1),
-(49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '', 1);
+(49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '', 1),
+(50, 'a', 'dmin', '', 3, '69', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', NULL);
 
 -- --------------------------------------------------------
 
@@ -628,7 +629,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2configuration`

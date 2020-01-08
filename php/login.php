@@ -26,7 +26,7 @@ if($resultCheck > 0){
   // Stop de column als array in het variabele $row.
   if($row = mysqli_fetch_assoc($result)){
     // Laat de achternaam zien
-	$_SESSION['user'] = [$row['initials'], $row['middleName'], $row['surname'], $row['email'], $row['interncell'], $row['departmentName'], $row['usertype']];
+	$_SESSION['user'] = [$row['initials'], $row['middleName'], $row['surname'], $row['email'], $row['interncell'], $row['departmentName'], $row['usertype'], $row['userID']];
 	header('Location: profiel.php');
   }
 
