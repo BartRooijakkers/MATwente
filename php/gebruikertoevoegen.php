@@ -33,20 +33,20 @@
 
           <label for="department"><b>Afdeling</b></label><br>
           <select name="department" form="addUser" required>
-                  <option value="" selected disabled hidden>Kies Hier</option>
-                  <option value="CAD"> CAD </option>
-                  <option value="Directie"> Directie </option>
-                  <option value="Engineering"> Engineering </option>
-                  <option value="Financiele Administratie"> Financiele Administratie </option>
-                  <option value="HRM"> HRM </option>
-                  <option value="ICT"> ICT </option>
-                  <option value="Onderzoek"> Onderzoek </option>
-                  <option value="Planning"> Planning </option>
-                  <option value="Project planning"> Project Planning </option>
-                  <option value="Rapportage"> Rapportage </option>
-                  <option value="Secretariaat"> Secretariaat </option>
-                  <option value="Verkoop en Marketing"> Verkoop en Marketing </option>
-                  </select>
+                  <option value="">Make a selection</option>
+                  <option value="2"> CAD </option>
+                  <option value="3"> Directie </option>
+                  <option value="4"> Engineering </option>
+                  <option value="5"> Financiele Administratie </option>
+                  <option value="6"> HRM </option>
+                  <option value="7"> ICT </option>
+                  <option value="8"> Onderzoek </option>
+                  <option value="9"> Planning </option>
+                  <option value="10"> Project Planning </option>
+                  <option value="11"> Rapportage </option>
+                  <option value="12"> Secretariaat </option>
+                  <option value="13"> Verkoop en Marketing </option>
+                </select><br><br>
 
 					<button type="submit" class="btn" name="login_btn">Aanmaken</button>
 					<br>

@@ -13,10 +13,10 @@
 						 <form action="adduser.php" method="post" class="addUser">
 				<br>
 					<label for="omschrijving"><b>Omschrijving</b></label><br>
-					<input type="text" placeholder="omschrijf het probleem" name="shortDescription" required><br>
+					<input type="text" placeholder="Omschrijf het probleem" name="shortDescription" required><br>
 
 					<label for=""><b>impact</b></label><br>
-					<input type="number" placeholder="Hoeveel mensen worden geimpact" name="impact" required><br><br>
+					<input type="number" placeholder="Hoeveel mensen worden geimpact" name="impact" max="9999" required><br><br>
 
 
 					<button type="submit" class="btn" name="login_btn">Aanmaken</button>
