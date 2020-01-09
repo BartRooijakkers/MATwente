@@ -50,7 +50,7 @@ $sql = "INSERT INTO user (initials, middleName, surname, email, interncell, pass
 VALUES ('$initials', '$middlename', '$surname', '$email', '$interncell', '$password', '$sex', '$department', '$userType')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    header("location:gebruikertoevoegen.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
