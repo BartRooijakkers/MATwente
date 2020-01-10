@@ -17,7 +17,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 $shortDescription = $_POST['shortDescription'];
 $impact = $_POST['impact'];
 $status = 9;
-$user = 1;
+$user = $data[7];
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());

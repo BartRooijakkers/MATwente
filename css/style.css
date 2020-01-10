@@ -244,3 +244,10 @@ h1.meldingerror{
 	float:center;
 	font-style: italic;
 }
+label.vraag{
+	color:red;
+}
+
+label.antwoord{
+	color:green;
+}

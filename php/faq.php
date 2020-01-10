@@ -54,8 +54,8 @@ else{
 
       /* Weergeven van de data in het tabel */
 	    echo "
-      	  <label>".$row["question"]."<label><br>
-      <label>".$row["answer"]."<label><br>";
+      	  <label class='vraag'>".$row["question"]."<label><br>
+      <label class='antwoord'>".$row["answer"]."<label><br>";
 	  }
 	}
 	else{
