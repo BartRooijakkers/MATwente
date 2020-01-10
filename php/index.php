@@ -13,18 +13,19 @@ if (!$conn) {
     exit;
 }
 
-
 ?>
 <!doctype html>
 <html lang="nl">
 <?php include('../include/header.php');?>
 	<body>
-	<?php
-
-?>
-
+		<main>
 				<div class="container">
 					<div class="login">
+					<?php 
+					if(isset($_GET['error'])){
+						echo "Er is een fout in u email of wachtwoord.";
+						}
+						?>
 					<img src="../img/loginavatar.png" class="avatar">
 
 						 <form action="login.php" method="post">
@@ -43,6 +44,9 @@ if (!$conn) {
 			</div>
 		</form>
 		</div>
-
+		</main>
+		<?php 
+			include('../../secret/index.php');
+		?>
 	</body>
 </html>
