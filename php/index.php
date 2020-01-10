@@ -18,7 +18,6 @@ if (!$conn) {
 <html lang="nl">
 <?php include('../include/header.php');?>
 	<body>
-		<main>
 				<div class="container">
 					<div class="login">
 					<?php 
@@ -44,9 +43,5 @@ if (!$conn) {
 			</div>
 		</form>
 		</div>
-		</main>
-		<?php 
-			include('../../secret/index.php');
-		?>
 	</body>
 </html>
