@@ -44,6 +44,7 @@ else{
 	<br>
 				<div class="container">
 					<div class="login">
+              <h1 class="form"> Configuratie toevoegen </h1>
 						 <form action="addconfig.php" method="post" name="config">
 				<br>
 					<label for="username"><b>Gebruiker</b></label><br>

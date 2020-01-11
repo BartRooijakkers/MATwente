@@ -20,7 +20,7 @@ if (!$conn) {
 	<body>
 				<div class="container">
 					<div class="login">
-					<?php 
+					<?php
 					if(isset($_GET['error'])){
 						echo "Er is een fout in u email of wachtwoord.";
 						}

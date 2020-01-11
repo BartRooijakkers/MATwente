@@ -35,14 +35,6 @@ if (!$conn) {
       include('../include/navigatie.php');
     }
     ?>
-			<div class="oudemeldingen">
-				<p>Hier staan uw meldingen</p>
-      <form class="" action="sessionend.php" method="post">
-	<button type="submit">details</button>
-      </form>
-
-
-			</div>
 			<div class="gegevens">
 				<p class="PG">Persoonlijke gegevens: </p>
 

@@ -6,7 +6,9 @@ if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
 $data = $_SESSION['user'];
-
+if($data[6] != 2 ){
+header("location:profiel.php");
+}
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -21,7 +23,7 @@ if (!$conn) {
 
 $id = $_GET["userID"];
 
-$sql = "SELECT user.initials, user.middleName, user.surname, user.interncell, user.sex, user.email, departments.departmentName, configuration.configurationName FROM user INNER JOIN departments ON departments.departmentID = user.departmentID INNER JOIN user2configuration ON user.userID = user2configuration.userID INNER JOIN configuration ON configuration.configurationID = user2configuration.configurationID WHERE user.userID = $id";
+$sql = "SELECT user.initials, user.middleName, user.surname, user.interncell, user.sex, user.email, departments.departmentName, user.departmentID, configuration.configurationName FROM user INNER JOIN departments ON departments.departmentID = user.departmentID INNER JOIN user2configuration ON user.userID = user2configuration.userID INNER JOIN configuration ON configuration.configurationID = user2configuration.configurationID WHERE user.userID = $id";
 
 $result = mysqli_query($conn,$sql);
 
@@ -47,7 +49,7 @@ else{
 
 	<div class=table>
           <h1> Gebruiker details </h1>
-            <form class="edit" action="<?php$_SERVER['PHP_SELF'];?>" method="post">
+            <form class="edit" action="modifyuser.php?userID=<?php echo $id?>" method="post">
 	<table class="gebruikerDetails" name="incidentenDetails">
 	<tr>
 
@@ -75,20 +77,21 @@ else{
       echo "<tr><td>".$row["initials"]."</td>
       <td>".$row["middleName"]."</td>
       <td><input type='text' value=".$row["surname"]." name='surname'></td>
-      <td><select name='departmentName' value=".$row["departmentName"]." class='selectDepartment' form='edit'>
-              <option selected='selected' value=".$row["departmentName"]."> $department </option>
-              <option value='CAD'> CAD </option>
-              <option value='Directie'> Directie </option>
-              <option value='Engineering'> Engineering </option>
-              <option value='Financiele Administratie'> Financiele Administratie </option>
-              <option value='HRM'> HRM </option>
-              <option value='ICT'> ICT </option>
-              <option value='Onderzoek'> Onderzoek </option>
-              <option value='Planning'> Planning </option>
-              <option value='Project planning'> Project Planning </option>
-              <option value='Rapportage'> Rapportage </option>
-              <option value='Secretariaat'> Secretariaat </option>
-              <option value='Verkoop en Marketing'> Verkoop en Marketing </option>
+      <td><select name='departmentName' value=".$row["departmentName"]." class='selectDepartment'>
+              <option selected='selected' value=".$row["departmentID"]."> $department </option>
+              <option value=''>Make a selection</option>
+              <option value='2'> CAD </option>
+              <option value='3'> Directie </option>
+              <option value='4'> Engineering </option>
+              <option value='5'> Financiele Administratie </option>
+              <option value='6'> HRM </option>
+              <option value='7'> ICT </option>
+              <option value='8'> Onderzoek </option>
+              <option value='9'> Planning </option>
+              <option value='10'> Project Planning </option>
+              <option value='11'> Rapportage </option>
+              <option value='12'> Secretariaat </option>
+              <option value='13'> Verkoop en Marketing </option>
               </select></td>
       <td><input type='text' value=".$row["interncell"]." name='interncell'></td>";
       echo "<td>";
@@ -114,6 +117,7 @@ else{
 
 
 </table>
+<button type="submit" class="btn" name="login_btn">Aanmaken</button>
 </form>
 <a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
 </div>

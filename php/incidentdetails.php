@@ -6,7 +6,9 @@ if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
 $data = $_SESSION['user'];
-
+if($data[6] != 2 ){
+header("location:profiel.php");
+}
 /* Connectie maken met de database */
 $servername = "localhost";
 $username = "root";

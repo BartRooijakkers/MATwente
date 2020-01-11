@@ -33,6 +33,7 @@ else{
   <div class="container">
 
 					<div class="login">
+            <h1 class="form"> Incident Melden </h1>
 						 <form action="addincident.php" method="post" class="addUser">
 				<br>
 					<label for="omschrijving"><b>Omschrijving</b></label><br>

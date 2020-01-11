@@ -5,7 +5,11 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
+
 $data = $_SESSION['user'];
+if($data[6] == 1 ){
+header("location:profiel.php");
+}
 
 $servername = "localhost";
 $username = "root";
@@ -87,7 +91,13 @@ else{
 	    <td>".$row["surname"]."</td>
 	    <td>".$row["departmentName"]."</td>
 			<td>".$row["email"]."</td>
-			<td>".$row["interncell"]."</td>
+			<td>".$row["interncell"]."</td>";
+      if($data[6] == 2){
+        echo"<td><a href='gebruikerdetailsbeheerder.php?userID=".$row["userID"]."'>"."<i class='fas fa-external-link-alt'></i>"."</td>
+        </tr>";
+      }
+      else
+      echo"
 			<td><a href='gebruikerdetails.php?userID=".$row["userID"]."'>"."<i class='fas fa-external-link-alt'></i>"."</td>
 			 </tr>";
 	  }

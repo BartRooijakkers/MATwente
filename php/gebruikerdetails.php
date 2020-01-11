@@ -5,8 +5,11 @@ if(!isset($_SESSION)){
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
-$data = $_SESSION['user'];
 
+$data = $_SESSION['user'];
+if($data[6] == 1 ){
+header("location:profiel.php");
+}
 $servername = "localhost";
 $username = "root";
 $password = "";

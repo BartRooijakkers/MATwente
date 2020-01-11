@@ -20,6 +20,18 @@ div.login{
 	border-radius: 15px;
 }
 
+div.login1{
+	height:auto;
+	border: 2px solid #08faec;
+	max-width:35%;
+	float:center;
+	background-color:#74c385;
+	text-align:center;
+	margin: 0 auto;
+	border-radius: 15px;
+	margin-top:-2%;
+}
+
 
 input[type=text], input[type=password] {
   max-width: 75%;
@@ -258,6 +270,13 @@ h1.meldingerror{
 	float:center;
 	font-style: italic;
 }
+
+h1.form{
+	color:white;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
 label.vraag{
 	color:red;
 }

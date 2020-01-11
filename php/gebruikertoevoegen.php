@@ -6,7 +6,9 @@ if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
 $data = $_SESSION['user'];
-
+if($data[6] != 2 ){
+header("location:profiel.php");
+}
 /* Connectie maken met de database */
 $servername = "localhost";
 $username = "root";
@@ -38,7 +40,8 @@ else{
 	<br>
   <div class="container">
 
-					<div class="login">
+					<div class="login1">
+            <h1 class="form"> Gebruiker toevoegen </h1>
 						 <form action="adduser.php" method="post" class="addUser">
 				<br>
 					<label for="username"><b>Initialen</b></label><br>

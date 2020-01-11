@@ -7,6 +7,9 @@ header("location:index.php");
 }
 $data = $_SESSION['user'];
 
+if($data[6] != 2 ){
+header("location:profiel.php");
+}
 $servername = "localhost";
 $username = "root";
 $password = "";

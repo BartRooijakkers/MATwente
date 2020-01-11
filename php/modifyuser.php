@@ -16,25 +16,36 @@ $dbname = "twente";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-$shortDescription = $_POST['shortDescription'];
-$impact = $_POST['impact'];
-$status = 9;
-$user = $data[7];
-$type = 3;
+
+// Omzetten van department Van string naar integer
+$surname       =  $_POST['surname'];
+$interncell = $_POST['interncell'];
+$department = $_POST['departmentName'];
+
+if($department == "7"){
+  $userType = "2";
+}
+elseif($department == "3"){
+  $userType = "3";
+}
+else{
+  $userType = "1";
+}
+
+
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
+$id = $_GET["userID"];
 
-$sql = "INSERT INTO incident (shortDescription, impact, statusID,type)
-VALUES ('$shortDescription', '$impact', '$status','$type');";
+$sql = "UPDATE user SET surname = '$surname' , departmentID = $department , interncell = $interncell WHERE userID =$id";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    header("location:gebruikers.php?sort=department");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-header("incidenten.php");
 
 ?>
