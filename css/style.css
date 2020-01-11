@@ -54,6 +54,13 @@ div.container{
 div.table{
 margin-left:11%;
 margin-bottom: 5%;
+padding-top: 4%;
+}
+
+div.tableGraphs{
+margin-left:11%;
+padding-top: 4%;
+z-index: -1;
 }
 
 table.incidentenDetails{
@@ -85,6 +92,13 @@ table.gebruikerDetails{
 }
 
 table.configuratieDetails{
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  overflow:auto;
+}
+
+table.Graphs{
   border: 1px solid black;
   color: black;
   width: 100%;
@@ -251,3 +265,27 @@ label.vraag{
 label.antwoord{
 	color:green;
 }
+
+div.geslachtGraph{
+	width:40%;
+}
+div#pieSex{
+	width: 100%;
+	 height: 40%;
+}
+div#pieAfdeling{
+	width: 100%;
+	 height: 40%;
+}
+div#pieType{
+	width: 100%;
+	 height: 40%;
+}
+div#chart_div{
+	width: 100%;
+	 height: 40%;
+}
+div#pieConfiguraties{
+	width: 100%;
+	 height: 40%;
+ }

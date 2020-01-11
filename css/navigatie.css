@@ -15,6 +15,7 @@
 	padding: 1%;
 	font-family: 'lemonMilk';
 	position: fixed;
+	z-index: 1;
 }
 
 
@@ -26,6 +27,7 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 
 }
 
@@ -37,6 +39,7 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 }
 
 .topnav a:last-child {
@@ -47,11 +50,13 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 }
 
 .topnav a:hover {
 	background-color: #08faec;
 	color: black;
+	z-index: 1;
 }
 
 .sidenav {
@@ -70,6 +75,7 @@
 	margin-top:auto;
 	text-overflow: ellipsis;
 	font-family: 'lemonMilk';
+	z-index: 1;
 }
 
 .sidenav a {
@@ -79,11 +85,13 @@
     font-size: 25px;
     color: white;
     display: block;
+		z-index: 1;
 }
 
 .sidenav a:hover {
   background-color: #08faec;
   color: black;
+	z-index: 1;
 }
 
 .topnav a:nth-last-child(2) {
@@ -94,6 +102,7 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 }
 
 /* Responsiveness */
@@ -111,6 +120,7 @@
 	padding: 1%;
 	font-family: 'lemonMilk';
 	position: fixed;
+	z-index: 1;
 }
 
 
@@ -122,6 +132,7 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 
 }
 
@@ -133,6 +144,7 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 }
 
 .topnav1 a:last-child {
@@ -143,11 +155,13 @@
 	padding: 20px 20px;
 	text-decoration: none;
 	font-size: 25px;
+	z-index: 1;
 }
 
 .topnav1 a:hover {
 	background-color: #08faec;
 	color: black;
+	z-index: 1;
 }
 
 .sidenav1 {
@@ -166,6 +180,7 @@
 	margin-top:auto;
 	text-overflow: ellipsis;
 	font-family: 'lemonMilk';
+	z-index: 1;
 }
 
 .sidenav1 a {
@@ -175,9 +190,11 @@
     font-size: 25px;
     color: white;
     display: block;
+		z-index: 1;
 }
 
 .sidenav1 a:hover {
   background-color: #08faec;
   color: black;
+	z-index: 1;
 }

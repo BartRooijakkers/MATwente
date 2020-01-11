@@ -18,13 +18,14 @@ $shortDescription = $_POST['shortDescription'];
 $impact = $_POST['impact'];
 $status = 9;
 $user = $data[7];
+$type = 3;
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO incident (shortDescription, impact, statusID)
-VALUES ('$shortDescription', '$impact', '$status')";
+$sql = "INSERT INTO incident (shortDescription, impact, statusID,type)
+VALUES ('$shortDescription', '$impact', '$status','$type');";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -33,4 +34,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 header("configuraties.php");
+
 ?>

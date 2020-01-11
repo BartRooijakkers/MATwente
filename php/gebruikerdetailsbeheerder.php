@@ -38,15 +38,13 @@ if($data[6] == 2){
   include('../include/navigatiebeheerder.php');
 }
 elseif($data[6] == 3){
-  include('../include/navigatiebeheerder.php');
+  include('../include/navigatiedirectie.php');
 }
 else{
   include('../include/navigatie.php');
 }
 ?>
-<br>
-<br>
-<br>
+
 	<div class=table>
           <h1> Gebruiker details </h1>
             <form class="edit" action="<?php$_SERVER['PHP_SELF'];?>" method="post">

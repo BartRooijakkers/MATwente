@@ -25,16 +25,16 @@ if (!$conn) {
 	<?php include('../include/header.php');?>
 		<body>
       <?php
-      if($data[6] == 2){
-        include('../include/navigatiebeheerder.php');
-      }
-      elseif($data[6] == 3){
-        include('../include/navigatiebeheerder.php');
-      }
-      else{
-        include('../include/navigatie.php');
-      }
-      ?>
+    if($data[6] == 2){
+      include('../include/navigatiebeheerder.php');
+    }
+    elseif($data[6] == 3){
+      include('../include/navigatiedirectie.php');
+    }
+    else{
+      include('../include/navigatie.php');
+    }
+    ?>
 			<div class="oudemeldingen">
 				<p>Hier staan uw meldingen</p>
       <form class="" action="sessionend.php" method="post">

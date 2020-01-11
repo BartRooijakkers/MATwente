@@ -35,7 +35,7 @@ if($data[6] == 2){
   include('../include/navigatiebeheerder.php');
 }
 elseif($data[6] == 3){
-  include('../include/navigatiebeheerder.php');
+  include('../include/navigatiedirectie.php');
 }
 else{
   include('../include/navigatie.php');
