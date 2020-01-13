@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 08 jan 2020 om 19:01
+-- Gegenereerd op: 13 jan 2020 om 19:55
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -97,7 +97,8 @@ INSERT INTO `config2incident` (`ID`, `incidentID`, `configurationID`) VALUES
 (33, 30, 1),
 (34, 31, 1),
 (35, 32, 1),
-(36, 33, 2);
+(36, 33, 2),
+(37, 36, 1);
 
 -- --------------------------------------------------------
 
@@ -270,7 +271,8 @@ INSERT INTO `responsible` (`responsibleID`, `responsibleName`) VALUES
 (1, 'MaTW - ICT Afdeling'),
 (2, 'Hosting Provider'),
 (3, 'MaLoZ - ICT Afdeling'),
-(4, 'Leverancier printer');
+(4, 'Leverancier printer'),
+(5, 'Nog toe te wijzen');
 
 -- --------------------------------------------------------
 
@@ -298,7 +300,8 @@ INSERT INTO `status` (`statusID`, `statusName`, `statusImpact`, `urgency`) VALUE
 (6, 'er is een workaround aanwezig', '>0', '3'),
 (7, 'niet reproduceerbare fout', '>0', '4'),
 (8, 'incident afgehandeld', '>0', '5'),
-(9, 'Nog toe te wijzen', '-', '6');
+(9, 'Nog toe te wijzen', '-', '6'),
+(11, 'Foutief', '-', '7');
 
 -- --------------------------------------------------------
 
@@ -373,7 +376,7 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (47, 'E', 'Aslan', '', 13, '270', 1, 'easlan@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (48, 'F', 'Suasso', ' Lopes', 13, '270', 2, 'fsuasso@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
-(50, 'a', 'dmin', '', 3, '69', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 3);
+(53, 'A', 'Dmin', '', 7, '131', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 2);
 
 -- --------------------------------------------------------
 
@@ -441,7 +444,7 @@ INSERT INTO `user2configuration` (`ID`, `userID`, `configurationID`) VALUES
 (47, 47, 1),
 (48, 48, 1),
 (49, 49, 1),
-(50, 50, 1);
+(53, 53, 1);
 
 -- --------------------------------------------------------
 
@@ -590,7 +593,7 @@ ALTER TABLE `config2hardware`
 -- AUTO_INCREMENT voor een tabel `config2incident`
 --
 ALTER TABLE `config2incident`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT voor een tabel `configuration`
@@ -620,37 +623,37 @@ ALTER TABLE `hardware`
 -- AUTO_INCREMENT voor een tabel `incident`
 --
 ALTER TABLE `incident`
-  MODIFY `incidentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `incidentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT voor een tabel `responsible`
 --
 ALTER TABLE `responsible`
-  MODIFY `responsibleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `responsibleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `status`
 --
 ALTER TABLE `status`
-  MODIFY `statusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `statusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2configuration`
 --
 ALTER TABLE `user2configuration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2incident`
 --
 ALTER TABLE `user2incident`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

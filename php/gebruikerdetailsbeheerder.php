@@ -117,8 +117,13 @@ else{
 
 
 </table>
-<button type="submit" class="btn" name="login_btn">Aanmaken</button>
+<button type="submit" class="btn" name="modify_btn">Aanpassen</button>
 </form>
+
+<a href="deleteuser.php?userID=<?php echo $id?>">
+<button class="deletebtn" name="delete_btn">Verwijder Gebruiker</button>
+</a>
+
 <a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
 </div>
 

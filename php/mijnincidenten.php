@@ -87,6 +87,20 @@ else{
   if (mysqli_num_rows($result) >= 1){
 
         while($row = mysqli_fetch_assoc($result)){
+
+          if (is_null($row['feedback'])){
+	           $feedback = "N.V.T";
+           }else{
+	           $feedback = $row["feedback"];
+            }
+
+            if (is_null($row['cause'])){
+               $cause = "N.V.T";
+             }else{
+              $cause = $row["cause"];
+              }
+
+
           /* Het vertalen van dagen uit de database van Engels naar Nederlands */
             $day = "";
             if ($row["DAYNAME(incident.date)"] == "Monday"){
@@ -119,13 +133,17 @@ else{
               echo "<p class='wacht'>Wacht</p>";
               } elseif ($urgency == 5) {
                 echo "<p class='geen'>Geen</p>";
+              }elseif ($urgency == 6) {
+                echo "<p class='nttw'>Nog toe te wijzen</p>";
+              }elseif ($urgency == 6) {
+                echo "<p class='fout'>Nog toe te wijzen</p>";
               }"</td>";
 
 
         /* Weergeven van data uit de database */
         echo"<td>".$row["shortDescription"]."</td>
-	           <td>".$row["feedback"]."</td>
-              <td>".$row["cause"]."</td>
+	           <td>".$feedback."</td>
+              <td>".$cause."</td>
               <td>".$row["responsibleName"]."</td>
               <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
       			 </tr>";

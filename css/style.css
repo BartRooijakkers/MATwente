@@ -1,8 +1,12 @@
-@font-face { font-family: LemonMilk; src: url('Font/LemonMilk.otf'); }
-.LemonMilk { font-family:  LemonMilk; font-size: 4.2em; }
+@font-face { font-family: Coolvetica; src: url('coolvetica.ttf'); }
+.Coolvetica { font-family:  Coolvetica; font-size: 4.2em; }
+@font-face { font-family: Cosima; src: url('Cosima.otf'); }
+.Coolvetica { font-family:  Cosima; font-size: 4.2em; }
+@font-face { font-family: KeepCalm; src: url('KeepCalm.ttf'); }
+.Coolvetica { font-family:  KeepCalm; font-size: 4.2em; }
 
 html{
-	font-family:Century Gothic;
+	font-family:KeepCalm;
 	height:100%;
 	width:100%;
 	background:#f9f9f9;
@@ -131,12 +135,12 @@ td{
 
 tr:nth-child(even){
 background: #ffffff;
-font-weight:bold;
+font-weight:none;
 }
 
 tr:nth-child(odd){
 	background: #e0e0e0;
-	font-weight:bold;
+	font-weight:none;
 }
 
 i.fas.fa-external-link-alt {
@@ -158,8 +162,15 @@ img.return{
 
 p.profielfields{
 	font-weight:bold;
+		font-style: italic;
+	color: #525252;
+}
+
+p.persooninfo{
+
 	color: black;
 }
+
 
 /* Urgency opmaak */
 p.nuAfhandelen{
@@ -184,6 +195,16 @@ p.wacht{
 
 p.geen{
 	color:green;
+	font-weight:bold;
+}
+
+p.fout{
+	color:brown;
+	font-weight:bold;
+}
+
+p.nttw{
+	color:blue;
 	font-weight:bold;
 }
 
@@ -275,6 +296,32 @@ h1.form{
 	color:white;
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+/* delete */
+.deletebtn{
+background-image: linear-gradient(#00c4bb,#005b57);
+  border: 1px solid black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+	float:right;
+	font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+	margin-bottom:3%;
+}
+
+.deletebtn:hover{
+background-image: linear-gradient(purple,maroon);
+  border: 1px solid ;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 label.vraag{

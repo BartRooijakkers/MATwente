@@ -20,7 +20,10 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
-$sql = "SELECT configuration.configurationID, user.userID, user.initials, user.surname, departments.departmentName, configuration.configurationName, departments.location FROM user INNER JOIN departments ON user.departmentID = departments.departmentID INNER JOIN user2configuration ON user2configuration.userID = user.userID INNER JOIN configuration ON user2configuration.configurationID = configuration.configurationID";
+$sql = "SELECT configuration.configurationID, user.userID, user.initials, user.surname, departments.departmentName, configuration.configurationName, departments.location
+FROM user INNER JOIN departments ON user.departmentID = departments.departmentID
+INNER JOIN user2configuration ON user2configuration.userID = user.userID
+INNER JOIN configuration ON user2configuration.configurationID = configuration.configurationID";
 
 if ($_GET['sort'] == 'configuratie')
 {

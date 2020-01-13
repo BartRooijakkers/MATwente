@@ -25,13 +25,26 @@ $sex = 2;
 }
 // Omzetten van department Van string naar integer
 
-$initials    =  $_POST['initials'];
+$initials    =  strtoupper($_POST['initials']);
 $middlename = $_POST['middleName'];
-$surname       =  $_POST['surname'];
+$surname       =  ucfirst($_POST['surname']);
 $email  =  $_POST['email'];
 $interncell = $_POST['nummer'];
 $password  =  hash("sha256","Welkom0!");
 $department = $_POST['department'];
+
+if ($department == "4"){
+  $config = "2";
+}
+elseif($department == "8"){
+    $config = "2";
+}
+elseif($department == "9"){
+    $config = "2";
+}
+else{
+  $config = "1";
+}
 
 if($department == "7"){
   $userType = "2";
@@ -50,9 +63,12 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO user (initials, middleName, surname, email, interncell, password, sex, departmentID,userType)
-VALUES ('$initials', '$middlename', '$surname', '$email', '$interncell', '$password', '$sex', '$department', '$userType')";
+VALUES ('$initials', '$middlename', '$surname', '$email', '$interncell', '$password', '$sex', '$department', '$userType');";
 
 if ($conn->query($sql) === TRUE) {
+  $last_id = mysqli_insert_id($conn);
+  $sql1 = "INSERT INTO user2configuration (userID, configurationID) VALUES ('$last_id', '$config');";
+  mysqli_query( $conn, $sql1);
     header("location:gebruikertoevoegen.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

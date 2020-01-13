@@ -80,6 +80,18 @@ else{
 
         while($row = mysqli_fetch_assoc($result)){
 
+          if (is_null($row['feedback'])){
+             $feedback = "N.V.T";
+           }else{
+             $feedback = $row["feedback"];
+            }
+
+            if (is_null($row['cause'])){
+               $cause = "N.V.T";
+             }else{
+              $cause = $row["cause"];
+              }
+
           /* Tijdsberekening, Omzetten van minuten naar Uren */
           $time =  $row["time"] / 60;
 
@@ -115,12 +127,16 @@ else{
               echo "<p class='wacht'>Wacht</p>";
               } elseif ($urgency == 5) {
                 echo "<p class='geen'>Geen</p>";
+              }elseif ($urgency == 6) {
+                echo "<p class='nttw'>Nog toe te wijzen</p>";
+              }elseif ($urgency == 7) {
+                echo "<p class='fout'>Foutief</p>";
               }"</td>";
 
 
         /* Weergeven van data uit de database */
         echo"<td>".$row["shortDescription"]."</td>
-	           <td>".$row["cause"]."</td>
+	           <td>".$cause."</td>
 			       <td>".round($time, 2)." uur"."</td>
       			 <td>".$row["initials"].", ".$row["surname"]."</td>
               <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
@@ -129,7 +145,7 @@ else{
 	  }
 	}
 	else{
-	  echo "Error";
+	  echo "Error, Geen incidenten aangetroffen";
 	}
 	?>
 
