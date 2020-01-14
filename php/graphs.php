@@ -224,15 +224,7 @@ $result4 = mysqli_query($conn,$sql4);
   </head>
   <body>
     <?php
-  if($data[6] == 2){
-    include('../include/navigatiebeheerder.php');
-  }
-  elseif($data[6] == 3){
-    include('../include/navigatiedirectie.php');
-  }
-  else{
-    include('../include/navigatie.php');
-  }
+include('../include/navigatiedirectie.php');
   ?>
     <!--Table and divs that hold the pie charts-->
       <div class="tableGraphs">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 14 jan 2020 om 10:56
--- Serverversie: 10.1.38-MariaDB
--- PHP-versie: 7.3.2
+-- Gegenereerd op: 14 jan 2020 om 21:28
+-- Serverversie: 10.4.6-MariaDB
+-- PHP-versie: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -167,11 +167,11 @@ CREATE TABLE `faq` (
 
 INSERT INTO `faq` (`ID`, `question`, `answer`) VALUES
 (1, 'Hoe kan ik mijn wachtwoord wijzigen?', 'Naar je profiel gaan en daar kan je je wachtwoord wijzigen.'),
-(2, 'Hoe kan ik een incident melden?', 'Op de knop ‘Incident melden’ drukken en dan ziet u daar kan je het incident omschrijven.'),
-(3, 'Kan ik zien hoelang het probleem duurt voordat het is opgelost?', 'Ja, als u op ‘Incidenten’ klik, dan zie je uw incidenten en daarbij ook de tijd zien hoe lang mijn incident duurt'),
-(4, 'Kan ik mijn profiel aanpassen?', 'De beheerders kunnen u profiel aanpassen.'),
+(2, 'Hoe kan ik een incident melden?', 'Op de knop: \"Incident melden\" drukken en dan ziet u daar kan je het incident omschrijven.'),
+(3, 'Kan ik zien hoelang het probleem duurt voordat het is opgelost?', 'Ja, als u op \"Incidenten\" klik, dan zie je uw incidenten en daarbij ook de tijd zien hoe lang mijn incident duurt'),
+(4, 'Kan ik mijn profiel aanpassen?', 'De beheerders kunnen u profiel aanpassen, hiervoor kunt u contact opnemen.'),
 (5, 'Kan ik de urgentie zien van mijn incident?', 'Dat kan u ook zien bij uw gemelde incidenten.'),
-(6, 'Kan ik voor meerdere mensen een incident melden?', 'Als jullie allemaal hetzelfde probleem hebben, dan kan dat! Als u op ‘incident melden’ klikt, dan zie je onder de omschrijving ‘Impact’ en dan kan je invullen hoeveel mensen er last van hebben.');
+(6, 'Kan ik voor meerdere mensen een incident melden?', 'Als jullie allemaal hetzelfde probleem hebben, dan kan dat! Als u op \"incident melden\" klikt, dan zie je onder de omschrijving \"Impact\" en dan kan je invullen hoeveel mensen er last van hebben.');
 
 -- --------------------------------------------------------
 
@@ -214,7 +214,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NULL DEFAULT current_timestamp(),
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

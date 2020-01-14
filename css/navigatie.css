@@ -29,3 +29,25 @@ body{
 	padding: 1.5em;
 	margin: 0;
 }
+
+.topnav1 {
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding: 1.5em;
+	background-color: #009A92;
+	height: 1.7%;
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+.topnav1 a:hover {
+	background-color: #007B75;
+}
+.topnav1 > a{
+	text-decoration: none;
+	font-size: 1em;
+	color: #EFF8F8;
+	padding: 1.5em;
+	margin: 0;
+}

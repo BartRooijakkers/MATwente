@@ -42,7 +42,7 @@ else{
 
 	<div class=table>
       <h1> Veel Gestelde Vragen </h1>
-
+<table class="faq">
 	<?php
 
 	if (mysqli_num_rows($result) >= 1){
@@ -52,8 +52,8 @@ else{
 
       /* Weergeven van de data in het tabel */
 	    echo "
-      	  <label class='vraag'>".$row["question"]."<label><br>
-      <label class='antwoord'>".$row["answer"]."<label><br>";
+      	 <tr><td class='vraag'><p class='vraag'>".$row["question"]."</p></td></tr>
+      <tr><td class='antwoord'><p class='antwoord'>".$row["answer"]."</p></td</tr>";
 	  }
 	}
 	else{
@@ -61,7 +61,7 @@ else{
 	}
 	?>
 
-
+</table>
 </div>
 
 

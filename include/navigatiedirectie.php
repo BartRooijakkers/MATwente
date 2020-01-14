@@ -1,4 +1,4 @@
-<div class="topnav">
+<div class="topnav1">
 	<a href="gebruikers.php?sort=department">Gebruikers</a>
 	<a href="mijnincidenten.php?sort=urgency">Mijn incidenten</a>
 	<a href="graphs.php"> Statistieken </a>
