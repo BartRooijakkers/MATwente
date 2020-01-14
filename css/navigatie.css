@@ -1,7 +1,7 @@
 @font-face { font-family: Coolvetica; src: url('coolvetica.ttf'); }
 .Coolvetica { font-family:  Coolvetica; font-size: 4.2em; }
 @font-face { font-family: Cosima; src: url('Cosima.otf'); }
-.Coolvetica { font-family:  Cosima; font-size: 4.2em; }
+.Cosima { font-family:  Cosima; font-size: 4.2em; }
 
 .topnav {
 	width:98%;
@@ -30,6 +30,7 @@
 	text-decoration: none;
 	font-size: 25px;
 	z-index: 1;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 
@@ -59,6 +60,7 @@
 	background-color: #08faec;
 	color: black;
 	z-index: 1;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .sidenav {
@@ -78,6 +80,7 @@
 	text-overflow: ellipsis;
 		font-family: Cosima;
 	z-index: 1;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .sidenav a {
@@ -94,6 +97,7 @@
   background-color: #08faec;
   color: black;
 	z-index: 1;
+		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 @media only screen and (min-width: 1920px) {
 	.topnav a:nth-last-child(2) {
@@ -105,6 +109,17 @@
 		text-decoration: none;
 		font-size: 25px;
 		z-index: 1;
+	}
+	.topnav a:nth-last-child(2):hover {
+		padding: 6px 4px 0px 16px;
+		margin-left: 42%;
+		color: black;
+		text-align: center;
+		padding: 20px 20px;
+		text-decoration: none;
+		font-size: 25px;
+		z-index: 1;
+		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	}
 }
 @media only screen and (max-width: 1919px) {
@@ -118,6 +133,18 @@
 		font-size: 25px;
 		z-index: 1;
 	}
+
+.topnav a:nth-last-child(2):hover {
+		padding: 6px 4px 0px 16px;
+		margin-left: 30%;
+		color: black;
+		text-align: center;
+		padding: 20px 20px;
+		text-decoration: none;
+		font-size: 25px;
+		z-index: 1;
+		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -130,4 +157,15 @@
 		text-decoration: none;
 		font-size: 25px;
 		z-index: 1;
+	}
+.topnav a:nth-last-child(2):hover {
+		padding: 6px 4px 0px 16px;
+		margin-left: 30%;
+		color: black;
+		text-align: center;
+		padding: 20px 20px;
+		text-decoration: none;
+		font-size: 25px;
+		z-index: 1;
+			text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	}

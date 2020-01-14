@@ -126,7 +126,7 @@ else{
               } elseif ($urgency == 4) {
               echo "<p class='wacht'>Wacht</p>";
               } elseif ($urgency == 5) {
-                echo "<p class='geen'>Geen</p>";
+                echo "<p class='geen'>Afgehandeld</p>";
               }elseif ($urgency == 6) {
                 echo "<p class='nttw'>Nog toe te wijzen</p>";
               }elseif ($urgency == 7) {

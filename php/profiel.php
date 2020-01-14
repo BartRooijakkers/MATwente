@@ -42,15 +42,15 @@ if (!$conn) {
 		<?php
 
 			echo "<td>"."<p class='profielfields'>Voorletter: </p>"."<p class='persooninfo'>".$data[0]."</p>"."</td>
-			<td><br>"."<p class='profielfields'>Tussenvoegsel: </p>"."<p class='persooninfo'>".$data[1]."</p>"."</td>
-			<td><br>"."<p class='profielfields'>Achternaam: </p>"."<p class='persooninfo'>".$data[2]."</p>"."</td>
-      <td><br>"."<p class='profielfields'>Afdeling: </p>"."<p class='persooninfo'>".$data[5]."</p>"."</td>
-			<td><br>"."<p class='profielfields'>Email: </p>"."<p class='persooninfo'>".$data[3]."</p>"."</td>
-			<td><br>"."<p class='profielfields'>intern telefoon nummer: </p>"."<p class='persooninfo'>".$data[4]."</p>"."</td>";
+			<td>"."<p class='profielfields'>Tussenvoegsel: </p>"."<p class='persooninfo'>".$data[1]."</p>"."</td>
+			<td>"."<p class='profielfields'>Achternaam: </p>"."<p class='persooninfo'>".$data[2]."</p>"."</td>
+      <td>"."<p class='profielfields'>Afdeling: </p>"."<p class='persooninfo'>".$data[5]."</p>"."</td>
+			<td>"."<p class='profielfields'>Email: </p>"."<p class='persooninfo'>".$data[3]."</p>"."</td>
+			<td>"."<p class='profielfields'>intern telefoon nummer: </p>"."<p class='persooninfo'>".$data[4]."</p>"."</td>";
 
 
 		?>
-				</p>
+			  <a href="wachtwoordveranderen.php"> <button class="editpassbtn">Wachtwoord Wijzigen </button> </a>
 			</div>
 
 

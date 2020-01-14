@@ -1,9 +1,9 @@
 @font-face { font-family: Coolvetica; src: url('coolvetica.ttf'); }
 .Coolvetica { font-family:  Coolvetica; font-size: 4.2em; }
 @font-face { font-family: Cosima; src: url('Cosima.otf'); }
-.Coolvetica { font-family:  Cosima; font-size: 4.2em; }
+.Cosisma { font-family:  Cosima; font-size: 4.2em; }
 @font-face { font-family: KeepCalm; src: url('KeepCalm.ttf'); }
-.Coolvetica { font-family:  KeepCalm; font-size: 4.2em; }
+.KeepCalm { font-family:  KeepCalm; font-size: 4.2em; }
 
 html{
 	font-family:KeepCalm;
@@ -155,8 +155,8 @@ i.fas.fa-sort-down{
 }
 
 img.return{
-	max-height: 75px;
-	max-width: 75px;
+	max-height: 50px;
+	max-width: 50px;
 }
 
 
@@ -164,10 +164,11 @@ p.profielfields{
 	font-weight:bold;
 		font-style: italic;
 	color: #525252;
+		padding: 0px 20px 1px 20px;
 }
 
 p.persooninfo{
-
+		padding: 0px 20px 1px 20px;
 	color: black;
 }
 
@@ -211,6 +212,7 @@ p.nttw{
 p.PG{
 	color:#ffffff;
 	font-weight:bolder;
+		padding: 0px 20px px 20px;
 }
 
 a.gebruikers {
@@ -354,4 +356,31 @@ div#chart_div{
 div#pieConfiguraties{
 	width: 95%;
 	 height: 40%;
+ }
+
+ .editpassbtn{
+ background-image: linear-gradient(#00c4bb,#005b57);
+   border: 1px solid black;
+   color: white;
+  padding: 15px 32px 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+	 margin-left:1%;
+     margin-bottom: 2%;
+		 border-radius: 10px;
+ }
+
+ .editpassbtn:hover{
+ background-image: linear-gradient(purple,maroon);
+   border: 1px solid ;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+     margin-bottom: 2%;
+		 		 border-radius: 10px;
  }
