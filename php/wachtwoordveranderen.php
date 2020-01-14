@@ -41,16 +41,14 @@ else{
 					<div class="login1">
             <h1 class="form"> Wachtwoord Veranderen </h1>
 						 <form action="modifypassword.php" method="post" class="addUser">
-				<br>
+
 					<label for="username"><b>password</b></label><br>
-					<input type="text" placeholder="Vul uw nieuwe wachtwoord in" name="password" required><br>
+					<input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Vul uw nieuwe wachtwoord in" name="password" required>
+					<br><button type="submit" class="btn" name="login_btn">Veranderen</button><br>
 
 
-					<button type="submit" class="btn" name="login_btn">Veranderen</button>
-					<br>
+		    <p class="wachtwoord"> Uw wachtwoord moet: minimaal 8 karakters lang zijn & minimaal: 1 hoofdletter, 1 kleine letter, 1 nummer en speciaal teken bevatten </p>
 
-			<label class="error"></label>
-			<br>
 			</div>
 		</form>
   </div>

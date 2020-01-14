@@ -3,169 +3,29 @@
 @font-face { font-family: Cosima; src: url('Cosima.otf'); }
 .Cosima { font-family:  Cosima; font-size: 4.2em; }
 
+body{
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
 .topnav {
-	width:98%;
-	border-top: 2px solid #08faec;
-	border-right: 2px solid #08faec;
-	border-left: 2px solid #08faec;
-	border-bottom: 2px solid #08faec;
-	margin-top:-0.55%;
-	margin-left:-0.6%;
-	overflow: hidden;
-	background-color:#74c385;
-	padding-left: 7%;
-	padding: 1%;
-		font-family: Cosima;
-	position: fixed;
-	z-index: 1;
-}
-
-
-.topnav a {
-	padding: 6px 4px 0px 16px;
-	margin-left: 1%;
-	color: white;
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding: 1.5em;
+	background-color: #009A92;
+	height: 100%;
 	text-align: center;
-	padding: 20px 20px;
-	text-decoration: none;
-	font-size: 25px;
-	z-index: 1;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
-
-.topnav a:first-child {
-	padding: 6px 4px 0px 16px;
-	margin-left: 12.6%;
-	color: white;
-	text-align: center;
-	padding: 20px 20px;
-	text-decoration: none;
-	font-size: 25px;
-	z-index: 1;
-}
-
-.topnav a:last-child {
-	padding: 6px 4px 0px 16px;
-	margin-left: 1%;
-	color: white;
-	text-align: center;
-	padding: 20px 20px;
-	text-decoration: none;
-	font-size: 25px;
-	z-index: 1;
+	border-bottom: 1px solid black;
 }
 
 .topnav a:hover {
-	background-color: #08faec;
-	color: black;
-	z-index: 1;
-	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	background-color: #007B75;
 }
-
-.sidenav {
-	border-top: 2px solid #08faec;
-	border-right: 2px solid #08faec;
-	border-left: 2px solid #08faec;
-	border-bottom: 2px solid #08faec;
-    height: auto;
-    width: auto;
-	max-width: 10%;
-	min-height: 100%;
-	top: 0;
-    left: 0;
-    position: fixed;
-    background-color: #74c385;
-	margin-top:auto;
-	text-overflow: ellipsis;
-		font-family: Cosima;
-	z-index: 1;
-		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+.topnav > a{
+	text-decoration: none;
+	font-size: 1em;
+	color: #EFF8F8;
+	padding: 1.5em;
+	margin: 0;
 }
-
-.sidenav a {
-	margin-top:30%;
-    padding: 35px 8px 35px 8px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-		z-index: 1;
-}
-
-.sidenav a:hover {
-  background-color: #08faec;
-  color: black;
-	z-index: 1;
-		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-}
-@media only screen and (min-width: 1920px) {
-	.topnav a:nth-last-child(2) {
-		padding: 6px 4px 0px 16px;
-		margin-left: 42%;
-		color: white;
-		text-align: center;
-		padding: 20px 20px;
-		text-decoration: none;
-		font-size: 25px;
-		z-index: 1;
-	}
-	.topnav a:nth-last-child(2):hover {
-		padding: 6px 4px 0px 16px;
-		margin-left: 42%;
-		color: black;
-		text-align: center;
-		padding: 20px 20px;
-		text-decoration: none;
-		font-size: 25px;
-		z-index: 1;
-		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-	}
-}
-@media only screen and (max-width: 1919px) {
-	.topnav a:nth-last-child(2) {
-		padding: 6px 4px 0px 16px;
-		margin-left: 30%;
-		color: white;
-		text-align: center;
-		padding: 20px 20px;
-		text-decoration: none;
-		font-size: 25px;
-		z-index: 1;
-	}
-
-.topnav a:nth-last-child(2):hover {
-		padding: 6px 4px 0px 16px;
-		margin-left: 30%;
-		color: black;
-		text-align: center;
-		padding: 20px 20px;
-		text-decoration: none;
-		font-size: 25px;
-		z-index: 1;
-		text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-	}
-}
-
-@media only screen and (max-width: 1200px) {
-	.topnav a:nth-last-child(2) {
-		padding: 6px 4px 0px 16px;
-		margin-left: 22%;
-		color: white;
-		text-align: center;
-		padding: 20px 20px;
-		text-decoration: none;
-		font-size: 25px;
-		z-index: 1;
-	}
-.topnav a:nth-last-child(2):hover {
-		padding: 6px 4px 0px 16px;
-		margin-left: 30%;
-		color: black;
-		text-align: center;
-		padding: 20px 20px;
-		text-decoration: none;
-		font-size: 25px;
-		z-index: 1;
-			text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-	}

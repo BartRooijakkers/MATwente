@@ -59,7 +59,7 @@ else{
 ?>
 	<div class=table>
         <h1> Incidenten </h1>
-	<table class="incidenten" name="incidenten">
+	<table class="gebruikers" name="incidenten">
 	<tr>
 
 

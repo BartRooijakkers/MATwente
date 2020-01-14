@@ -17,6 +17,7 @@ if (!$conn) {
 <!doctype html>
 <html lang="nl">
 <?php include('../include/header.php');?>
+  <script src="https://kit.fontawesome.com/292c831ebb.js" crossorigin="anonymous"></script>
 	<body>
 				<div class="container">
 					<div class="login">
@@ -25,7 +26,7 @@ if (!$conn) {
 						echo "Er is een fout in u email of wachtwoord.";
 						}
 						?>
-					<img src="../img/loginavatar.png" class="avatar">
+					<i class="fas fa-user-tie"></i>
 
 						 <form action="login.php" method="post">
 				<br>

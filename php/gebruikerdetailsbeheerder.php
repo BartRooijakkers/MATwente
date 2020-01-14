@@ -77,23 +77,71 @@ else{
       echo "<tr><td>".$row["initials"]."</td>
       <td>".$row["middleName"]."</td>
       <td><input type='text' value=".$row["surname"]." name='surname'></td>
-      <td><select name='departmentName' value=".$row["departmentName"]." class='selectDepartment'>
-              <option selected='selected' value=".$row["departmentID"]."> $department </option>
-              <option value=''>Make a selection</option>
-              <option value='2'> CAD </option>
-              <option value='3'> Directie </option>
-              <option value='4'> Engineering </option>
-              <option value='5'> Financiele Administratie </option>
-              <option value='6'> HRM </option>
-              <option value='7'> ICT </option>
-              <option value='8'> Onderzoek </option>
-              <option value='9'> Planning </option>
-              <option value='10'> Project Planning </option>
-              <option value='11'> Rapportage </option>
-              <option value='12'> Secretariaat </option>
-              <option value='13'> Verkoop en Marketing </option>
-              </select></td>
-      <td><input type='text' value=".$row["interncell"]." name='interncell'></td>";
+      <td><select name='departmentName' class='selectDepartment'>";
+
+      if($row["departmentID"]==2){
+            echo " <option selected value='2'> CAD </option>";
+      }else{
+          echo " <option value='2'> CAD </option>";
+      }
+      if($row["departmentID"]==3){
+            echo " <option selected value='3'> Directie </option>";
+      }else{
+          echo " <option value='3'> Directie </option>";
+      }
+      if($row["departmentID"]==4){
+            echo " <option selected value='4'> Engineering </option>";
+      }else{
+          echo " <option value='4'> Engineering </option>";
+      }
+      if($row["departmentID"]==5){
+            echo " <option selected value='5'> Financiele Administratie </option>";
+      }else{
+          echo " <option value='5'> Financiele Administratie </option>";
+      }
+      if($row["departmentID"]==6){
+            echo " <option selected value='6'> HRM </option>";
+      }else{
+          echo " <option value='6'> HRM </option>";
+      }
+      if($row["departmentID"]==7){
+            echo " <option selected value='7'> ICT </option>";
+      }else{
+          echo " <option value='7'> ICT </option>";
+      }
+      if($row["departmentID"]==8){
+            echo " <option selected value='8'> Onderzoek </option>";
+      }else{
+          echo " <option value='8'> Onderzoek </option>";
+      }
+      if($row["departmentID"]==9){
+            echo " <option selected value='9'> Planning </option>";
+      }else{
+          echo " <option value='9'> Planning </option>";
+      }
+      if($row["departmentID"]==10){
+            echo " <option selected value='10'> Project Planning </option>";
+      }else{
+          echo " <option value='10'> Project Planning </option>";
+      }
+      if($row["departmentID"]==11){
+            echo " <option selected value='11'> Rapportage </option>";
+      }else{
+          echo " <option value='11'> Rapportage </option>";
+      }
+      if($row["departmentID"]==12){
+            echo " <option selected value='12'> Secretariaat </option>";
+      }else{
+          echo " <option value='12'> Secretariaat </option>";
+      }
+      if($row["departmentID"]==13){
+            echo " <option selected value='13'> Verkoop en Marketing </option>";
+      }else{
+          echo " <option value='13'> Verkoop en Marketing </option>";
+      }
+
+
+      echo"<td><input type='text' value=".$row["interncell"]." name='interncell'></td>";
       echo "<td>";
           if ($geslacht == 1) {
           echo "Man";

@@ -35,7 +35,7 @@ if (!$conn) {
       include('../include/navigatie.php');
     }
     ?>
-			<div class="gegevens">
+			<div class="login">
 				<p class="PG">Persoonlijke gegevens: </p>
 
 
@@ -50,7 +50,7 @@ if (!$conn) {
 
 
 		?>
-			  <a href="wachtwoordveranderen.php"> <button class="editpassbtn">Wachtwoord Wijzigen </button> </a>
+			  <a href="wachtwoordveranderen.php"> <button class="btn">Wachtwoord Wijzigen </button> </a>
 			</div>
 
 

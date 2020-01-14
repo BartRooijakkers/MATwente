@@ -40,7 +40,7 @@ else{
 	<br>
   <div class="container">
 
-					<div class="login1">
+					<div class="login">
             <h1 class="form"> Gebruiker toevoegen </h1>
 						 <form action="adduser.php" method="post" class="addUser">
 				<br>
