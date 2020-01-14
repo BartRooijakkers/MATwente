@@ -53,9 +53,6 @@ else{
           <label for=""><b>Achternaam</b></label><br>
           <input type="text" placeholder="Vul de achternaam in" name="surname" required><br>
 
-					<label for="E-mail"><b>E-mail</b></label><br>
-					<input type="text" placeholder="Vul de e-mail in" name="email" required><br>
-
 					<label for="nummer"><b>Nummer</b></label><br>
 					<input type="text" placeholder="Vul het Interne telefoonnummer in" name="nummer" maxlength="3" required><br>
 

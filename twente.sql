@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 jan 2020 om 19:55
--- Serverversie: 10.4.6-MariaDB
--- PHP-versie: 7.3.9
+-- Gegenereerd op: 14 jan 2020 om 10:56
+-- Serverversie: 10.1.38-MariaDB
+-- PHP-versie: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -166,7 +166,12 @@ CREATE TABLE `faq` (
 --
 
 INSERT INTO `faq` (`ID`, `question`, `answer`) VALUES
-(1, 'poopoo', 'and fart');
+(1, 'Hoe kan ik mijn wachtwoord wijzigen?', 'Naar je profiel gaan en daar kan je je wachtwoord wijzigen.'),
+(2, 'Hoe kan ik een incident melden?', 'Op de knop ‘Incident melden’ drukken en dan ziet u daar kan je het incident omschrijven.'),
+(3, 'Kan ik zien hoelang het probleem duurt voordat het is opgelost?', 'Ja, als u op ‘Incidenten’ klik, dan zie je uw incidenten en daarbij ook de tijd zien hoe lang mijn incident duurt'),
+(4, 'Kan ik mijn profiel aanpassen?', 'De beheerders kunnen u profiel aanpassen.'),
+(5, 'Kan ik de urgentie zien van mijn incident?', 'Dat kan u ook zien bij uw gemelde incidenten.'),
+(6, 'Kan ik voor meerdere mensen een incident melden?', 'Als jullie allemaal hetzelfde probleem hebben, dan kan dat! Als u op ‘incident melden’ klikt, dan zie je onder de omschrijving ‘Impact’ en dan kan je invullen hoeveel mensen er last van hebben.');
 
 -- --------------------------------------------------------
 
@@ -209,7 +214,7 @@ CREATE TABLE `incident` (
   `cause` varchar(255) DEFAULT NULL,
   `solution` varchar(255) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT current_timestamp(),
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `type` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -376,7 +381,8 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (47, 'E', 'Aslan', '', 13, '270', 1, 'easlan@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (48, 'F', 'Suasso', ' Lopes', 13, '270', 2, 'fsuasso@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
-(53, 'A', 'Dmin', '', 7, '131', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 2);
+(53, 'A', 'Dmin', '', 7, '131', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 2),
+(56, 'W', 'Slikke', 'van der', 10, '544', 1, 'wslikke@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1);
 
 -- --------------------------------------------------------
 
@@ -444,7 +450,8 @@ INSERT INTO `user2configuration` (`ID`, `userID`, `configurationID`) VALUES
 (47, 47, 1),
 (48, 48, 1),
 (49, 49, 1),
-(53, 53, 1);
+(53, 53, 1),
+(56, 56, 1);
 
 -- --------------------------------------------------------
 
@@ -611,7 +618,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT voor een tabel `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `hardware`
@@ -641,13 +648,13 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2configuration`
 --
 ALTER TABLE `user2configuration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2incident`

@@ -10,6 +10,7 @@ html{
 	height:100%;
 	width:100%;
 	background:#f9f9f9;
+		background-image: url("background.jpg");
 }
 
 /* login */
@@ -80,45 +81,44 @@ z-index: -1;
 }
 
 table.incidentenDetails{
-  border: 1px solid black;
+	border: 1px solid black;
   color: black;
   width: 100%;
-  overflow:auto;
+	border-collapse: collapse;
 }
-
 table.incidenten{
   border: 1px solid black;
   color: black;
   width: 100%;
-  overflow:auto;
+	border-collapse: collapse;
 }
 
 table.gebruikers{
-  border: 1px solid black;
+	border: 1px solid black;
   color: black;
   width: 100%;
-  overflow:auto;
+	border-collapse: collapse;
 }
 
 table.gebruikerDetails{
-  border: 1px solid black;
+	border: 1px solid black;
   color: black;
   width: 100%;
-  overflow:auto;
+	border-collapse: collapse;
 }
 
 table.configuratieDetails{
-  border: 1px solid black;
+	border: 1px solid black;
   color: black;
   width: 100%;
-  overflow:auto;
+	border-collapse: collapse;
 }
 
 table.Graphs{
-  border: 1px solid black;
+	border: 1px solid black;
   color: black;
   width: 100%;
-  overflow:auto;
+	border-collapse: collapse;
 }
 
 

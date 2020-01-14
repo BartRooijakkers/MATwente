@@ -103,7 +103,7 @@ else{
            echo "Anders";
     }"</td>";
 
-    echo"<td>".$row["email"]."</td>
+    echo"<td><input type='text' value=".$row["email"]." name='email'></td>
       <td>".$row["configurationName"]."</td>
       </tr>";
     }

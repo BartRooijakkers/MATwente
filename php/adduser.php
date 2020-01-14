@@ -28,7 +28,6 @@ $sex = 2;
 $initials    =  strtoupper($_POST['initials']);
 $middlename = $_POST['middleName'];
 $surname       =  ucfirst($_POST['surname']);
-$email  =  $_POST['email'];
 $interncell = $_POST['nummer'];
 $password  =  hash("sha256","Welkom0!");
 $department = $_POST['department'];
@@ -55,8 +54,44 @@ elseif($department == "3"){
 else{
   $userType = "1";
 }
-
-
+// Department Name toezeggen
+if($department == 2){
+  $departmentName ="cad";
+}
+elseif($department == 3){
+  $departmentName ="directie";
+}
+elseif($department == 4){
+  $departmentName ="engineering";
+}
+elseif($department == 5){
+  $departmentName ="Financieleadministratie";
+}
+elseif($department == 6){
+  $departmentName ="hrm";
+}
+elseif($department == 7){
+  $departmentName ="ict";
+}
+elseif($department == 8){
+  $departmentName ="onderzoek";
+}
+elseif($department == 9){
+  $departmentName ="planning";
+}
+elseif($department == 10){
+  $departmentName ="projectplanning";
+}
+elseif($department == 11){
+  $departmentName ="rapportage";
+}
+elseif($department == 12){
+  $departmentName ="secretariaat";
+}
+elseif($department == 13){
+  $departmentName ="verkoopenmarketing";
+}
+$email  =  $_POST['initials'] .$_POST['surname'] ."@".$departmentName. ".matwente.com";
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());

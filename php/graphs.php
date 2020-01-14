@@ -23,7 +23,7 @@ if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
 //Datum graph query
-$sql = "SELECT YEAR(incident.date),DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date), COUNT(*) as number FROM incident GROUP BY date";
+$sql = "SELECT YEAR(incident.date),DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date), COUNT(*) as number FROM incident GROUP BY DAY(incident.date)";
 //Geslacht graph query
 $sql1 = "SELECT sex, count(*) as number from user GROUP BY sex";
 //Afdeling graph query

@@ -17,30 +17,15 @@ $dbname = "twente";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
-// Omzetten van department Van string naar integer
-$surname       =  ucfirst($_POST['surname']);
-$interncell = $_POST['interncell'];
-$department = $_POST['departmentName'];
-$email = $_POST['email'];
-
-if($department == "7"){
-  $userType = "2";
-}
-elseif($department == "3"){
-  $userType = "3";
-}
-else{
-  $userType = "1";
-}
-
-
+// wachtwoord Encrypten
+$password  =  hash("sha256","Welkom0!");
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
 $id = $_GET["userID"];
 
-$sql = "UPDATE user SET surname = '$surname' , departmentID = $department , interncell = $interncell, email = '$email' WHERE userID =$id";
+$sql =  "UPDATE user SET password = $'$password' WHERE userID =$id";
 
 if ($conn->query($sql) === TRUE) {
     header("location:gebruikers.php?sort=department");
