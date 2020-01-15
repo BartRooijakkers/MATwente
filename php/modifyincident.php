@@ -24,16 +24,25 @@ $cause = $_POST['cause'];
 $solution = $_POST['solution'];
 $feedback = $_POST['feedback'];
 $status = $_POST['statusID'];
+$type =$_POST['type'];
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
 
-$sql =  "UPDATE incident SET statusID = $status description = '$description' time = $time
-responsibleID = $responsible cause = '$cause' solution = '$solution' feedback = '$feedback'
+if($status == 8 || $status == 11){
+
+$sql =  "UPDATE incident SET statusID = $status, description = '$description', time = $time,
+responsibleID = $responsible, cause = '$cause', solution = '$solution', feedback = '$feedback', type = $type, finishDate = CURRENT_TIMESTAMP
  WHERE incidentID =$id";
+}
+ else{
+   $sql =  "UPDATE incident SET statusID = $status, description = '$description', time = $time,
+   responsibleID = $responsible, cause = '$cause', solution = '$solution', feedback = '$feedback', type = $type, finishdate = NULL
+    WHERE incidentID =$id";
+ }
 
 if ($conn->query($sql) === TRUE) {
-    header("location:incidentendetails.php?=$id");
+    header("location:incidenten.php?sort=urgency");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

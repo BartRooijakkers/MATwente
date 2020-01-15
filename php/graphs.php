@@ -38,6 +38,11 @@ $sql2 = "SELECT departments.departmentName, COUNT(incident.incidentID) AS number
  $sql4 = "SELECT configuration.configurationName, COUNT(config2incident.incidentID) AS number FROM config2incident
  INNER JOIN configuration ON configuration.configurationID = config2incident.configurationID
  GROUP BY configuration.configurationName";
+ // Incidenter per Gebruiker query
+ $sql5 = "SELECT user.initials, user.surname, COUNT(incident.incidentID) AS number FROM user
+ INNER JOIN user2incident ON user.userID = user2incident.userID
+ INNER JOIN incident ON user2incident.incidentID = incident.incidentID
+ GROUP BY user.surname;";
  //datum oproep
 $result = mysqli_query($conn,$sql);
 //Geslacht oproep
@@ -48,6 +53,8 @@ $result2 = mysqli_query($conn,$sql2);
 $result3 = mysqli_query($conn,$sql3);
 // incidente per configuraties oproep
 $result4 = mysqli_query($conn,$sql4);
+//Incidenten per gebruiker oproepen
+$result5 = mysqli_query($conn,$sql5);
 
 ?>
 
@@ -74,6 +81,8 @@ $result4 = mysqli_query($conn,$sql4);
 
       //Tekent incidente per configuraties grafiek
       google.charts.setOnLoadCallback(drawconfiguratiesChart);
+      //Tekent incidente per gebruiker grafiek
+      google.charts.setOnLoadCallback(drawuserincidentChart);
       // Callback that draws the pie chart for Sarah's pizza.
       function drawDateChart() {
         var data = google.visualization.arrayToDataTable([
@@ -211,6 +220,30 @@ $result4 = mysqli_query($conn,$sql4);
            var chart = new google.visualization.PieChart(document.getElementById('pieConfiguraties'));
            chart.draw(data, options);
       }
+      function drawuserincidentChart() {
+         // Define the chart to be drawn.
+         var data = google.visualization.arrayToDataTable([
+            ['Gebruiker', 'Meldingen'],
+            <?php
+             while($row = mysqli_fetch_array($result5))
+             {
+               $special = "F, Çiçek";
+               $name = $row['initials'] . ", " . $row['surname'];
+               if($name == "F, &Ccedil;i&ccedil;ek"){
+                  echo "['".$special."', ".$row["number"]."],";
+             }else{
+                  echo "['".$name."', ".$row["number"]."],";
+             }
+           }
+             ?>
+         ]);
+
+         var options = {title: 'Meldingen per gebruiker'};
+
+         // Instantiate and draw the chart.
+         var chart = new google.visualization.ColumnChart(document.getElementById('userincidentChart'));
+         chart.draw(data, options);
+      }
 
     </script>
     <title>MA Twente</title>
@@ -235,6 +268,7 @@ include('../include/navigatiedirectie.php');
         <div id="pieConfiguraties" style="border: 1px solid #ccc"></div>
         <div id="pieType" style="border: 1px solid #ccc"></div>
         <div id="pieSex" style="border: 1px solid #ccc"></div>
+        <div id="userincidentChart" style="border: 1px solid #ccc"></div>
 
 
   </div>
