@@ -7,5 +7,4 @@
 	<a href="gebruikers.php?sort=department">Gebruikers</a>
 	<a href="gebruikertoevoegen.php">Gebruiker toevoegen</a>
 	<a href="faq.php">Veel Gestelde Vragen</a>
-		<a href="sessionend.php">Log uit </a>
 </div>

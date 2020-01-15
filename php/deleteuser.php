@@ -23,6 +23,7 @@ $id = $_GET["userID"];
 
 $sql = "DELETE FROM user WHERE userID =$id;";
 $sql .="DELETE FROM user2configuration WHERE userID = $id;";
+$sql .="UPDATE user2incident SET userID = 57 WHERE userID =$id;";
 
 if ($conn->multi_query($sql) === TRUE) {
     header("location:gebruikers.php?sort=department");

@@ -7,6 +7,7 @@
 
 @font-face { font-family: champagne; src: url('../font/ChampagneBold.ttf'); }
 
+
 html{
 	font-family:KeepCalm;
 	height:100%;
@@ -15,7 +16,7 @@ html{
 }
 
 body {
-		overflow-x: hidden;
+	  overflow-x:hidden;
 		background-color: transparent;
 }
 
@@ -95,7 +96,7 @@ z-index: -1;
 table.incidentenDetails{
 	border: 1px solid black;
   color: black;
-  width: 100%;
+  width: 90%;
 	border-collapse: collapse;
 }
 table.incidenten{

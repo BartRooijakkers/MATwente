@@ -109,5 +109,4 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-header("gebruikers.php");
 ?>

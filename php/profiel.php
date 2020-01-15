@@ -50,7 +50,8 @@ if (!$conn) {
 
 
 		?>
-			  <a href="wachtwoordveranderen.php"> <button class="btn">Wachtwoord Wijzigen </button> </a>
+			  <a href="wachtwoordveranderen.php"> <button class="btn">Wachtwoord Wijzigen </button> </a><br>
+        <a href="sessionend.php"> <button class="btn">   Uitloggen  </button> </a>
 			</div>
 
 

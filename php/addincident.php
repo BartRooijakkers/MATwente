@@ -33,16 +33,15 @@ VALUES ('$shortDescription', '$impact', '$status','$type', '$responsible');";
 
 
 if ($conn->multi_query($sql) === TRUE) {
-  header("incidenten.php");
   $last_id = mysqli_insert_id($conn);
   $sql1 = "INSERT INTO user2incident (userID, incidentID) VALUES ('$user', '$last_id');";
   $sql1 .= "INSERT INTO config2incident(configurationID, incidentID) VALUES('$config', '$last_id')";
-    $conn->multi_query($sql1)
-     or die(mysqli_error($conn));
+     header("Location: mijnincidenten.php?sort=urgency");
+    $conn->multi_query($sql1);
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-header("incidenten.php");
 
 ?>

@@ -189,9 +189,9 @@ $responsible = $row["responsibleName"];
 
 echo"
       <td><textarea cols='40' rows='5' name='description'>".$description." </textarea></td>
-      <td><textarea cols='40' rows='5' name='cause'>".$cause." </textarea></td>
-      <td><textarea cols='40' rows='5' name='solution'>".$solution." </textarea></td>
-      <td><textarea cols='40' rows='5' name='feedback'>".$feedback." </textarea></td>
+      <td><textarea cols='20' rows='5' name='cause'>".$cause." </textarea></td>
+      <td><textarea cols='25' rows='5' name='solution'>".$solution." </textarea></td>
+      <td><textarea cols='25' rows='5' name='feedback'>".$feedback." </textarea></td>
 
       <tr>      <th> Tijd (uren)</th>
       <th> Verantwoordelijk</th>
@@ -203,7 +203,7 @@ echo"
 
 
       	</tr>
-      <tr>    <td><input type='number' min='0' max='999' value=".round($time, 2)." name='time'</td>
+      <tr>    <td><input type='number' step='0.1'max='999' value=".round($time, 2)." name='time'</td>
       <td><select name='responsibleID' class='selectDepartment'>";
 
                   if($row["responsibleID"]==1){

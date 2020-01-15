@@ -38,11 +38,11 @@ else{
 	<br>
   <div class="container">
 
-					<div class="login1">
+					<div class="login">
             <h1 class="form"> Wachtwoord Veranderen </h1>
 						 <form action="modifypassword.php" method="post" class="addUser">
 
-					<label for="username"><b>password</b></label><br>
+					<label for="username"><b>Nieuwe wachtwoord</b></label><br>
 					<input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Vul uw nieuwe wachtwoord in" name="password" required>
 					<br><button type="submit" class="btn" name="login_btn">Veranderen</button><br>
 

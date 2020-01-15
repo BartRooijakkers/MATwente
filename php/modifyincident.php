@@ -28,7 +28,7 @@ if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
 
-$sql =  "UPDATE incident SET statusID = $status description = '$description' incident.time = $time
+$sql =  "UPDATE incident SET statusID = $status description = '$description' time = $time
 responsibleID = $responsible cause = '$cause' solution = '$solution' feedback = '$feedback'
  WHERE incidentID =$id";
 
