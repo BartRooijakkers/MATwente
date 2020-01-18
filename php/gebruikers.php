@@ -22,7 +22,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
-$sql = "SELECT user.userID, departments.departmentName, user.initials, user.surname, user.middleName, user.sex, user.interncell, user.email FROM user INNER JOIN departments ON user.departmentID = departments.departmentID";
+$sql = "SELECT user.userID, departments.departmentName, user.initials, user.surname, user.middleName, user.sex, user.interncell, user.email
+FROM user INNER JOIN departments ON user.departmentID = departments.departmentID
+WHERE user.userID != 57 ";
 
 if ($_GET['sort'] == 'initials')
 {

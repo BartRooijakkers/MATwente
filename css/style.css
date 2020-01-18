@@ -100,9 +100,9 @@ table.incidentenDetails{
 	border-collapse: collapse;
 }
 table.incidenten{
-  border: 1px solid black;
+	border: 1px solid black;
   color: black;
-  width: 100%;
+  width: 90%;
 	border-collapse: collapse;
 }
 
@@ -116,21 +116,21 @@ table.gebruikers{
 table.gebruikerDetails{
 	border: 1px solid black;
   color: black;
-  width: 100%;
+  width: 90%;
 	border-collapse: collapse;
 }
 
 table.configuratieDetails{
 	border: 1px solid black;
   color: black;
-  width: 100%;
+  width: 90%;
 	border-collapse: collapse;
 }
 
 table.Graphs{
 	border: 1px solid black;
   color: black;
-  width: 100%;
+  width: 90%;
 	border-collapse: collapse;
 }
 
@@ -192,7 +192,7 @@ p.persooninfo{
 td.vraag{
   border: 2px solid black;
   padding: 10px;
-  background-color:red;
+  background-color:#009A92;
 	color:black;
 	font-weight: bold;
 		font-style: italic;
@@ -269,16 +269,6 @@ a:visited {
 }
 
 
-.oudemeldingen{
-    border-radius:30px;
-    border: 2px solid black;
-    padding-left: 0.3%;
-    padding-right: 0.3%;
-    margin-left: 83.3%;
-    margin-top: 4.5%;
-    position: fixed;
-		background-color:#74c385;
-}
 
 .btn{
 	background-color: #009A92;
@@ -305,17 +295,6 @@ background-color: #007B75;
   font-size: 16px;
     margin-bottom: 2%;
 		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.gegevens{
-    border-radius:30px;
-    border: 2px solid black;
-    padding-left: 0.3%;
-    padding-right: 0.3%;
-    margin-left: 10.5%;
-    margin-top: 4.5%;
-    position: fixed;
-		background-color:#74c385;
 }
 
 .gebruiker{
@@ -436,7 +415,7 @@ div#pieConfiguraties{
 
  /* opmaak van de "Comment" button */
  .commentbtn{
-
+width:100%;
  	background-color: #009A92;
    border: 1px solid black;
  	border-radius: 5px;
@@ -445,13 +424,13 @@ div#pieConfiguraties{
    text-align: center;
    text-decoration: none;
    display: inline-block;
-	 float:right;
    font-size: 16px;
      margin-bottom: 2%;
  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
  }
 
  .commentbtn:hover{
+	 width:100%;
  background-color: #007B75;
    border: 1px solid black ;
    color: white;
@@ -459,7 +438,6 @@ div#pieConfiguraties{
    text-align: center;
    text-decoration: none;
    display: inline-block;
-	  float:right;
    font-size: 16px;
      margin-bottom: 2%;
  		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -496,4 +474,10 @@ background-color: #007B75;
   font-size: 16px;
     margin-bottom: 2%;
 		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div.typeradio{
+text-align:left;
+display:inline;
+white-space: normal;
 }

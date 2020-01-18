@@ -25,7 +25,7 @@ if (!$conn) {
 //Datum graph query
 $sql = "SELECT YEAR(incident.date),DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date), COUNT(*) as number FROM incident GROUP BY DAY(incident.date)";
 //Geslacht graph query
-$sql1 = "SELECT sex, count(*) as number from user GROUP BY sex";
+$sql1 = "SELECT sex, count(*) as number from user WHERE user.userID != 57 GROUP BY sex";
 //Afdeling graph query
 $sql2 = "SELECT departments.departmentName, COUNT(incident.incidentID) AS number FROM USER
  INNER JOIN user2incident ON user.userID = user2incident.userID
@@ -35,9 +35,17 @@ $sql2 = "SELECT departments.departmentName, COUNT(incident.incidentID) AS number
  // Type incident graph query
  $sql3 = "SELECT incident.type, COUNT(*) AS number FROM incident GROUP BY incident.type";
  // Incidenten per Configuraties query
- $sql4 = "SELECT configuration.configurationName, COUNT(config2incident.incidentID) AS number FROM config2incident
- INNER JOIN configuration ON configuration.configurationID = config2incident.configurationID
- GROUP BY configuration.configurationName";
+ $sql4 = "SELECT configuration.configurationName,
+  SUM(IF(config2incident.configurationID= 1 && incident.type = 1,1,0)) as softwareS,
+  SUM(IF(config2incident.configurationID= 1 && incident.type = 2,1,0)) as hardwareS,
+  SUM(IF(config2incident.configurationID= 1 && incident.type = 3,1,0)) as nttwS,
+  SUM(IF(config2incident.configurationID= 2 && incident.type = 1,1,0)) as softwareM,
+  SUM(IF(config2incident.configurationID= 2 && incident.type = 2,1,0)) as hardwareM,
+  SUM(IF(config2incident.configurationID= 2 && incident.type = 3,1,0)) as nttwM
+  FROM configuration
+  INNER JOIN config2incident ON configuration.configurationID = config2incident.configurationID
+  INNER JOIN incident ON config2incident.incidentID = incident.incidentID
+  GROUP BY configurationName";
  // Incidenter per Gebruiker query
  $sql5 = "SELECT user.initials, user.surname, COUNT(incident.incidentID) AS number FROM user
  INNER JOIN user2incident ON user.userID = user2incident.userID
@@ -116,7 +124,7 @@ $result5 = mysqli_query($conn,$sql5);
           title: 'Incidenten per datum',
           hAxis: {title: 'Datum',  titleTextStyle: {color: '#333'}},
           curveType: 'function',
-          vAxis: {minValue: 0},
+          vAxis: {minValue: 0, title:"Aantal incidenten"},
            pointSize: 10,
         };
 
@@ -160,6 +168,7 @@ $result5 = mysqli_query($conn,$sql5);
                      <?php
                      while($row = mysqli_fetch_array($result2))
                      {
+
                           echo "['".$row["departmentName"]."', ".$row["number"]."],";
                      }
                      ?>
@@ -203,21 +212,30 @@ $result5 = mysqli_query($conn,$sql5);
       function drawconfiguratiesChart()
       {
            var data = google.visualization.arrayToDataTable([
-                     ['Configuratie', 'Aantal Incidenten'],
+                     ['Configuratie', 'Software', 'Hardware', 'nog toe te wijzen'],
                      <?php
                      while($row = mysqli_fetch_array($result4))
                      {
-                          echo "['".$row["configurationName"]."', ".$row["number"]."],";
+                        if($row["configurationName"] == "Standaard werkplek")
+                        {
+                          echo "['".$row["configurationName"]."', ".$row["softwareS"].",".$row["hardwareS"].",".$row["nttwS"]."],";
+                        }
+                        elseif($row["configurationName"] == "Mobiele werkplek")
+                        {
+                            echo "['".$row["configurationName"]."', ".$row["softwareM"].",".$row["hardwareM"].",".$row["nttwM"]."],";
+                        }
                      }
                      ?>
                 ]);
            var options = {
                  title: 'Aantal gemelde incidenten per configuratie',
-                // is3D:true,
-                colors: ['#ed7b18','#7499B4']
+                  isStacked: true,
+                vAxis: {title:"aantal incidenten"},
+                  hAxis: {title: 'Configuratie'},
+                colors: ['#D8514E','#2A2B2D', '#2EA8D9']
 
                 };
-           var chart = new google.visualization.PieChart(document.getElementById('pieConfiguraties'));
+           var chart = new google.visualization.ColumnChart(document.getElementById('pieConfiguraties'));
            chart.draw(data, options);
       }
       function drawuserincidentChart() {
@@ -238,7 +256,12 @@ $result5 = mysqli_query($conn,$sql5);
              ?>
          ]);
 
-         var options = {title: 'Meldingen per gebruiker'};
+         var options = {
+           title: 'Meldingen per gebruiker',
+           vAxis: {title:"aantal incidenten"},
+            hAxis: {direction:1, slantedText:true, slantedTextAngle:270 },
+            height:500
+          };
 
          // Instantiate and draw the chart.
          var chart = new google.visualization.ColumnChart(document.getElementById('userincidentChart'));

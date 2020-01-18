@@ -247,16 +247,16 @@ echo"
       <td><a class='gebruikers' href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>";
       if($row["type"]==3){
-            echo "<input type='radio' name='type' value='1'><b> Software </b>
-            <input type='radio' name='type' value='2'><b>Hardware </b>";
+            echo "<div class='typeradio'><input type='radio' ='type' value='1'><b> Software </b><br>
+            <input type='radio' name='type' value='2'><b>Hardware </b></div>";
       }elseif($row["type"]==2){
-          echo "  <input type='radio' name='type' value='1'><b> Software </b>
+          echo "  <input type='radio' name='type' value='1'><b> Software  </b><br>
           <input type='radio' name='type' value='2' checked><b>Hardware </b>";
       }
       elseif($row["type"] == 1){
-        echo"
-        <input type='radio' name='type' value='1' checked><b> Software </b>
-        <input type='radio' name='type' value='2'><b>Hardware </b>";
+        echo"<div class='typeradio'>
+        <input type='radio' name='type' value='1' checked><b> Software </b><br>
+        <input type='radio' name='type' value='2'><b> Hardware </b></div>";
       }
       echo"</td>
       <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>

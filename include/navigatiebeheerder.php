@@ -1,6 +1,6 @@
 <div class="topnav">
 	<a href="profiel.php">Profiel</a>
-	<a href="configuraties.php?sort=departments">Configuratie</a>
+	<a href="configuraties.php?sort=departments">Configuraties</a>
 	<a href="configuratietoevoegen.php">Configuratie Toevoegen</a>
   <a href="incidenten.php?sort=urgency">Incidenten</a>
 	<a href="incidentmeld.php">Incident Melden</a>
