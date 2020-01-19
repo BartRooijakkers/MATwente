@@ -49,7 +49,7 @@ else{
 
 	<div class=table>
           <h1> Gebruiker details </h1>
-            <form class="edit" action="modifyuser.php?userID=<?php echo $id?>" method="post">
+            <form class="edit" action="../functions/modifyuser.php?userID=<?php echo $id?>" method="post">
 	<table class="gebruikerDetails" name="incidentenDetails">
 	<tr>
 
@@ -167,12 +167,15 @@ else{
 </table>
 <button type="submit" class="btn" name="modify_btn">Aanpassen</button>
 </form>
+<a href="javascript:history.back()">
+<button class="backbtn" name="delete_btn">Terug</button>
+</a>
 
-<a href="deleteuser.php?userID=<?php echo $id?>">
+<a href="../functions/deleteuser.php?userID=<?php echo $id?>">
 <button class="deletebtn" name="delete_btn">Verwijder Gebruiker</button>
 </a>
 
-<a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
+
 </div>
 
 

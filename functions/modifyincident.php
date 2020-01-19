@@ -3,7 +3,7 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
 $servername = "localhost";
@@ -42,7 +42,7 @@ responsibleID = $responsible, cause = '$cause', solution = '$solution', feedback
  }
 
 if ($conn->query($sql) === TRUE) {
-    header("location:incidenten.php?sort=urgency");
+    header("location:../php/incidenten.php?sort=urgency");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -1,8 +1,8 @@
-@font-face { font-family: Coolvetica; src: url('coolvetica.ttf'); }
+@font-face { font-family: Coolvetica; src: url('../font/coolvetica.ttf'); }
 .Coolvetica { font-family:  Coolvetica; font-size: 4.2em; }
-@font-face { font-family: Cosima; src: url('Cosima.otf'); }
+@font-face { font-family: Cosima; src: url('../font/Cosima.otf'); }
 .Cosisma { font-family:  Cosima; font-size: 4.2em; }
-@font-face { font-family: KeepCalm; src: url('KeepCalm.ttf'); }
+@font-face { font-family: KeepCalm; src: url('../font/KeepCalm.ttf'); }
 .KeepCalm { font-family:  KeepCalm; font-size: 4.2em; }
 
 @font-face { font-family: champagne; src: url('../font/ChampagneBold.ttf'); }
@@ -333,7 +333,8 @@ h1.form{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-margin-top:-4.7%;
+margin-top:-5.5%;
+margin-right: 9.5%;
 		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -447,7 +448,6 @@ width:100%;
 /* opmaak terugknop */
 .backbtn{
 	width:13.5%;
-	float:right;
 	background-color: #009A92;
   border: 1px solid black;
 	border-radius: 5px;
@@ -458,12 +458,10 @@ width:100%;
   display: inline-block;
   font-size: 16px;
     margin-bottom: 2%;
-		margin-right:10%;
 		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .backbtn:hover{
-	float:right;
 background-color: #007B75;
   border: 1px solid black ;
   color: white;
@@ -480,4 +478,33 @@ div.typeradio{
 text-align:left;
 display:inline;
 white-space: normal;
+}
+
+.list{
+	width:80%;
+	background-color: #009A92;
+  border: 1px solid black;
+	border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    margin-bottom: 2%;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.list:hover{
+		width:80%;
+background-color: #007B75;
+  border: 1px solid black ;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    margin-bottom: 2%;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

@@ -6,26 +6,14 @@ if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
 $data = $_SESSION['user'];
-
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
-
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
-}
-$sql = "SELECT userID,initials, surname FROM user";
-
-$result = mysqli_query($conn,$sql);
-
-
-
-?>
+}?>
 <!doctype html>
 <html lang="nl">
 	<?php include('../include/header.php');?>
@@ -44,25 +32,17 @@ else{
 	<br>
 				<div class="container">
 					<div class="login">
-              <h1 class="form"> Configuratie toevoegen </h1>
-						 <form action="../functions/addconfig.php" method="post" name="config">
+              <h1 class="form"> Hardware toevoegen </h1>
+						 <form action="../functions/addhardware.php" method="post" name="hardware">
 				<br>
-					<label for="username"><b>Gebruiker</b></label><br>
-          <select name='user' required>
-<?php
-          if (mysqli_num_rows($result) > 1){
+					<label for="Merk"><b>Merk</b></label><br>
+          <input type="text" name="brand" placeholder="Vul het merk van de hardware in" required><br>
 
-                while($row = mysqli_fetch_assoc($result)){
-                  echo " <option value='".$row["userID"]."'>".$row["initials"].", ".$row['surname']."</option>
-                ";
-            }
-          }
-          else{
-            echo "Error";
-          }
-          ?>
+          <label for="Model"><b>Model</b></label><br>
+          <input type="text" name="model" placeholder="Vul het model van de hardware in" required><br>
 
-
+          <label for="Type"><b>Type</b></label><br>
+          <input type="text" name="type" placeholder="Vul het type hardware in" required><br>
 
         </select><br>
 

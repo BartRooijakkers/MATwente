@@ -3,7 +3,7 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
 $servername = "localhost";
@@ -36,7 +36,7 @@ if ($conn->multi_query($sql) === TRUE) {
   $last_id = mysqli_insert_id($conn);
   $sql1 = "INSERT INTO user2incident (userID, incidentID) VALUES ('$user', '$last_id');";
   $sql1 .= "INSERT INTO config2incident(configurationID, incidentID) VALUES('$config', '$last_id')";
-     header("Location: mijnincidenten.php?sort=urgency");
+     header("Location:../php/mijnincidenten.php?sort=urgency");
     $conn->multi_query($sql1);
 
 } else {

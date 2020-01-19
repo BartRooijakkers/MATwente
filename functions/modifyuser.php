@@ -3,11 +3,11 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
 if($data[6] != 2 ){
-header("location:profiel.php");
+header("location:../php/profiel.php");
 }
 $servername = "localhost";
 $username = "root";
@@ -43,7 +43,7 @@ $id = $_GET["userID"];
 $sql = "UPDATE user SET surname = '$surname' , departmentID = $department , interncell = $interncell, email = '$email' WHERE userID =$id";
 
 if ($conn->query($sql) === TRUE) {
-    header("location:gebruikers.php?sort=department");
+    header("location:../php/gebruikers.php?sort=department");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

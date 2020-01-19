@@ -51,7 +51,7 @@ else{
 ?>
 	<div class=table>
           <h1> Incident details </h1>
-            <form class="edit" action="modifyincident.php?incidentID=<?php echo $id?>" method="post">
+            <form class="edit" action="../functions/modifyincident.php?incidentID=<?php echo $id?>" method="post">
 	<table class="incidentenDetails" name="incidentenDetails">
 	<tr>
 	  <th> Impact </th>

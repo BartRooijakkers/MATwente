@@ -3,7 +3,7 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
 
@@ -32,11 +32,11 @@ if($resultCheck > 0){
   if($row = mysqli_fetch_assoc($result)){
     // Laat de achternaam zien
 	$_SESSION['user'] = [$row['initials'], $row['middleName'], $row['surname'], $row['email'], $row['interncell'], $row['departmentName'], $row['userType'], $row['userID'], $row['configurationID']];
-	header('Location: profiel.php');
+	header('Location: ../php/profiel.php');
   }
 
 }
 else{
-	header('Location: index.php?error');
+	header('Location:../php/index.php?error');
 }
 ?>

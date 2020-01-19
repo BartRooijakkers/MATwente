@@ -3,11 +3,11 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
 if($data[6] != 2 ){
-header("location:profiel.php");
+header("location:../php/profiel.php");
 }
 $servername = "localhost";
 $username = "root";
@@ -104,7 +104,7 @@ if ($conn->query($sql) === TRUE) {
   $last_id = mysqli_insert_id($conn);
   $sql1 = "INSERT INTO user2configuration (userID, configurationID) VALUES ('$last_id', '$config');";
   mysqli_query( $conn, $sql1);
-    header("location:gebruikertoevoegen.php");
+    header("location:../php/gebruikertoevoegen.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

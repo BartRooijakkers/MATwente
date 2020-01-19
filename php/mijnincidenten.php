@@ -143,7 +143,7 @@ else{
               <td>".$row["responsibleName"]."</td>
               <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
 
-              <td><form class='comment' action='comment.php?incidentID= $incidentID' method='post'>
+              <td><form class='comment' action='../functions/comment.php?incidentID= $incidentID' method='post'>
               <textarea cols=38 rows='3' name='comment'>".$comment." </textarea>
               <button class='commentbtn' name='modify_btn'> Submit </button>
               </form></td>

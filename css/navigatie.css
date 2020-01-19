@@ -1,6 +1,6 @@
-@font-face { font-family: Coolvetica; src: url('coolvetica.ttf'); }
+@font-face { font-family: Coolvetica; src: url('../font/coolvetica.ttf'); }
 .Coolvetica { font-family:  Coolvetica; font-size: 4.2em; }
-@font-face { font-family: Cosima; src: url('Cosima.otf'); }
+@font-face { font-family: Cosima; src: url('../font/Cosima.otf'); }
 .Cosima { font-family:  Cosima; font-size: 4.2em; }
 
 body{

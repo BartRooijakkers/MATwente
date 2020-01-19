@@ -28,7 +28,7 @@ if (!$conn) {
 						?>
 					<i class="fas fa-user-tie"></i>
 
-						 <form action="login.php" method="post">
+						 <form action="../functions/login.php" method="post">
 				<br>
 					<label for="username"><b>E-mail</b></label><br>
 					<input type="text" placeholder="Vul uw E-mail in" name="username" required><br>

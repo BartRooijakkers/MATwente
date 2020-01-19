@@ -6,7 +6,9 @@ if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
 $data = $_SESSION['user'];
-
+if($data[6] != 2 ){
+header("location:profiel.php");
+}
 /* Connectie maken met de database */
 $servername = "localhost";
 $username = "root";
@@ -39,18 +41,22 @@ else{
   <div class="container">
 
 					<div class="login">
-            <h1 class="form"> Wachtwoord Veranderen </h1>
-						 <form action="../functions/modifypassword.php" method="post" class="addUser">
+            <h1 class="form"> Wat wilt u toevoegen? </h1>
 
-					<label for="username"><b>Nieuwe wachtwoord</b></label><br>
-					<input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Vul uw nieuwe wachtwoord in" name="password" required>
-					<br><button type="submit" class="btn" name="login_btn">Veranderen</button><br>
-
-
-		    <p class="wachtwoord"> Uw wachtwoord moet: minimaal 8 karakters lang zijn & minimaal: 1 hoofdletter, 1 kleine letter, 1 nummer en speciaal teken bevatten </p>
+          <a href="gebruikertoevoegen.php">
+            <button class="list" name="login_btn">Gebruiker toevoegen</button>
+          </a>
+          <a href="configuratietoevoegen.php">
+            <button class="list" name="login_btn">Configuratie toevoegen</button>
+          </a>
+          <a href="hardwaretoevoegen.php">
+            <button class="list" name="login_btn">Hardware toevoegen</button>
+          </a>
+          <a href="faqtoevoegen.php">
+            <button class="list" name="login_btn">Veel gestelde vragen toevoegen</button>
+          </a>
 
 			</div>
-		</form>
   </div>
 </body>
 </html>

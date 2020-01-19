@@ -3,7 +3,7 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
 
@@ -13,22 +13,24 @@ $password = "";
 $dbname = "twente";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-$user = $_POST['user'];
+$brand = $_POST['brand'];
+$model = $_POST['model'];
+$type = $_POST['type'];
 $config = $_POST['config'];
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO user2configuration (userID, configurationID)
-VALUES ('$user', '$config')";
+$sql = "INSERT INTO hardware (model, type, brand)
+VALUES ('$model', '$type','$brand')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+  $last_id = mysqli_insert_id($conn);
+  $sql1 = "INSERT INTO config2hardware (hardwareID, configurationID) VALUES ('$last_id', '$config');";
+  mysqli_query( $conn, $sql1);
+    header("location:../php/configuraties.php?sort=departments");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
-header("location: configuraties.php?sort=departments");
 ?>

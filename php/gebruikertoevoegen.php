@@ -42,7 +42,7 @@ else{
 
 					<div class="login">
             <h1 class="form"> Gebruiker toevoegen </h1>
-						 <form action="adduser.php" method="post" class="addUser">
+						 <form action="../functions/adduser.php" method="post" class="addUser">
 				<br>
 					<label for="username"><b>Initialen</b></label><br>
 					<input type="text" placeholder="Vul de Initialen in" name="initials" required><br>

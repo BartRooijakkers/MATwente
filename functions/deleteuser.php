@@ -3,9 +3,12 @@ if(!isset($_SESSION)){
  session_start();
 }
 if(!isset($_SESSION['user'])){
-header("location:index.php");
+header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
+if($data[6] != 2 ){
+header("location:../php/profiel.php");
+}
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,19 +16,17 @@ $dbname = "twente";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-
-// wachtwoord Encrypten
-$password  =  hash("sha256",$_POST['password']);
-
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
-$id = $data[7];
+$id = $_GET["userID"];
 
-$sql =  "UPDATE user SET password ='$password' WHERE userID =$id";
+$sql = "DELETE FROM user WHERE userID =$id;";
+$sql .="DELETE FROM user2configuration WHERE userID = $id;";
+$sql .="UPDATE user2incident SET userID = 57 WHERE userID =$id;";
 
-if ($conn->query($sql) === TRUE) {
-    header("location:profiel.php");
+if ($conn->multi_query($sql) === TRUE) {
+    header("location:../php/gebruikers.php?sort=department");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

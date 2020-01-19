@@ -79,7 +79,9 @@ else{
 
 
 </table>
-<a href="javascript:history.back()"><img class= 'return' src=../img/return.png></a>
+<a href="javascript:history.back()">
+<button class="backbtn" name="delete_btn">Terug</button>
+</a>
 </div>
 
 
