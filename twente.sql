@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 jan 2020 om 14:07
+-- Gegenereerd op: 21 jan 2020 om 22:41
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -142,11 +142,12 @@ INSERT INTO `departments` (`departmentID`, `departmentName`, `location`) VALUES
 (6, 'HRM', 1),
 (7, 'ICT', 1),
 (8, 'Onderzoek', 2),
-(9, 'Planning', 2),
+(9, 'Planning  ', 2),
 (10, 'Project planning', 1),
 (11, 'Rapportage', 1),
 (12, 'Secretariaat', 1),
-(13, 'Verkoop en Marketing', 1);
+(13, 'Verkoop en Marketing', 1),
+(15, 'Verwijderde Afdeling', 1);
 
 -- --------------------------------------------------------
 
@@ -383,7 +384,6 @@ INSERT INTO `user` (`userID`, `initials`, `surname`, `middleName`, `departmentID
 (48, 'F', 'Suasso', ' Lopes', 13, '270', 2, 'fsuasso@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (49, 'J', 'Thompson', '', 13, '270', 2, 'jthompson@verkoopenmarketing.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (53, 'A', 'Dmin', '', 7, '131', 1, 'admin@test.nl', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 2),
-(56, 'W', 'Slikke', 'van der', 10, '544', 1, 'wslikke@projectplanning.matwente.com', '7426582011e77b93dc3c2006c25334bddb9984a52cfe68883363da3963c268a1', 1),
 (57, 'V', 'erwijderde Gebruiker', NULL, 7, NULL, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -453,7 +453,7 @@ INSERT INTO `user2configuration` (`ID`, `userID`, `configurationID`) VALUES
 (48, 48, 1),
 (49, 49, 1),
 (53, 53, 1),
-(56, 56, 1);
+(60, 57, 1);
 
 -- --------------------------------------------------------
 
@@ -602,7 +602,7 @@ ALTER TABLE `config2hardware`
 -- AUTO_INCREMENT voor een tabel `config2incident`
 --
 ALTER TABLE `config2incident`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT voor een tabel `configuration`
@@ -614,7 +614,7 @@ ALTER TABLE `configuration`
 -- AUTO_INCREMENT voor een tabel `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `departmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `departmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT voor een tabel `faq`
@@ -632,7 +632,7 @@ ALTER TABLE `hardware`
 -- AUTO_INCREMENT voor een tabel `incident`
 --
 ALTER TABLE `incident`
-  MODIFY `incidentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `incidentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT voor een tabel `responsible`
@@ -650,19 +650,19 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2configuration`
 --
 ALTER TABLE `user2configuration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT voor een tabel `user2incident`
 --
 ALTER TABLE `user2incident`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

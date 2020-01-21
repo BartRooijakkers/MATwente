@@ -19,15 +19,14 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
-$id = $_GET["userID"];
+$id = $_GET["departmentID"];
 
-$sql = "DELETE FROM user WHERE userID =$id;";
-$sql .="UPDATE user2configuration SET userID = 57 WHERE userID =$id;";
-$sql .="UPDATE user2incident SET userID = 57 WHERE userID =$id;";
+$sql = "DELETE FROM departments WHERE departmentID =$id;";
+$sql .="UPDATE user SET departmentID = 15 WHERE departmentID =$id;";
 
 
 if ($conn->multi_query($sql) === TRUE) {
-    header("location:../php/gebruikers.php?sort=department");
+    header("location:../php/departments.php?sort=department");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -21,6 +21,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
+
+$sql = "SELECT departmentID,departmentName FROM departments";
+
+$result = mysqli_query($conn,$sql);
+
 ?>
 <!doctype html>
 <html lang="nl">
@@ -62,21 +67,20 @@ else{
 
           <label for="department"><b>Afdeling</b></label><br>
           <select name="department" required>
-                  <option value="">Make a selection</option>
-                  <option value="2"> CAD </option>
-                  <option value="3"> Directie </option>
-                  <option value="4"> Engineering </option>
-                  <option value="5"> Financiele Administratie </option>
-                  <option value="6"> HRM </option>
-                  <option value="7"> ICT </option>
-                  <option value="8"> Onderzoek </option>
-                  <option value="9"> Planning </option>
-                  <option value="10"> Project Planning </option>
-                  <option value="11"> Rapportage </option>
-                  <option value="12"> Secretariaat </option>
-                  <option value="13"> Verkoop en Marketing </option>
-                </select><br><br>
+                  <option value="" selected disabled hidden>Kies een afdeling</option>
+                  <?php
+                            if (mysqli_num_rows($result) > 1){
 
+                                  while($row = mysqli_fetch_assoc($result)){
+                                    echo " <option value='".$row["departmentID"]."'>".$row["departmentName"]."</option>
+                                  ";
+                              }
+                            }
+                            else{
+                              echo "Error";
+                            }
+                            ?>
+</select><br><br>
 					<button type="submit" class="btn" name="login_btn">Aanmaken</button>
 					<br>
 

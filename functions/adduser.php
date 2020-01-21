@@ -91,7 +91,7 @@ elseif($department == 12){
 elseif($department == 13){
   $departmentName ="verkoopenmarketing";
 }
-$email  =  $_POST['initials'] .$_POST['surname'] ."@".$departmentName. ".matwente.com";
+$email  =  strtolower($initials) .strtolower($surname) ."@".$departmentName. ".matwente.com";
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());

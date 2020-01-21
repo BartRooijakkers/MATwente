@@ -15,19 +15,20 @@ $password = "";
 $dbname = "twente";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+$id = $_GET["departmentID"];
 
+// Omzetten van department Van string naar integer
+$departmentName = $_POST["departmentName"];
+$location = $_POST["location"];
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
-$id = $_GET["userID"];
-
-$sql = "DELETE FROM user WHERE userID =$id;";
-$sql .="UPDATE user2configuration SET userID = 57 WHERE userID =$id;";
-$sql .="UPDATE user2incident SET userID = 57 WHERE userID =$id;";
 
 
-if ($conn->multi_query($sql) === TRUE) {
-    header("location:../php/gebruikers.php?sort=department");
+$sql = "UPDATE departments SET departmentName = '$departmentName' , location = $location WHERE departmentID =$id";
+
+if ($conn->query($sql) === TRUE) {
+    header("location:../php/departments.php?sort=department");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

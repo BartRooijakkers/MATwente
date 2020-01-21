@@ -6,28 +6,24 @@ if(!isset($_SESSION['user'])){
 header("location:../php/index.php");
 }
 $data = $_SESSION['user'];
-if($data[6] != 2 ){
-header("location:../php/profiel.php");
-}
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
-
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+/* Gegevens oproepen */
+$departmentName = $_POST['departmentName'];
+$location = $_POST['location'];
+
 
 if (!$conn) {
  die("Connection Failed " . mysqli_connect_error());
 }
-$id = $_GET["userID"];
+  $sql =  "INSERT INTO departments (departmentName, location)
+  VALUES ('$departmentName', $location)";
 
-$sql = "DELETE FROM user WHERE userID =$id;";
-$sql .="UPDATE user2configuration SET userID = 57 WHERE userID =$id;";
-$sql .="UPDATE user2incident SET userID = 57 WHERE userID =$id;";
-
-
-if ($conn->multi_query($sql) === TRUE) {
-    header("location:../php/gebruikers.php?sort=department");
+if ($conn->query($sql) === TRUE) {
+    header("location:../php/departments.php?sort=departments");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -41,24 +41,24 @@ else{
   <div class="container">
 
 					<div class="login">
-            <h1 class="form"> Wat wilt u toevoegen? </h1>
+            <h1 class="form">Afdeling toevoegen </h1>
+						 <form action="../functions/adddepartment.php" method="post" class="adddepartment">
+				<br>
+					<label for="departmentName"><b>Afdeling Naam</b></label><br>
+					<input type="text" placeholder="Vul de naam van de afdeling in" name="departmentName" required><br>
+          <label for="location"><b>Locatie</b></label><br>
+          <input type="radio" name="location" value="1" required> Intern
+          <input type="radio" name="location" value="2"> Extern<br><br>
 
-          <a href="gebruikertoevoegen.php">
-            <button class="list" name="login_btn">Gebruiker toevoegen</button>
-          </a>
-          <a href="afdelingtoevoegen.php">
-            <button class="list" name="login_btn">Afdeling toevoegen</button>
-          <a href="configuratietoevoegen.php">
-            <button class="list" name="login_btn">Configuratie toevoegen</button>
-          </a>
-          <a href="hardwaretoevoegen.php">
-            <button class="list" name="login_btn">Hardware toevoegen</button>
-          </a>
-          <a href="faqtoevoegen.php">
-            <button class="list" name="login_btn">Veel gestelde vragen toevoegen</button>
-          </a>
 
+
+					<button type="submit" class="btn" name="login_btn">Aanmaken</button>
+					<br>
+
+			<label class="error"></label>
+			<br>
 			</div>
+		</form>
   </div>
 </body>
 </html>

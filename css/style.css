@@ -134,7 +134,18 @@ table.Graphs{
 	border-collapse: collapse;
 }
 
+div.departments{
+margin-left:30%;
+margin-bottom: 5%;
+padding-top: 4%;
+}
 
+table.departments{
+	border: 1px solid black;
+  color: black;
+  width: 90%;
+	border-collapse: collapse;
+}
 
 th{
   border: 2px solid black;
@@ -506,5 +517,62 @@ background-color: #007B75;
   display: inline-block;
   font-size: 16px;
     margin-bottom: 2%;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.deletebtn1{
+	background-color: #009A92;
+  border: 1px solid black;
+	border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+	float:right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+margin-top:-6.8%;
+margin-right: 49%;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.deletebtn1:hover{
+	background-color: #007B75;
+	  border: 1px solid black ;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	    margin-bottom: 2%;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.backbtn1{
+	width:13.5%;
+	background-color: #009A92;
+  border: 1px solid black;
+	border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top:-6.8%;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.backbtn1:hover{
+background-color: #007B75;
+  border: 1px solid black ;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+margin-top:-6.8%;
 		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

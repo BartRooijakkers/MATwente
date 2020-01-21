@@ -25,7 +25,10 @@ if (!$conn) {
 //Datum graph query
 $sql = "SELECT YEAR(incident.date),DAYNAME(incident.date), MONTHNAME(incident.date), DAY(incident.date), COUNT(*) as number FROM incident GROUP BY DAY(incident.date)";
 //Geslacht graph query
-$sql1 = "SELECT sex, count(*) as number from user WHERE user.userID != 57 GROUP BY sex";
+$sql1 = "SELECT departments.*, COUNT(user.userID) as number FROM departments
+INNER JOIN user ON user.departmentID = departments.departmentID
+WHERE user.userID != 57 AND user.userID != 53
+GROUP BY departmentName";
 //Afdeling graph query
 $sql2 = "SELECT departments.departmentName, COUNT(incident.incidentID) AS number FROM USER
  INNER JOIN user2incident ON user.userID = user2incident.userID
@@ -136,26 +139,18 @@ $result5 = mysqli_query($conn,$sql5);
       function drawGeslachtChart()
       {
            var data = google.visualization.arrayToDataTable([
-                     ['Gender', 'Number'],
+                     ['Afdeling', 'Medewerkers'],
                      <?php
                      while($row = mysqli_fetch_array($result1))
                      {
-                       if ($row["sex"] == 1) {
-                     $geslacht = "Mannen";
-                     } elseif ($row["sex"] == 2) {
-                     $geslacht = "Vrouwen";
-                     } elseif ($row["sex"] == 3) {
-                      $geslacht = "Anders";
-                    }
-                          echo "['".$geslacht."', ".$row["number"]."],";
+                          echo "['".$row["departmentName"]."', ".$row["number"]."],";
                      }
                      ?>
                 ]);
            var options = {
-                 title: 'Percentage van Mannelijk & Vrouwelijk Medewerkers',
+                 title: 'Percentage Medewerkers per Afdeling',
                  //is3D:true,
                 pieHole: 0.4,
-                colors: ['#2092e8', '#d212e3']
                 };
            var chart = new google.visualization.PieChart(document.getElementById('pieSex'));
            chart.draw(data, options);

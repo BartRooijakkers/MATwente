@@ -150,7 +150,7 @@ $responsible = $row["responsibleName"];
   };
   /* Weergeven van data uit de database */
       echo "<tr><td>".$row["impact"].$personen."</td>
-      <td><select name='statusID' class='selectDepartment'>";
+      <td><select name='statusID' class='selectstatus'>";
                   if($row["statusID"]==1){
                         echo " <option selected value='1'> Niemand kan nog werken </option>";
                   }else{
@@ -247,7 +247,7 @@ echo"
       <td><a class='gebruikers' href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>";
       if($row["type"]==3){
-            echo "<div class='typeradio'><input type='radio' ='type' value='1'><b> Software </b><br>
+            echo "<div class='typeradio'><input type='radio' name='type' value='1'><b> Software </b><br>
             <input type='radio' name='type' value='2'><b>Hardware </b></div>";
       }elseif($row["type"]==2){
           echo "  <input type='radio' name='type' value='1'><b> Software  </b><br>

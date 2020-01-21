@@ -4,6 +4,7 @@
   <a href="incidenten.php?sort=urgency">Incidenten</a>
 	<a href="incidentmeld.php">Incident Melden</a>
 	<a href="gebruikers.php?sort=department">Gebruikers</a>
+		<a href="departments.php?sort=departments">Afdelingen</a>
 	<a href="toevoegen.php">Toevoegen</a>
 	<a href="faq.php">Veel Gestelde Vragen</a>
 </div>

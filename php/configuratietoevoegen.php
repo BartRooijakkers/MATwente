@@ -49,6 +49,7 @@ else{
 				<br>
 					<label for="username"><b>Gebruiker</b></label><br>
           <select name='user' required>
+            <option value="" selected disabled hidden>Kies een gebruiker</option>
 <?php
           if (mysqli_num_rows($result) > 1){
 
