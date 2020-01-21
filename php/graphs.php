@@ -82,7 +82,7 @@ $result5 = mysqli_query($conn,$sql5);
       google.charts.setOnLoadCallback(drawDateChart);
 
       // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawGeslachtChart);
+      google.charts.setOnLoadCallback(drawafdelinguserChart);
 
       //Tekent Afdeling grafiek
           google.charts.setOnLoadCallback(drawAfdelingChart);
@@ -136,7 +136,7 @@ $result5 = mysqli_query($conn,$sql5);
       }
 
       // Callback that draws the pie chart for Anthony's pizza.
-      function drawGeslachtChart()
+      function drawafdelinguserChart()
       {
            var data = google.visualization.arrayToDataTable([
                      ['Afdeling', 'Medewerkers'],
@@ -152,7 +152,7 @@ $result5 = mysqli_query($conn,$sql5);
                  //is3D:true,
                 pieHole: 0.4,
                 };
-           var chart = new google.visualization.PieChart(document.getElementById('pieSex'));
+           var chart = new google.visualization.PieChart(document.getElementById('pieuserDepartment'));
            chart.draw(data, options);
       }
 
@@ -285,7 +285,7 @@ include('../include/navigatiedirectie.php');
         <div id="pieAfdeling" style="border: 1px solid #ccc"></div>
         <div id="pieConfiguraties" style="border: 1px solid #ccc"></div>
         <div id="pieType" style="border: 1px solid #ccc"></div>
-        <div id="pieSex" style="border: 1px solid #ccc"></div>
+        <div id="pieuserDepartment" style="border: 1px solid #ccc"></div>
         <div id="userincidentChart" style="border: 1px solid #ccc"></div>
 
 

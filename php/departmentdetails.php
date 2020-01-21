@@ -54,7 +54,6 @@ else{
     <th> Afdeling</th>
     <th> Locatie </th>
     <th> Aantal Medewerkers</th>
-    <th> Openen </th>
 
 
 
@@ -83,7 +82,6 @@ else{
       }
 echo"</td>
       <td>".$mensen."</td>
-      	<td><a href='departmentdetails.php?departmentID=".$row["departmentID"]."'>"."<i class='fas fa-external-link-alt'></i>"."</td>
 			 </tr>";
 	  }
 	}

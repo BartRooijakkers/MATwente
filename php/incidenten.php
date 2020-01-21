@@ -7,7 +7,7 @@ header("location:index.php");
 }
 $data = $_SESSION['user'];
 
-if($data[6] != 2 ){
+if($data[6] == 1 ){
 header("location:profiel.php");
 }
 $servername = "localhost";
