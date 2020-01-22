@@ -133,6 +133,12 @@ table.Graphs{
   width: 90%;
 	border-collapse: collapse;
 }
+table.faq{
+	border: 1px solid black;
+  color: black;
+  width: 90%;
+	border-collapse: collapse;
+}
 
 div.departments{
 margin-left:30%;

@@ -140,8 +140,15 @@ else{
 			       <td>".round($time, 2)." uur"."</td>
       			 <td>".$row["initials"].", ".$row["surname"]."</td>
               <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
-      			 <td><a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<i class='fas fa-external-link-alt 1'></i>"."</td>
+      			 <td>";
+             if($data[6] == 2){
+            echo"   <a href='incidentdetails.php?incidentID=".$row["incidentID"]."'>"."<i class='fas fa-external-link-alt 1'></i>"."</td>
       			 </tr>";
+           }
+           elseif($data[6] == 3){
+             echo"   <a href='incidentdetailsdirectie.php?incidentID=".$row["incidentID"]."'>"."<i class='fas fa-external-link-alt 1'></i>"."</td>
+       			 </tr> ";
+           }
 	  }
 	}
 	else{

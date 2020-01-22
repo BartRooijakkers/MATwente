@@ -7,11 +7,8 @@ header("location:index.php");
 }
 $data = $_SESSION['user'];
 $id = $_GET["incidentID"];
-if($data[6] == 3 ){
-  header("location:incidentdetailsdirectie.php?incidentID=$id");
-}
-elseif($data[6] != 2 ){
-header("location:profiel.php");
+if($data[6] != 3){
+  header("location:profiel.php");
 }
 /* Connectie maken met de database */
 $servername = "localhost";
@@ -54,7 +51,6 @@ else{
 ?>
 	<div class=table>
           <h1> Incident details </h1>
-            <form class="edit" action="../functions/modifyincident.php?incidentID=<?php echo $id?>" method="post">
 	<table class="incidentenDetails" name="incidentenDetails">
 	<tr>
 	  <th> Impact </th>
@@ -151,117 +147,34 @@ $responsible = $row["responsibleName"];
   } elseif($row["DAYNAME(incident.date)"] == "Sunday") {
       $day = "Zondag";
   };
+  /* Type omzetten van integer naar string */
+  if($row["type"] == 1){
+    $type = "Software";
+  }
+  elseif($row["type"] == 2){
+    $type = "Hardware";
+  }
+  elseif($row["type"] == 3){
+    $type = "Nog toe te wijzen";
+  }
   /* Weergeven van data uit de database */
       echo "<tr><td>".$row["impact"].$personen."</td>
-      <td><select name='statusID' class='selectstatus'>";
-                  if($row["statusID"]==1){
-                        echo " <option selected value='1'> Niemand kan nog werken </option>";
-                  }else{
-                      echo " <option value='1'> Niemand kan nog werken </option>";
-                  }
-                  if($row["statusID"]==2){
-                        echo " <option selected value='2'> Kunnen niet werken. orders worden gemist </option>";
-                  }else{
-                      echo "  <option value='2'> Kunnen niet werken. orders worden gemist </option>";
-                  }
-                  if($row["statusID"]==3){
-                        echo " <option selected value='3'> kan niet werken </option>";
-                  }else{
-                      echo " <option value='3'> kan niet werken </option>";
-                  }
-                  if($row["statusID"]==4){
-                        echo " <option selected value='4'> kunnen niet werken met 1 programma </option>";
-                  }else{
-                      echo "  <option value='4'> kunnen niet werken met 1 programma </option>";
-                  }
-                  if($row["statusID"]==5){
-                        echo "   <option selected value='5'> kan niet werken met 1 programma </option>";
-                  }else{
-                      echo "     <option value='5'> kan niet werken met 1 programma </option>";
-                  }
-                  if($row["statusID"]==6){
-                        echo "     <option selected value='6'> er is een workaround aanwezig </option>";
-                  }else{
-                      echo "       <option value='6'> er is een workaround aanwezig </option>";
-                  }
-                  if($row["statusID"]==7){
-                        echo "     <option selected value='7'> niet reproduceerbare fout </option>";
-                  }else{
-                      echo "           <option value='7'> niet reproduceerbare fout </option>";
-                  }
-                  if($row["statusID"]==9){
-                        echo "     <option selected value='9'> Nog toe te wijzen </option>";
-                  }else{
-                      echo "           <option value='9'> Nog toe te wijzen </option>";
-                  }
-                  if($row["statusID"]==8){
-                        echo "     <option selected value='8'> Afgerond </option>";
-                  }else{
-                      echo "           <option value='8'> Afgerond </option>";
-                  }
-                  if($row["statusID"]==11){
-                        echo "     <option selected value='11'> Foutief </option>";
-                  }else{
-                      echo "           <option value='11'> Foutief </option>";
-                  }
-echo"
-      <td><textarea cols='40' rows='5' name='description'>".$description." </textarea></td>
-      <td><textarea cols='20' rows='5' name='cause'>".$cause." </textarea></td>
-      <td><textarea cols='25' rows='5' name='solution'>".$solution." </textarea></td>
-      <td><textarea cols='25' rows='5' name='feedback'>".$feedback." </textarea></td>
-      <tr>      <th> Tijd (uren)</th>
+      <td>".$status."</td>
+      <td>".$description."</td>
+      <td>".$cause."</td>
+      <td>".$solution."</td>
+      <td>".$feedback."</td>
+      <tr><th> Tijd (uren)</th>
       <th> Verantwoordelijk</th>
       <th> Incidentmelder </th>
       	 <th> Type incident</th>
          <th> Meld datum </th>
          <th> Afrond datum </th>
       	</tr>
-      <tr>    <td><input type='number' step='0.1'max='999' value=".round($time, 2)." name='time'</td>
-      <td><select name='responsibleID' class='selectDepartment'>";
-                  if($row["responsibleID"]==1){
-                        echo "  <option selected='selected' value='1'> MaTW - ICT Afdeling </option>";
-                  }else{
-                      echo "  <option value='1'> MaTW - ICT Afdeling </option>";
-                  }
-                  if($row["responsibleID"]==2){
-                        echo "  <option selected value='2'> Hosting Provider </option>";
-                  }else{
-                      echo "  <option value='2'> Hosting Provider </option>";
-                  }
-                  if($row["responsibleID"]==3){
-                        echo "  <option selected value='3'> MaLoZ - ICT Afdeling </option>";
-                  }else{
-                      echo "  <option value='3'> MaLoZ - ICT Afdeling </option>";
-                  }
-                  if($row["responsibleID"]==4){
-                        echo "  <option selected value='4'> Leverancier printer </option>";
-                  }else{
-                      echo "  <option value='4'> Leverancier printer </option>";
-                  }
-                  if($row["responsibleID"]==5){
-                        echo "      <option selected value='5'> Nog toe te wijzen </option>";
-                  }else{
-                      echo "      <option value='5'> Nog toe te wijzen </option>";
-                  }
-
-echo"
-                  </select></td>
-
+      <tr><td>".round($time, 2)." Uren"."</td>
+      <td>".$responsible."</td>
       <td><a class='gebruikers' href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
-      <td>";
-      if($row["type"]==3){
-            echo "<div class='typeradio'><input type='radio' name='type' value='1'><b> Software </b><br>
-            <input type='radio' name='type' value='2'><b>Hardware </b></div>";
-      }elseif($row["type"]==2){
-          echo "  <input type='radio' name='type' value='1'><b> Software  </b><br>
-          <input type='radio' name='type' value='2' checked><b>Hardware </b>";
-      }
-      elseif($row["type"] == 1){
-        echo"<div class='typeradio'>
-        <input type='radio' name='type' value='1' checked><b> Software </b><br>
-        <input type='radio' name='type' value='2'><b> Hardware </b></div>";
-      }
-      echo"</td>
+      <td>".$type."</td>
       <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
       <td>".$finishDate."</td>
       </tr>";
@@ -281,7 +194,6 @@ echo"
 
 
 </table>
-<button type="submit" class="btn" name="modify_btn">Aanpassen</button>
 <a href="javascript:history.back()">
 <button class="backbtn" name="delete_btn">Terug</button>
 </a>
