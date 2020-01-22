@@ -1,24 +1,28 @@
 <?php
+/* Controlleren of sessie is aangemaakt */
 if(!isset($_SESSION)){
  session_start();
 }
+/* Wanneer sessie niet gemaakt is wordt de gebruiker terug verwezen naar de inlogpagina*/
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
+/* Rol van gebruiker oproepen */
 $data = $_SESSION['user'];
+/* Controleer rol van de gebruiker, Wanneer gebruiker niet bevoegd is wordt hij terug verwezen naar profiel.php */
 if($data[6] != 3 ){
 header("location:profiel.php");
 }
+/* variablen database connectie definiëren */
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
-
-$userID = $data[6];
-
+/* Connectie maken met de database */
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
+/* User type oproepen */
+$userID = $data[6];
+/* Als connectie is gefaald toon error */
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
@@ -66,30 +70,22 @@ $result3 = mysqli_query($conn,$sql3);
 $result4 = mysqli_query($conn,$sql4);
 //Incidenten per gebruiker oproepen
 $result5 = mysqli_query($conn,$sql5);
-
 ?>
-
 <html>
   <head>
     <script src="https://kit.fontawesome.com/85544c20de.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
       // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-
       // Draw the pie chart for Sarah's pizza when Charts is loaded.
       google.charts.setOnLoadCallback(drawDateChart);
-
       // Draw the pie chart for the Anthony's pizza when Charts is loaded.
       google.charts.setOnLoadCallback(drawafdelinguserChart);
-
       //Tekent Afdeling grafiek
           google.charts.setOnLoadCallback(drawAfdelingChart);
-
       //Tekent Type incident grafiek
         google.charts.setOnLoadCallback(drawtypeIncidentChart);
-
       //Tekent incidente per configuraties grafiek
       google.charts.setOnLoadCallback(drawconfiguratiesChart);
       //Tekent incidente per gebruiker grafiek
@@ -122,7 +118,6 @@ $result5 = mysqli_query($conn,$sql5);
            }
            ?>
         ]);
-
         var options = {
           title: 'Incidenten per datum',
           hAxis: {title: 'Datum',  titleTextStyle: {color: '#333'}},
@@ -130,12 +125,10 @@ $result5 = mysqli_query($conn,$sql5);
           vAxis: {minValue: 0, title:"Aantal incidenten"},
            pointSize: 10,
         };
-
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-
-      // Callback that draws the pie chart for Anthony's pizza.
+      // Tekent de chart
       function drawafdelinguserChart()
       {
            var data = google.visualization.arrayToDataTable([
@@ -155,7 +148,6 @@ $result5 = mysqli_query($conn,$sql5);
            var chart = new google.visualization.PieChart(document.getElementById('pieuserDepartment'));
            chart.draw(data, options);
       }
-
       function drawAfdelingChart()
       {
            var data = google.visualization.arrayToDataTable([
@@ -163,7 +155,6 @@ $result5 = mysqli_query($conn,$sql5);
                      <?php
                      while($row = mysqli_fetch_array($result2))
                      {
-
                           echo "['".$row["departmentName"]."', ".$row["number"]."],";
                      }
                      ?>
@@ -175,7 +166,6 @@ $result5 = mysqli_query($conn,$sql5);
            var chart = new google.visualization.PieChart(document.getElementById('pieAfdeling'));
            chart.draw(data, options);
       }
-
       function drawtypeIncidentChart()
       {
            var data = google.visualization.arrayToDataTable([
@@ -203,7 +193,6 @@ $result5 = mysqli_query($conn,$sql5);
            var chart = new google.visualization.PieChart(document.getElementById('pieType'));
            chart.draw(data, options);
       }
-
       function drawconfiguratiesChart()
       {
            var data = google.visualization.arrayToDataTable([
@@ -250,19 +239,15 @@ $result5 = mysqli_query($conn,$sql5);
            }
              ?>
          ]);
-
          var options = {
            title: 'Meldingen per gebruiker',
            vAxis: {title:"aantal incidenten"},
             hAxis: {direction:1, slantedText:true, slantedTextAngle:270 },
             height:500
           };
-
-         // Instantiate and draw the chart.
          var chart = new google.visualization.ColumnChart(document.getElementById('userincidentChart'));
          chart.draw(data, options);
       }
-
     </script>
     <title>MA Twente</title>
     <meta charset="UTF-8">
@@ -277,18 +262,17 @@ $result5 = mysqli_query($conn,$sql5);
     <?php
 include('../include/navigatiedirectie.php');
   ?>
-    <!--Table and divs that hold the pie charts-->
+    <!--tabel met daarin de grafieken-->
       <div class="tableGraphs">
+          <!-- Kop text -->
             <h1> Statistieken</h1>
-
+<!-- Begin Grafieken -->
         <div id="chart_div" style="border: 1px solid #ccc"></div>
         <div id="pieAfdeling" style="border: 1px solid #ccc"></div>
         <div id="pieConfiguraties" style="border: 1px solid #ccc"></div>
         <div id="pieType" style="border: 1px solid #ccc"></div>
         <div id="pieuserDepartment" style="border: 1px solid #ccc"></div>
         <div id="userincidentChart" style="border: 1px solid #ccc"></div>
-
-
   </div>
   </body>
 </html>

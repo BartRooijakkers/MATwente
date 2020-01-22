@@ -1,12 +1,14 @@
 <?php
+/* Controlleren of sessie is aangemaakt */
 if(!isset($_SESSION)){
  session_start();
 }
+/* Wanneer sessie niet gemaakt is wordt de gebruiker terug verwezen naar de inlogpagina*/
 if(!isset($_SESSION['user'])){
 header("location:../php/index.php");
 }
+/* Rol van gebruiker oproepen */
 $data = $_SESSION['user'];
-
 // Database Instellingen
 $db_host = "localhost";
 $db_user = "root";
@@ -16,7 +18,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 // Connectie variabele
 $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-
+// Password vergelijken
 $password = hash("sha256",$password);
 // SQL: alles van de gebruikers
 $sql = "SELECT user.*, departments.departmentName, user2configuration.configurationID FROM user
@@ -34,7 +36,7 @@ if($resultCheck > 0){
 	$_SESSION['user'] = [$row['initials'], $row['middleName'], $row['surname'], $row['email'], $row['interncell'], $row['departmentName'], $row['userType'], $row['userID'], $row['configurationID']];
 	header('Location: ../php/profiel.php');
   }
-
+// Als login is mislukt wordt je terug verwezen
 }
 else{
 	header('Location:../php/index.php?error');

@@ -49,7 +49,7 @@ div.login1{
 }
 
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
   max-width: 75%;
   max-height: 5%;
   padding: 15px 23px;
@@ -60,6 +60,7 @@ input[type=text], input[type=password] {
 	border-radius: 5px;
 
 }
+
 
 label.error{
   color:red;

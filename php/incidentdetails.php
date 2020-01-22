@@ -1,28 +1,34 @@
 <?php
+/* Controlleren of sessie is aangemaakt */
 if(!isset($_SESSION)){
  session_start();
 }
+/* Wanneer sessie niet gemaakt is wordt de gebruiker terug verwezen naar de inlogpagina*/
 if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
+/* Rol van gebruiker oproepen */
 $data = $_SESSION['user'];
-$id = $_GET["incidentID"];
+/* Controleer rol van de gebruiker, Wanneer gebruiker niet bevoegd is wordt hij terug verwezen naar profiel.php */
 if($data[6] == 3 ){
   header("location:incidentdetailsdirectie.php?incidentID=$id");
 }
 elseif($data[6] != 2 ){
 header("location:profiel.php");
 }
+/*Get incidentID*/
+$id = $_GET["incidentID"];
 /* Connectie maken met de database */
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
+/* Als connectie is gefaald toon error */
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
+/* Query definiëren */
 $sql = "SELECT status.statusName, status.statusID, incident.description, incident.impact,
 incident.time, responsible.responsibleName, responsible.responsibleID, incident.cause,
 incident.solution, incident.feedback, incident.comment, DAYNAME(incident.date),
@@ -34,13 +40,15 @@ INNER JOIN user ON user2incident.userID = user.userID
 INNER JOIN departments ON user.departmentID = departments.departmentID
 INNER JOIN responsible ON incident.responsibleID = responsible.responsibleID
 INNER JOIN status ON incident.statusID = status.statusID WHERE incident.incidentID = $id";
+/* Query opzetten */
 $result = mysqli_query($conn,$sql);
 ?>
-
 <!doctype html>
 <html lang="nl">
-<?php include('../include/header.php');?>
+<!-- Het includen van de header -->
+	<?php include('../include/header.php');?>
 <body>
+  <!-- Het includen van de navigatie gebaseerd op rol -->
 	<?php
 if($data[6] == 2){
   include('../include/navigatiebeheerder.php');
@@ -53,10 +61,14 @@ else{
 }
 ?>
 	<div class=table>
+      <!-- Kop text -->
           <h1> Incident details </h1>
+          <!-- Begin Form -->
             <form class="edit" action="../functions/modifyincident.php?incidentID=<?php echo $id?>" method="post">
-	<table class="incidentenDetails" name="incidentenDetails">
+<!-- Begin tabel -->
+  <table class="incidentenDetails" name="incidentenDetails">
 	<tr>
+      <!-- Aanwijzen van kopjes -->
 	  <th> Impact </th>
     <th> Status </th>
 		<th> Omschrijving</th>
@@ -243,10 +255,7 @@ echo"
                   }else{
                       echo "      <option value='5'> Nog toe te wijzen </option>";
                   }
-
-echo"
-                  </select></td>
-
+echo"  </select></td>
       <td><a class='gebruikers' href='gebruikerdetails.php?userID=".$row["userID"]."'>".$row["initials"].", ".$row["surname"]."</td>
       <td>";
       if($row["type"]==3){
@@ -265,7 +274,6 @@ echo"
       <td>".$day." ".$row["DAY(incident.date)"]." ".$row["MONTHNAME(incident.date)"]."</td>
       <td>".$finishDate."</td>
       </tr>";
-
       if (is_null($row['comment'])){
          echo" ";
        }else{
@@ -274,21 +282,18 @@ echo"
     }
   }
   else{
+        /* Wanneer de query mislukt toont hij: Error */
     echo "Error";
   }
   ?>
-
-
-
 </table>
+<!-- Submit knop-->
 <button type="submit" class="btn" name="modify_btn">Aanpassen</button>
+<!-- Terug knop, brengt je naar de vorige pagina -->
 <a href="javascript:history.back()">
 <button class="backbtn" name="delete_btn">Terug</button>
 </a>
 </div>
 </form>
-
-
-
-	</body>
+</body>
 </html>

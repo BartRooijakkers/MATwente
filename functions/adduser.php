@@ -1,21 +1,25 @@
 <?php
+/* Controlleren of sessie is aangemaakt */
 if(!isset($_SESSION)){
  session_start();
 }
+/* Wanneer sessie niet gemaakt is wordt de gebruiker terug verwezen naar de inlogpagina*/
 if(!isset($_SESSION['user'])){
 header("location:../php/index.php");
 }
+/* Rol van gebruiker oproepen */
 $data = $_SESSION['user'];
-if($data[6] != 2 ){
-header("location:../php/profiel.php");
-}
+/* variablen database connectie definiëren */
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
-
+/* Connectie maken met de database */
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
+/* Als connectie is gefaald toon error */
+if (!$conn) {
+  die("Connection Failed " . mysqli_connect_error());
+}
 // Omzetten van gender Van string naar integer
 if($_POST['gender'] == "male"){
   $sex = 1;
@@ -23,14 +27,14 @@ if($_POST['gender'] == "male"){
 elseif($_POST['gender'] == "female"){
 $sex = 2;
 }
-// Omzetten van department Van string naar integer
-
+// Data uit form halen
 $initials    =  strtoupper($_POST['initials']);
 $middlename = $_POST['middleName'];
 $surname       =  ucfirst($_POST['surname']);
 $interncell = $_POST['nummer'];
 $password  =  hash("sha256","Welkom0!");
 $department = $_POST['department'];
+// Omzetten van department Van string naar integer
 
 if ($department == "4"){
   $config = "2";
@@ -91,22 +95,20 @@ elseif($department == 12){
 elseif($department == 13){
   $departmentName ="verkoopenmarketing";
 }
+//definieer email
 $email  =  strtolower($initials) .strtolower($surname) ."@".$departmentName. ".matwente.com";
-
-if (!$conn) {
- die("Connection Failed " . mysqli_connect_error());
-}
-
+/* Query definiëren */
 $sql = "INSERT INTO user (initials, middleName, surname, email, interncell, password, sex, departmentID,userType)
 VALUES ('$initials', '$middlename', '$surname', '$email', '$interncell', '$password', '$sex', '$department', '$userType');";
-
+/* Als query gelukt is  voer volgende queries uit*/
 if ($conn->query($sql) === TRUE) {
   $last_id = mysqli_insert_id($conn);
   $sql1 = "INSERT INTO user2configuration (userID, configurationID) VALUES ('$last_id', '$config');";
   mysqli_query( $conn, $sql1);
+    /* Als query gelukt is redirect naar mijnincidenten */
     header("location:../php/gebruikertoevoegen.php");
 } else {
+    /* Wanneer de query mislukt toont hij: Error */
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 ?>

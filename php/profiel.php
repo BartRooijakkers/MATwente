@@ -6,19 +6,15 @@ if(!isset($_SESSION['user'])){
 header("location:index.php");
 }
 $data = $_SESSION['user'];
-
+/* Database connectie */
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "twente";
-
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
 if (!$conn) {
   die("Connection Failed " . mysqli_connect_error());
 }
-
-
  ?>
 	<!doctype html>
 	<html lang="nl">
@@ -36,24 +32,21 @@ if (!$conn) {
     }
     ?>
 			<div class="login">
+          <!-- Kop text -->
 				<p class="PG">Persoonlijke gegevens: </p>
-
-
 		<?php
-
+/* Toon gegevens */
 			echo "<td>"."<p class='profielfields'>Voorletter: </p>"."<p class='persooninfo'>".$data[0]."</p>"."</td>
 			<td>"."<p class='profielfields'>Tussenvoegsel: </p>"."<p class='persooninfo'>".$data[1]."</p>"."</td>
 			<td>"."<p class='profielfields'>Achternaam: </p>"."<p class='persooninfo'>".$data[2]."</p>"."</td>
       <td>"."<p class='profielfields'>Afdeling: </p>"."<p class='persooninfo'>".$data[5]."</p>"."</td>
 			<td>"."<p class='profielfields'>Email: </p>"."<p class='persooninfo'>".$data[3]."</p>"."</td>
 			<td>"."<p class='profielfields'>intern telefoon nummer: </p>"."<p class='persooninfo'>".$data[4]."</p>"."</td>";
-
-
 		?>
+      <!-- Wachtwoord verander knop -->
 			  <a href="wachtwoordveranderen.php"> <button class="btn">Wachtwoord Wijzigen </button> </a><br>
+          <!-- uitlog knop-->
         <a href="sessionend.php"> <button class="btn">   Uitloggen  </button> </a>
 			</div>
-
-
-		</body>
+</body>
 	</html>
