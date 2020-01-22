@@ -23,7 +23,7 @@ if (!$conn) {
 					<div class="login">
 					<?php
 					if(isset($_GET['error'])){
-						echo "Er is een fout in u email of wachtwoord.";
+						echo "Er is een fout in uw email of wachtwoord.";
 						}
 						?>
 					<i class="fas fa-user-tie"></i>
