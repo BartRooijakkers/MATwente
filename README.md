@@ -1,6 +1,5 @@
-======================================================
+
 School opdracht, 1e project van het 2e leerjaar
-======================================================
 
 # M.A.-Twente
 M.A. Twente project /  Bart, Casey en Wesley
