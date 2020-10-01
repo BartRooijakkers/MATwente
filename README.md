@@ -37,7 +37,7 @@ Om in te loggen als BEHEERDER kunt u het volgende account gebruiken
 Username: admin@test.nl
 Password: Welkom0!
 
-Verder kunt u elk account gebruiker van de afdeling: ICT
+Verder kunt u elk account gebruiken van de afdeling: ICT
 Met hetzelfde wachtwoord
 ======================================================
 Om in te loggen als DIRECTIE kunt u het volgende account gebruiken
@@ -45,7 +45,7 @@ Om in te loggen als DIRECTIE kunt u het volgende account gebruiken
 Username: fcicek@directie.matwente.com
 Password: Welkom0!
 
-Verder kunt u elk account gebruiker van de afdeling: Directie
+Verder kunt u elk account gebruiken van de afdeling: Directie
 Met hetzelfde wachtwoord
 ======================================================
 Om in te loggen als NORMALE GEBRUIKER kunt u het volgende account gebruiken
@@ -53,5 +53,5 @@ Om in te loggen als NORMALE GEBRUIKER kunt u het volgende account gebruiken
 Username: sgeerman@cad.matwente.com
 Password: Welkom0!
 
-Verder kunt u elk account gebruiker van de alle afdelingen behalve ICT & DIRECTIE
+Verder kunt u elk account gebruiken van de alle afdelingen behalve ICT & DIRECTIE
 Met hetzelfde wachtwoord
